@@ -9,21 +9,91 @@
 /* Begin PBXBuildFile section */
 		AB86A7E726D3D76800EA990A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A7E626D3D76800EA990A /* AppDelegate.swift */; };
 		AB86A7E926D3D76800EA990A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A7E826D3D76800EA990A /* SceneDelegate.swift */; };
-		AB86A7EB26D3D76800EA990A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A7EA26D3D76800EA990A /* ViewController.swift */; };
-		AB86A7EE26D3D76800EA990A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A7EC26D3D76800EA990A /* Main.storyboard */; };
 		AB86A7F026D3D76900EA990A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB86A7EF26D3D76900EA990A /* Assets.xcassets */; };
 		AB86A7F326D3D76900EA990A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A7F126D3D76900EA990A /* LaunchScreen.storyboard */; };
+		AB86A7FE26D3DE3000EA990A /* LoginOrSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A7FD26D3DE3000EA990A /* LoginOrSignUp.storyboard */; };
+		AB86A80126D3DE6A00EA990A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A80026D3DE6A00EA990A /* Login.storyboard */; };
+		AB86A80326D3DE8100EA990A /* PasswordForgot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A80226D3DE8100EA990A /* PasswordForgot.storyboard */; };
+		AB86A80526D3DE9000EA990A /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A80426D3DE9000EA990A /* SignUp.storyboard */; };
+		AB86A80726D3DE9900EA990A /* PostDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A80626D3DE9900EA990A /* PostDetail.storyboard */; };
+		AB86A80926D3DEA600EA990A /* NotificationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A80826D3DEA600EA990A /* NotificationList.storyboard */; };
+		AB86A80B26D3DEB100EA990A /* AllNotificationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A80A26D3DEB100EA990A /* AllNotificationList.storyboard */; };
+		AB86A80D26D3DEB900EA990A /* ChoosableCameraOrLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A80C26D3DEB900EA990A /* ChoosableCameraOrLibrary.storyboard */; };
+		AB86A80F26D3DEC600EA990A /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A80E26D3DEC600EA990A /* Camera.storyboard */; };
+		AB86A81126D3DECF00EA990A /* EditingPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81026D3DECF00EA990A /* EditingPost.storyboard */; };
+		AB86A81326D3DED800EA990A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81226D3DED800EA990A /* Profile.storyboard */; };
+		AB86A81526D3DEDF00EA990A /* FollowOrFollowerList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81426D3DEDF00EA990A /* FollowOrFollowerList.storyboard */; };
+		AB86A81726D3DEE900EA990A /* AdditionalPet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81626D3DEE900EA990A /* AdditionalPet.storyboard */; };
+		AB86A81926D3DEF700EA990A /* EditPetProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81826D3DEF700EA990A /* EditPetProfile.storyboard */; };
+		AB86A81B26D3DEFF00EA990A /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81A26D3DEFF00EA990A /* Setting.storyboard */; };
+		AB86A81D26D3DF0A00EA990A /* ThemeColor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81C26D3DF0A00EA990A /* ThemeColor.storyboard */; };
+		AB86A81F26D3DF1900EA990A /* PrivacyAndSecurity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81E26D3DF1900EA990A /* PrivacyAndSecurity.storyboard */; };
+		AB86A82326D3DF7600EA990A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A82226D3DF7600EA990A /* Home.storyboard */; };
+		AB86A82826D3E0E700EA990A /* LoginOrSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A82726D3E0E700EA990A /* LoginOrSignUpViewController.swift */; };
+		AB86A82F26D3E14A00EA990A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A82E26D3E14A00EA990A /* LoginViewController.swift */; };
+		AB86A83126D3E15F00EA990A /* PasswordForgotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A83026D3E15F00EA990A /* PasswordForgotViewController.swift */; };
+		AB86A83326D3E16B00EA990A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A83226D3E16B00EA990A /* SignUpViewController.swift */; };
+		AB86A83526D3E19300EA990A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A83426D3E19300EA990A /* HomeViewController.swift */; };
+		AB86A83726D3E28600EA990A /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A83626D3E28600EA990A /* PostDetailViewController.swift */; };
+		AB86A83926D3E29700EA990A /* NotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A83826D3E29700EA990A /* NotificationListViewController.swift */; };
+		AB86A83B26D3E32100EA990A /* AllNotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A83A26D3E32100EA990A /* AllNotificationListViewController.swift */; };
+		AB86A83D26D3E33800EA990A /* ChoosableCameraOrLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A83C26D3E33800EA990A /* ChoosableCameraOrLibraryViewController.swift */; };
+		AB86A83F26D3E34A00EA990A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A83E26D3E34A00EA990A /* CameraViewController.swift */; };
+		AB86A84126D3E35100EA990A /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84026D3E35100EA990A /* LibraryViewController.swift */; };
+		AB86A84326D3E35B00EA990A /* EditingPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84226D3E35B00EA990A /* EditingPostViewController.swift */; };
+		AB86A84526D3E36700EA990A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84426D3E36700EA990A /* ProfileViewController.swift */; };
+		AB86A84726D3E37100EA990A /* FollowOrFollowerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84626D3E37100EA990A /* FollowOrFollowerListViewController.swift */; };
+		AB86A84926D3E37B00EA990A /* AdditionalPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84826D3E37B00EA990A /* AdditionalPetViewController.swift */; };
+		AB86A84B26D3E38600EA990A /* EditPetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84A26D3E38600EA990A /* EditPetProfileViewController.swift */; };
+		AB86A84D26D3E39400EA990A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84C26D3E39400EA990A /* SettingViewController.swift */; };
+		AB86A84F26D3E39B00EA990A /* ThemeColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84E26D3E39B00EA990A /* ThemeColorViewController.swift */; };
+		AB86A85126D3E3A500EA990A /* PrivacyAndSecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A85026D3E3A500EA990A /* PrivacyAndSecurityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AB86A7E326D3D76800EA990A /* PetSNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetSNS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB86A7E626D3D76800EA990A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB86A7E826D3D76800EA990A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB86A7EA26D3D76800EA990A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AB86A7ED26D3D76800EA990A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB86A7EF26D3D76900EA990A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB86A7F226D3D76900EA990A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB86A7F426D3D76900EA990A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB86A7FD26D3DE3000EA990A /* LoginOrSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginOrSignUp.storyboard; sourceTree = "<group>"; };
+		AB86A80026D3DE6A00EA990A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		AB86A80226D3DE8100EA990A /* PasswordForgot.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordForgot.storyboard; sourceTree = "<group>"; };
+		AB86A80426D3DE9000EA990A /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		AB86A80626D3DE9900EA990A /* PostDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostDetail.storyboard; sourceTree = "<group>"; };
+		AB86A80826D3DEA600EA990A /* NotificationList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationList.storyboard; sourceTree = "<group>"; };
+		AB86A80A26D3DEB100EA990A /* AllNotificationList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AllNotificationList.storyboard; sourceTree = "<group>"; };
+		AB86A80C26D3DEB900EA990A /* ChoosableCameraOrLibrary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChoosableCameraOrLibrary.storyboard; sourceTree = "<group>"; };
+		AB86A80E26D3DEC600EA990A /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
+		AB86A81026D3DECF00EA990A /* EditingPost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditingPost.storyboard; sourceTree = "<group>"; };
+		AB86A81226D3DED800EA990A /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		AB86A81426D3DEDF00EA990A /* FollowOrFollowerList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FollowOrFollowerList.storyboard; sourceTree = "<group>"; };
+		AB86A81626D3DEE900EA990A /* AdditionalPet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdditionalPet.storyboard; sourceTree = "<group>"; };
+		AB86A81826D3DEF700EA990A /* EditPetProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditPetProfile.storyboard; sourceTree = "<group>"; };
+		AB86A81A26D3DEFF00EA990A /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		AB86A81C26D3DF0A00EA990A /* ThemeColor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThemeColor.storyboard; sourceTree = "<group>"; };
+		AB86A81E26D3DF1900EA990A /* PrivacyAndSecurity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrivacyAndSecurity.storyboard; sourceTree = "<group>"; };
+		AB86A82226D3DF7600EA990A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		AB86A82726D3E0E700EA990A /* LoginOrSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrSignUpViewController.swift; sourceTree = "<group>"; };
+		AB86A82E26D3E14A00EA990A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AB86A83026D3E15F00EA990A /* PasswordForgotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordForgotViewController.swift; sourceTree = "<group>"; };
+		AB86A83226D3E16B00EA990A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		AB86A83426D3E19300EA990A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AB86A83626D3E28600EA990A /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		AB86A83826D3E29700EA990A /* NotificationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewController.swift; sourceTree = "<group>"; };
+		AB86A83A26D3E32100EA990A /* AllNotificationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotificationListViewController.swift; sourceTree = "<group>"; };
+		AB86A83C26D3E33800EA990A /* ChoosableCameraOrLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosableCameraOrLibraryViewController.swift; sourceTree = "<group>"; };
+		AB86A83E26D3E34A00EA990A /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		AB86A84026D3E35100EA990A /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		AB86A84226D3E35B00EA990A /* EditingPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingPostViewController.swift; sourceTree = "<group>"; };
+		AB86A84426D3E36700EA990A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AB86A84626D3E37100EA990A /* FollowOrFollowerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowOrFollowerListViewController.swift; sourceTree = "<group>"; };
+		AB86A84826D3E37B00EA990A /* AdditionalPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalPetViewController.swift; sourceTree = "<group>"; };
+		AB86A84A26D3E38600EA990A /* EditPetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetProfileViewController.swift; sourceTree = "<group>"; };
+		AB86A84C26D3E39400EA990A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		AB86A84E26D3E39B00EA990A /* ThemeColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorViewController.swift; sourceTree = "<group>"; };
+		AB86A85026D3E3A500EA990A /* PrivacyAndSecurityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyAndSecurityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +126,162 @@
 		AB86A7E526D3D76800EA990A /* PetSNS */ = {
 			isa = PBXGroup;
 			children = (
+				AB86A7FC26D3DDF000EA990A /* Models */,
+				AB86A7FB26D3DDED00EA990A /* Views */,
+				AB86A7FA26D3DDE200EA990A /* Controllers */,
 				AB86A7E626D3D76800EA990A /* AppDelegate.swift */,
 				AB86A7E826D3D76800EA990A /* SceneDelegate.swift */,
-				AB86A7EA26D3D76800EA990A /* ViewController.swift */,
-				AB86A7EC26D3D76800EA990A /* Main.storyboard */,
 				AB86A7EF26D3D76900EA990A /* Assets.xcassets */,
-				AB86A7F126D3D76900EA990A /* LaunchScreen.storyboard */,
 				AB86A7F426D3D76900EA990A /* Info.plist */,
 			);
 			path = PetSNS;
+			sourceTree = "<group>";
+		};
+		AB86A7FA26D3DDE200EA990A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB86A82D26D3E12100EA990A /* Login */,
+				AB86A82C26D3E11700EA990A /* Home */,
+				AB86A82B26D3E10F00EA990A /* Camera */,
+				AB86A82A26D3E0FE00EA990A /* Profile */,
+				AB86A82926D3E0F700EA990A /* Setting */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AB86A7FB26D3DDED00EA990A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB86A7FF26D3DE3500EA990A /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AB86A7FC26D3DDF000EA990A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AB86A7FF26D3DE3500EA990A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AB86A7F126D3D76900EA990A /* LaunchScreen.storyboard */,
+				AB86A82026D3DF3C00EA990A /* Login */,
+				AB86A82126D3DF5100EA990A /* Home */,
+				AB86A82426D3DF8100EA990A /* Camera */,
+				AB86A82526D3DF9C00EA990A /* Profile */,
+				AB86A82626D3DFA900EA990A /* Setting */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AB86A82026D3DF3C00EA990A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AB86A7FD26D3DE3000EA990A /* LoginOrSignUp.storyboard */,
+				AB86A80026D3DE6A00EA990A /* Login.storyboard */,
+				AB86A80226D3DE8100EA990A /* PasswordForgot.storyboard */,
+				AB86A80426D3DE9000EA990A /* SignUp.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		AB86A82126D3DF5100EA990A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AB86A82226D3DF7600EA990A /* Home.storyboard */,
+				AB86A80626D3DE9900EA990A /* PostDetail.storyboard */,
+				AB86A80826D3DEA600EA990A /* NotificationList.storyboard */,
+				AB86A80A26D3DEB100EA990A /* AllNotificationList.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AB86A82426D3DF8100EA990A /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				AB86A80E26D3DEC600EA990A /* Camera.storyboard */,
+				AB86A80C26D3DEB900EA990A /* ChoosableCameraOrLibrary.storyboard */,
+				AB86A81026D3DECF00EA990A /* EditingPost.storyboard */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		AB86A82526D3DF9C00EA990A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				AB86A81226D3DED800EA990A /* Profile.storyboard */,
+				AB86A81426D3DEDF00EA990A /* FollowOrFollowerList.storyboard */,
+				AB86A81626D3DEE900EA990A /* AdditionalPet.storyboard */,
+				AB86A81826D3DEF700EA990A /* EditPetProfile.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		AB86A82626D3DFA900EA990A /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				AB86A81A26D3DEFF00EA990A /* Setting.storyboard */,
+				AB86A81C26D3DF0A00EA990A /* ThemeColor.storyboard */,
+				AB86A81E26D3DF1900EA990A /* PrivacyAndSecurity.storyboard */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		AB86A82926D3E0F700EA990A /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				AB86A84C26D3E39400EA990A /* SettingViewController.swift */,
+				AB86A84E26D3E39B00EA990A /* ThemeColorViewController.swift */,
+				AB86A85026D3E3A500EA990A /* PrivacyAndSecurityViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		AB86A82A26D3E0FE00EA990A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				AB86A84426D3E36700EA990A /* ProfileViewController.swift */,
+				AB86A84626D3E37100EA990A /* FollowOrFollowerListViewController.swift */,
+				AB86A84826D3E37B00EA990A /* AdditionalPetViewController.swift */,
+				AB86A84A26D3E38600EA990A /* EditPetProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		AB86A82B26D3E10F00EA990A /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				AB86A83C26D3E33800EA990A /* ChoosableCameraOrLibraryViewController.swift */,
+				AB86A83E26D3E34A00EA990A /* CameraViewController.swift */,
+				AB86A84026D3E35100EA990A /* LibraryViewController.swift */,
+				AB86A84226D3E35B00EA990A /* EditingPostViewController.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		AB86A82C26D3E11700EA990A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AB86A83426D3E19300EA990A /* HomeViewController.swift */,
+				AB86A83626D3E28600EA990A /* PostDetailViewController.swift */,
+				AB86A83826D3E29700EA990A /* NotificationListViewController.swift */,
+				AB86A83A26D3E32100EA990A /* AllNotificationListViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AB86A82D26D3E12100EA990A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AB86A82726D3E0E700EA990A /* LoginOrSignUpViewController.swift */,
+				AB86A82E26D3E14A00EA990A /* LoginViewController.swift */,
+				AB86A83226D3E16B00EA990A /* SignUpViewController.swift */,
+				AB86A83026D3E15F00EA990A /* PasswordForgotViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +341,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB86A81D26D3DF0A00EA990A /* ThemeColor.storyboard in Resources */,
+				AB86A81B26D3DEFF00EA990A /* Setting.storyboard in Resources */,
+				AB86A81926D3DEF700EA990A /* EditPetProfile.storyboard in Resources */,
+				AB86A80126D3DE6A00EA990A /* Login.storyboard in Resources */,
+				AB86A80326D3DE8100EA990A /* PasswordForgot.storyboard in Resources */,
+				AB86A81526D3DEDF00EA990A /* FollowOrFollowerList.storyboard in Resources */,
+				AB86A80B26D3DEB100EA990A /* AllNotificationList.storyboard in Resources */,
+				AB86A80526D3DE9000EA990A /* SignUp.storyboard in Resources */,
+				AB86A81726D3DEE900EA990A /* AdditionalPet.storyboard in Resources */,
+				AB86A80726D3DE9900EA990A /* PostDetail.storyboard in Resources */,
+				AB86A81326D3DED800EA990A /* Profile.storyboard in Resources */,
+				AB86A82326D3DF7600EA990A /* Home.storyboard in Resources */,
+				AB86A80D26D3DEB900EA990A /* ChoosableCameraOrLibrary.storyboard in Resources */,
 				AB86A7F326D3D76900EA990A /* LaunchScreen.storyboard in Resources */,
+				AB86A81126D3DECF00EA990A /* EditingPost.storyboard in Resources */,
+				AB86A81F26D3DF1900EA990A /* PrivacyAndSecurity.storyboard in Resources */,
+				AB86A80926D3DEA600EA990A /* NotificationList.storyboard in Resources */,
+				AB86A80F26D3DEC600EA990A /* Camera.storyboard in Resources */,
 				AB86A7F026D3D76900EA990A /* Assets.xcassets in Resources */,
-				AB86A7EE26D3D76800EA990A /* Main.storyboard in Resources */,
+				AB86A7FE26D3DE3000EA990A /* LoginOrSignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +371,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB86A7EB26D3D76800EA990A /* ViewController.swift in Sources */,
+				AB86A83926D3E29700EA990A /* NotificationListViewController.swift in Sources */,
+				AB86A83326D3E16B00EA990A /* SignUpViewController.swift in Sources */,
+				AB86A84B26D3E38600EA990A /* EditPetProfileViewController.swift in Sources */,
+				AB86A83726D3E28600EA990A /* PostDetailViewController.swift in Sources */,
+				AB86A82F26D3E14A00EA990A /* LoginViewController.swift in Sources */,
+				AB86A82826D3E0E700EA990A /* LoginOrSignUpViewController.swift in Sources */,
+				AB86A83F26D3E34A00EA990A /* CameraViewController.swift in Sources */,
+				AB86A83126D3E15F00EA990A /* PasswordForgotViewController.swift in Sources */,
 				AB86A7E726D3D76800EA990A /* AppDelegate.swift in Sources */,
+				AB86A83B26D3E32100EA990A /* AllNotificationListViewController.swift in Sources */,
+				AB86A85126D3E3A500EA990A /* PrivacyAndSecurityViewController.swift in Sources */,
+				AB86A84F26D3E39B00EA990A /* ThemeColorViewController.swift in Sources */,
+				AB86A84326D3E35B00EA990A /* EditingPostViewController.swift in Sources */,
+				AB86A83526D3E19300EA990A /* HomeViewController.swift in Sources */,
+				AB86A83D26D3E33800EA990A /* ChoosableCameraOrLibraryViewController.swift in Sources */,
+				AB86A84726D3E37100EA990A /* FollowOrFollowerListViewController.swift in Sources */,
+				AB86A84526D3E36700EA990A /* ProfileViewController.swift in Sources */,
 				AB86A7E926D3D76800EA990A /* SceneDelegate.swift in Sources */,
+				AB86A84D26D3E39400EA990A /* SettingViewController.swift in Sources */,
+				AB86A84126D3E35100EA990A /* LibraryViewController.swift in Sources */,
+				AB86A84926D3E37B00EA990A /* AdditionalPetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AB86A7EC26D3D76800EA990A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB86A7ED26D3D76800EA990A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AB86A7F126D3D76900EA990A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
