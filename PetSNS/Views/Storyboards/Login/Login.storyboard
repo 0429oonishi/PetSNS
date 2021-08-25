@@ -16,9 +16,111 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Lfc-Pn-Eg8">
+                                <rect key="frame" x="50" y="233" width="314" height="196"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCp-1J-mtK">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メールアドレス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qkr-hL-0NF">
+                                                <rect key="frame" x="10" y="7" width="121.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="qkr-hL-0NF" firstAttribute="centerY" secondItem="pCp-1J-mtK" secondAttribute="centerY" id="DGg-fm-J5L"/>
+                                            <constraint firstAttribute="height" constant="34" id="TW3-BR-LIg"/>
+                                            <constraint firstItem="qkr-hL-0NF" firstAttribute="leading" secondItem="pCp-1J-mtK" secondAttribute="leading" constant="10" id="ddq-lg-o87"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qkr-hL-0NF" secondAttribute="trailing" constant="50" id="twF-ZO-Kqz"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレスを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nSK-mS-1Bc">
+                                        <rect key="frame" x="0.0" y="54" width="314" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Io-Wk-oaf">
+                                        <rect key="frame" x="0.0" y="108" width="314" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パスワード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0r8-zA-b1s">
+                                                <rect key="frame" x="10" y="7" width="87" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0r8-zA-b1s" secondAttribute="trailing" constant="50" id="94Q-zU-gwl"/>
+                                            <constraint firstItem="0r8-zA-b1s" firstAttribute="centerY" secondItem="1Io-Wk-oaf" secondAttribute="centerY" id="fqu-Ec-sF2"/>
+                                            <constraint firstItem="0r8-zA-b1s" firstAttribute="leading" secondItem="1Io-Wk-oaf" secondAttribute="leading" constant="10" id="g9F-7M-oSh"/>
+                                            <constraint firstAttribute="height" constant="34" id="qzh-qh-ciZ"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワードを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-o4-grR">
+                                        <rect key="frame" x="0.0" y="162" width="314" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ログイン" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rK9-X8-y95">
+                                <rect key="frame" x="164.5" y="144" width="85" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="950" constant="85" id="TWJ-Ma-ewT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqy-Ej-3ZU">
+                                <rect key="frame" x="100" y="489" width="214" height="50"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xTe-0V-2Pj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="登録">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerButtonDidTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CHz-EC-Ovt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zt-4S-8CH">
+                                <rect key="frame" x="125" y="589" width="164" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="パスワードを忘れた方はこちら"/>
+                                <connections>
+                                    <action selector="passwordForgotDidTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ds8-K4-3rk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Lfc-Pn-Eg8" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="22m-zA-HpL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rK9-X8-y95" secondAttribute="trailing" constant="50" id="2v9-3d-pAG"/>
+                            <constraint firstItem="rK9-X8-y95" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="100" id="5sg-xM-YBb"/>
+                            <constraint firstItem="Lfc-Pn-Eg8" firstAttribute="top" secondItem="rK9-X8-y95" secondAttribute="bottom" constant="65" id="7qr-2e-giI"/>
+                            <constraint firstItem="rK9-X8-y95" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="8Y2-hz-ey7"/>
+                            <constraint firstItem="uqy-Ej-3ZU" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="B3s-HK-b2J"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="uqy-Ej-3ZU" secondAttribute="trailing" constant="100" id="LAV-ca-pF3"/>
+                            <constraint firstItem="7zt-4S-8CH" firstAttribute="top" secondItem="uqy-Ej-3ZU" secondAttribute="bottom" constant="50" id="Q14-VN-MDA"/>
+                            <constraint firstItem="7zt-4S-8CH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="QBc-WE-vgo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Lfc-Pn-Eg8" secondAttribute="trailing" constant="50" id="Ri9-ue-Eaw"/>
+                            <constraint firstItem="uqy-Ej-3ZU" firstAttribute="top" secondItem="Lfc-Pn-Eg8" secondAttribute="bottom" constant="60" id="TIF-zs-Z4s"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7zt-4S-8CH" secondAttribute="trailing" constant="125" id="UVu-ZM-j9o"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mailAddressTextField" destination="nSK-mS-1Bc" id="tN6-sg-2uE"/>
+                        <outlet property="passwordTextField" destination="wbW-o4-grR" id="ada-Ze-hLS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -28,6 +130,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
