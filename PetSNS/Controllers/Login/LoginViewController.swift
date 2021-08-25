@@ -11,6 +11,8 @@ final class LoginViewController: UIViewController {
 
     @IBOutlet private weak var mailAddressTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var registerButton: UIButton!
+    @IBOutlet private weak var passwordForgotButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +21,7 @@ final class LoginViewController: UIViewController {
     @IBAction private func registerButtonDidTapped(_ sender: Any) {
     }
 
-    @IBAction private func passwordForgotDidTapped(_ sender: Any) {
+    @IBAction private func passwordForgotButtonDidTapped(_ sender: Any) {
     }
 
 }
