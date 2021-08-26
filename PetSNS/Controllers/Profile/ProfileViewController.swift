@@ -7,23 +7,35 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-
+final class ProfileViewController: UIViewController {
+    
+    @IBOutlet private weak var profileImageView: UIImageView!
+    @IBOutlet private weak var followButton: UIButton!
+    @IBOutlet private weak var followerButton: UIButton!
+    @IBOutlet private weak var editButton: UIButton!
+    @IBOutlet private weak var accompanimentCollectionView: UICollectionView!
+    @IBOutlet private weak var introductionTextView: UITextView!
+    @IBOutlet private weak var postedImageCollectionView: UICollectionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction private func followButtonDidTapped(_ sender: Any) {
+        
     }
-    */
-
+    
+    @IBAction private func followerButtonDidTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction private func editButtonDidTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction private func settingButtonDidTapped(_ sender: Any) {
+    }
+    
 }
