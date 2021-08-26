@@ -7,23 +7,32 @@
 
 import UIKit
 
-class PostDetailViewController: UIViewController {
+final class PostDetailViewController: UIViewController {
+
+    @IBOutlet private weak var postView: UIView!
+    @IBOutlet private weak var commentTableView: UITableView!
+
+    private let cellID = "PostDetailViewController"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        commentTableView.delegate = self
+        commentTableView.dataSource = self
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
     }
-    */
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+
+        return cell
+    }
 
 }
