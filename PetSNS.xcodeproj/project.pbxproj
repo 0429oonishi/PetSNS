@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		755E9AC626D7931C00A17709 /* HomeContainerPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 755E9AC526D7931C00A17709 /* HomeContainerPosts.storyboard */; };
+		755E9AC826D7933C00A17709 /* HomeContainerPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */; };
 		AB86A7E726D3D76800EA990A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A7E626D3D76800EA990A /* AppDelegate.swift */; };
 		AB86A7E926D3D76800EA990A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A7E826D3D76800EA990A /* SceneDelegate.swift */; };
 		AB86A7F026D3D76900EA990A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB86A7EF26D3D76900EA990A /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		755E9AC526D7931C00A17709 /* HomeContainerPosts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeContainerPosts.storyboard; sourceTree = "<group>"; };
+		755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerPostsViewController.swift; sourceTree = "<group>"; };
 		AB86A7E326D3D76800EA990A /* PetSNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetSNS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB86A7E626D3D76800EA990A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB86A7E826D3D76800EA990A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				AB86A82226D3DF7600EA990A /* Home.storyboard */,
+				755E9AC526D7931C00A17709 /* HomeContainerPosts.storyboard */,
 				AB86A80626D3DE9900EA990A /* PostDetail.storyboard */,
 				AB86A80826D3DEA600EA990A /* NotificationList.storyboard */,
 				AB86A80A26D3DEB100EA990A /* AllNotificationList.storyboard */,
@@ -266,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				AB86A83426D3E19300EA990A /* HomeViewController.swift */,
+				755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */,
 				AB86A83626D3E28600EA990A /* PostDetailViewController.swift */,
 				AB86A83826D3E29700EA990A /* NotificationListViewController.swift */,
 				AB86A83A26D3E32100EA990A /* AllNotificationListViewController.swift */,
@@ -357,6 +363,7 @@
 				AB86A7F326D3D76900EA990A /* LaunchScreen.storyboard in Resources */,
 				AB86A81126D3DECF00EA990A /* EditingPost.storyboard in Resources */,
 				AB86A81F26D3DF1900EA990A /* PrivacyAndSecurity.storyboard in Resources */,
+				755E9AC626D7931C00A17709 /* HomeContainerPosts.storyboard in Resources */,
 				AB86A80926D3DEA600EA990A /* NotificationList.storyboard in Resources */,
 				AB86A80F26D3DEC600EA990A /* Camera.storyboard in Resources */,
 				AB86A7F026D3D76900EA990A /* Assets.xcassets in Resources */,
@@ -378,6 +385,7 @@
 				AB86A82F26D3E14A00EA990A /* LoginViewController.swift in Sources */,
 				AB86A82826D3E0E700EA990A /* LoginOrSignUpViewController.swift in Sources */,
 				AB86A83F26D3E34A00EA990A /* CameraViewController.swift in Sources */,
+				755E9AC826D7933C00A17709 /* HomeContainerPostsViewController.swift in Sources */,
 				AB86A83126D3E15F00EA990A /* PasswordForgotViewController.swift in Sources */,
 				AB86A7E726D3D76800EA990A /* AppDelegate.swift in Sources */,
 				AB86A83B26D3E32100EA990A /* AllNotificationListViewController.swift in Sources */,
