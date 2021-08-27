@@ -9,14 +9,15 @@ import UIKit
 
 final class CameraViewController: UIViewController {
 
-    @IBOutlet private var cameraView: UIView!
+    @IBOutlet private weak var cameraView: UIView!
+    @IBOutlet private weak var sutterButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
-    @IBAction private func xMarkdButtonDidTapped(_ sender: Any) {
+    @IBAction private func closeButtonDidTapped(_ sender: Any) {
     }
 
     @IBAction private func shutterButtonDidTapped(_ sender: Any) {
