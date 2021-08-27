@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,18 +17,87 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ByC-Cf-llU">
+                                <rect key="frame" x="167" y="732" width="80" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ByC-Cf-llU" secondAttribute="height" multiplier="1:1" id="J89-VP-6hk"/>
+                                    <constraint firstAttribute="width" constant="80" id="VgZ-4X-CMi"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shutterButtonDidTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JwB-VQ-lTV"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="67" translatesAutoresizingMaskIntoConstraints="NO" id="1eL-HT-CPe">
+                                <rect key="frame" x="80" y="812" width="254" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugF-Na-eft">
+                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="写真"/>
+                                        <connections>
+                                            <action selector="stillImageShootingButtonDidTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NIW-Je-ZCc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDt-X1-08c">
+                                        <rect key="frame" x="160.5" y="0.0" width="93.5" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="ビデオ"/>
+                                        <connections>
+                                            <action selector="movieShootingButtonDidTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jLl-37-2e1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="q7E-UL-54G"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUX-br-oum">
+                                <rect key="frame" x="354" y="44" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ONF-q4-EoL"/>
+                                    <constraint firstAttribute="width" secondItem="EUX-br-oum" secondAttribute="height" multiplier="1:1" id="dEn-Tj-rmj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="xMarkdButtonDidTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="m9t-Q8-Ygo"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="1eL-HT-CPe" firstAttribute="top" secondItem="ByC-Cf-llU" secondAttribute="bottom" id="PoH-VN-MI8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="EUX-br-oum" secondAttribute="trailing" constant="20" id="U2A-WJ-ppN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="1eL-HT-CPe" secondAttribute="bottom" constant="5" id="bAw-LO-9Yt"/>
+                            <constraint firstItem="1eL-HT-CPe" firstAttribute="leading" relation="lessThanOrEqual" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="90" id="eUG-uN-DBR"/>
+                            <constraint firstItem="1eL-HT-CPe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" priority="950" constant="80" id="iRV-8H-fOK"/>
+                            <constraint firstItem="EUX-br-oum" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="lHp-8s-eEz"/>
+                            <constraint firstItem="1eL-HT-CPe" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="rWg-CE-kBd"/>
+                            <constraint firstItem="ByC-Cf-llU" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="wdc-GR-NT5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraView" destination="5EZ-qb-Rvc" id="Kvi-5H-7Za"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="124"/>
+            <point key="canvasLocation" x="137.68115942028987" y="123.88392857142857"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
