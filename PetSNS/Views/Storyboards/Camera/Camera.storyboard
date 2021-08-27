@@ -37,7 +37,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugF-Na-eft">
                                         <rect key="frame" x="0.0" y="0.0" width="93.5" height="45"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="写真"/>
                                         <connections>
                                             <action selector="stillImageShootingButtonDidTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NIW-Je-ZCc"/>
@@ -45,7 +45,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDt-X1-08c">
                                         <rect key="frame" x="160.5" y="0.0" width="93.5" height="45"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="ビデオ"/>
                                         <connections>
                                             <action selector="movieShootingButtonDidTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jLl-37-2e1"/>
