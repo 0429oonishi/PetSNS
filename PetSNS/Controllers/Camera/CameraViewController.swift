@@ -10,7 +10,7 @@ import UIKit
 final class CameraViewController: UIViewController {
 
     @IBOutlet private weak var cameraView: UIView!
-    @IBOutlet private weak var sutterButton: UIButton!
+    @IBOutlet private weak var shutterButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()

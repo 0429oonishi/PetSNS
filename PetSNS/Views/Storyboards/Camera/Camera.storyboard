@@ -87,7 +87,7 @@
                     </view>
                     <connections>
                         <outlet property="cameraView" destination="5EZ-qb-Rvc" id="Kvi-5H-7Za"/>
-                        <outlet property="sutterButton" destination="ByC-Cf-llU" id="Jbn-mp-k6f"/>
+                        <outlet property="shutterButton" destination="ByC-Cf-llU" id="Jbn-mp-k6f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
