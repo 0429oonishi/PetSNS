@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4EA5C3C526D99E1100626ADE /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3C326D99E1100626ADE /* HomeTableViewCell.swift */; };
-		4EA5C3C626D99E1100626ADE /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA5C3C426D99E1100626ADE /* HomeTableViewCell.xib */; };
+		4EA5C3C526D99E1100626ADE /* HomePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3C326D99E1100626ADE /* HomePostTableViewCell.swift */; };
+		4EA5C3C626D99E1100626ADE /* HomePostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA5C3C426D99E1100626ADE /* HomePostTableViewCell.xib */; };
 		755E9AC626D7931C00A17709 /* HomeContainerPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 755E9AC526D7931C00A17709 /* HomeContainerPosts.storyboard */; };
 		755E9AC826D7933C00A17709 /* HomeContainerPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */; };
 		AB86A7E726D3D76800EA990A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A7E626D3D76800EA990A /* AppDelegate.swift */; };
@@ -55,8 +55,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4EA5C3C326D99E1100626ADE /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		4EA5C3C426D99E1100626ADE /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		4EA5C3C326D99E1100626ADE /* HomePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostTableViewCell.swift; sourceTree = "<group>"; };
+		4EA5C3C426D99E1100626ADE /* HomePostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePostTableViewCell.xib; sourceTree = "<group>"; };
 		755E9AC526D7931C00A17709 /* HomeContainerPosts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeContainerPosts.storyboard; sourceTree = "<group>"; };
 		755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerPostsViewController.swift; sourceTree = "<group>"; };
 		AB86A7E326D3D76800EA990A /* PetSNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetSNS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +115,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EA5C3C726D9F85300626ADE /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				4EA5C3C826D9F91800626ADE /* Home */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		4EA5C3C826D9F91800626ADE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4EA5C3C426D99E1100626ADE /* HomePostTableViewCell.xib */,
+				4EA5C3C326D99E1100626ADE /* HomePostTableViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		AB86A7DA26D3D76800EA990A = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				AB86A7FF26D3DE3500EA990A /* Storyboards */,
+				4EA5C3C726D9F85300626ADE /* Xibs */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,7 +222,6 @@
 				AB86A80626D3DE9900EA990A /* PostDetail.storyboard */,
 				AB86A80826D3DEA600EA990A /* NotificationList.storyboard */,
 				AB86A80A26D3DEB100EA990A /* AllNotificationList.storyboard */,
-				4EA5C3C426D99E1100626ADE /* HomeTableViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -280,7 +297,6 @@
 				AB86A83626D3E28600EA990A /* PostDetailViewController.swift */,
 				AB86A83826D3E29700EA990A /* NotificationListViewController.swift */,
 				AB86A83A26D3E32100EA990A /* AllNotificationListViewController.swift */,
-				4EA5C3C326D99E1100626ADE /* HomeTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -353,7 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EA5C3C626D99E1100626ADE /* HomeTableViewCell.xib in Resources */,
+				4EA5C3C626D99E1100626ADE /* HomePostTableViewCell.xib in Resources */,
 				AB86A81D26D3DF0A00EA990A /* ThemeColor.storyboard in Resources */,
 				AB86A81B26D3DEFF00EA990A /* Setting.storyboard in Resources */,
 				AB86A81926D3DEF700EA990A /* EditPetProfile.storyboard in Resources */,
@@ -402,7 +418,7 @@
 				AB86A83526D3E19300EA990A /* HomeViewController.swift in Sources */,
 				AB86A83D26D3E33800EA990A /* ChoosableCameraOrLibraryViewController.swift in Sources */,
 				AB86A84726D3E37100EA990A /* FollowOrFollowerListViewController.swift in Sources */,
-				4EA5C3C526D99E1100626ADE /* HomeTableViewCell.swift in Sources */,
+				4EA5C3C526D99E1100626ADE /* HomePostTableViewCell.swift in Sources */,
 				AB86A84526D3E36700EA990A /* ProfileViewController.swift in Sources */,
 				AB86A7E926D3D76800EA990A /* SceneDelegate.swift in Sources */,
 				AB86A84D26D3E39400EA990A /* SettingViewController.swift in Sources */,
