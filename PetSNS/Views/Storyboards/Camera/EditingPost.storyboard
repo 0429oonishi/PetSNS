@@ -75,18 +75,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DJk-ay-VMo">
-                        <leftBarButtonItems>
-                            <barButtonItem title="Item" image="chevron.backward" catalog="system" id="ihc-xI-Rf1">
-                                <connections>
-                                    <action selector="backButtonDidTapped:" destination="Y6W-OH-hqX" id="eUW-Vq-PGy"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="stop" id="2dA-Ad-GpW">
-                                <connections>
-                                    <action selector="cancelButtonDidTapped:" destination="Y6W-OH-hqX" id="C3C-RR-MjG"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="2dA-Ad-GpW">
+                            <connections>
+                                <action selector="cancelButtonDidTapped:" destination="Y6W-OH-hqX" id="C3C-RR-MjG"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="投稿する" id="neT-r2-fvV">
                             <connections>
                                 <action selector="postButtonDidTapped:" destination="Y6W-OH-hqX" id="sO4-RI-CdY"/>
@@ -99,7 +92,7 @@
                         <outlet property="collectionView" destination="MPU-QO-fBe" id="Wr4-vm-9YA"/>
                         <outlet property="commentTextView" destination="Nvq-nJ-Tda" id="33j-dz-Yqf"/>
                         <outlet property="postButton" destination="neT-r2-fvV" id="JYc-0I-2yl"/>
-                        <outlet property="postedPhotoOrVideoView" destination="N6r-g8-B5m" id="j24-jg-5KG"/>
+                        <outlet property="postedPhotosView" destination="N6r-g8-B5m" id="j24-jg-5KG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -108,7 +101,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
