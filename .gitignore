@@ -2,6 +2,7 @@
 
 ios/*
 
+*UserInterfaceState.xcuserstate
 build/
 *.pbxuser
 !default.pbxuser
