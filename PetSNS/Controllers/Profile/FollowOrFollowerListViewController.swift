@@ -21,8 +21,8 @@ final class FollowOrFollowerListViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(PetInfoTableViewCell.nib,
-                           forCellReuseIdentifier: PetInfoTableViewCell.identifier)
+        tableView.register(PetConfigurationTableViewCell.nib,
+                           forCellReuseIdentifier: PetConfigurationTableViewCell.identifier)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView()
     }
@@ -48,8 +48,8 @@ extension FollowOrFollowerListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: PetInfoTableViewCell.identifier
-        ) as! PetInfoTableViewCell
+            withIdentifier: PetConfigurationTableViewCell.identifier
+        ) as! PetConfigurationTableViewCell
         return cell
     }
     

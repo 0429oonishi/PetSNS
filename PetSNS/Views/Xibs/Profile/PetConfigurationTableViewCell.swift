@@ -1,5 +1,5 @@
 //
-//  PetInfoTableViewCell.swift
+//  PetConfigurationTableViewCell.swift
 //  PetSNS
 //
 //  Created by 大西玲音 on 2021/08/28.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PetInfoTableViewCell: UITableViewCell {
+final class PetConfigurationTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var petImageView: UIImageView!
     @IBOutlet private weak var petNameLabel: UILabel!
