@@ -11,7 +11,7 @@ final class EditingPostViewController: UIViewController {
     
     @IBOutlet private weak var cancelButton: UIBarButtonItem!
     @IBOutlet private weak var postButton: UIBarButtonItem!
-    @IBOutlet private weak var postedPhotoOrVideoView: UIView!
+    @IBOutlet private weak var postedPhotosView: UIView!
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var commentTextView: UITextView!
 
@@ -26,6 +26,4 @@ final class EditingPostViewController: UIViewController {
     @IBAction private func cancelButtonDidTapped(_ sender: Any) {
     }
     
-    @IBAction private func backButtonDidTapped(_ sender: Any) {
-    }
 }
