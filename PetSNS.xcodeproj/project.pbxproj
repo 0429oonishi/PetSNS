@@ -115,6 +115,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB09945F26DA035B00DFA7D8 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				AB09946026DA036700DFA7D8 /* Profile */,
+			);
+			name = Xibs;
+			path = Storyboards/Xibs;
+			sourceTree = "<group>";
+		};
+		AB09946026DA036700DFA7D8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				AB09945C26D9FDC000DFA7D8 /* PetInfoTableViewCell.xib */,
+				AB09945B26D9FDC000DFA7D8 /* PetInfoTableViewCell.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		AB86A7DA26D3D76800EA990A = {
 			isa = PBXGroup;
 			children = (
@@ -160,8 +178,7 @@
 		AB86A7FB26D3DDED00EA990A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AB09945B26D9FDC000DFA7D8 /* PetInfoTableViewCell.swift */,
-				AB09945C26D9FDC000DFA7D8 /* PetInfoTableViewCell.xib */,
+				AB09945F26DA035B00DFA7D8 /* Xibs */,
 				AB86A7FF26D3DE3500EA990A /* Storyboards */,
 			);
 			path = Views;
