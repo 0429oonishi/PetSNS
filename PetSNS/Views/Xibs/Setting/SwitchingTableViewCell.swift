@@ -17,7 +17,11 @@ final class SwitchingTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    func configure(title: String, isOn: Bool) {
+        itemLabel.text = title
+        settingSwitch.isOn = isOn
     }
 
 }

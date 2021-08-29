@@ -19,4 +19,8 @@ final class ItemTableViewCell: UITableViewCell {
         // Initialization code
     }
     
+    func configure(title: String) {
+        itemLabel.text = title
+    }
+    
 }
