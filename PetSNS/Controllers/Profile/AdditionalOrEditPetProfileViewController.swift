@@ -22,9 +22,12 @@ final class AdditionalOrEditPetProfileViewController: UIViewController {
     }
 
     @IBAction private func closeButtonDidTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction private func saveButtonDidTapped(_ sender: Any) {
+        // MARK: - ToDo 保存処理
+        self.dismiss(animated: true, completion: nil)
     }
 
 }

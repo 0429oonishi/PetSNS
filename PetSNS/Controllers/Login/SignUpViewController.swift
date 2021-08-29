@@ -20,7 +20,7 @@ final class SignUpViewController: UIViewController {
     }
     
     @IBAction private func registerButtonDidTapped(_ sender: Any) {
-        
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
