@@ -60,7 +60,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IKf-65-YOp">
-                                <rect key="frame" x="0.0" y="128" width="414" height="734"/>
+                                <rect key="frame" x="0.0" y="128" width="414" height="685"/>
                                 <connections>
                                     <segue destination="BF7-Xg-06l" kind="embed" id="Ugw-VU-8t4"/>
                                 </connections>
@@ -78,6 +78,10 @@
                             <constraint firstItem="sTZ-OX-1jx" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="rCS-Yy-bFM"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" id="KK5-2g-chX">
+                        <inset key="largeContentSizeImageInsets" minX="1" minY="1" maxX="1" maxY="1"/>
+                    </tabBarItem>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Pet SNS" id="RAG-A3-Noo">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="bell" catalog="system" id="vvD-2b-t59">
                             <connections>
@@ -86,6 +90,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="allPostsButton" destination="5fZ-Vh-Zz0" id="znb-9b-Vss"/>
                         <outlet property="containerView" destination="IKf-65-YOp" id="7ZJ-dO-8YX"/>
@@ -96,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957.9710144927537" y="123.88392857142857"/>
+            <point key="canvasLocation" x="3488" y="123"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="0W2-AH-Z90">
@@ -104,7 +109,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="BF7-Xg-06l" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVL-ue-j37" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2767" y="124"/>
+            <point key="canvasLocation" x="4193" y="123"/>
         </scene>
     </scenes>
     <resources>

@@ -84,19 +84,19 @@
                                     <constraint firstAttribute="height" constant="50" id="xTe-0V-2Pj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="登録">
+                                <state key="normal" title="ログイン">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="registerButtonDidTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CHz-EC-Ovt"/>
+                                    <action selector="loginButtonDidTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CHz-EC-Ovt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zt-4S-8CH">
-                                <rect key="frame" x="125" y="589" width="164" height="26"/>
+                                <rect key="frame" x="128" y="589" width="158" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <state key="normal" title="パスワードを忘れた方はこちら"/>
                                 <connections>
-                                    <action selector="passwordForgotDidTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ds8-K4-3rk"/>
+                                    <action selector="passwordForgotButtonDidTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LJ8-48-eTE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -114,11 +114,13 @@
                             <constraint firstItem="7zt-4S-8CH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="QBc-WE-vgo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Lfc-Pn-Eg8" secondAttribute="trailing" constant="50" id="Ri9-ue-Eaw"/>
                             <constraint firstItem="uqy-Ej-3ZU" firstAttribute="top" secondItem="Lfc-Pn-Eg8" secondAttribute="bottom" constant="60" id="TIF-zs-Z4s"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7zt-4S-8CH" secondAttribute="trailing" constant="125" id="UVu-ZM-j9o"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7zt-4S-8CH" secondAttribute="trailing" constant="50" id="UVu-ZM-j9o"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="uqy-Ej-3ZU" id="48t-9J-tym"/>
                         <outlet property="mailAddressTextField" destination="nSK-mS-1Bc" id="tN6-sg-2uE"/>
+                        <outlet property="passwordForgotButton" destination="7zt-4S-8CH" id="ofx-VO-nN6"/>
                         <outlet property="passwordTextField" destination="wbW-o4-grR" id="ada-Ze-hLS"/>
                     </connections>
                 </viewController>

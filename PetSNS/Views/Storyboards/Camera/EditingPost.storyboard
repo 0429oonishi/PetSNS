@@ -13,7 +13,7 @@
         <!--Editing Post View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="EditPetProfileViewController" id="Y6W-OH-hqX" customClass="EditingPostViewController" customModule="PetSNS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditingPostViewController" id="Y6W-OH-hqX" customClass="EditingPostViewController" customModule="PetSNS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
