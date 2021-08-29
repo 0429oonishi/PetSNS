@@ -15,12 +15,20 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var selectedMarkView: UIView!
     @IBOutlet private weak var containerView: UIView!
     
+    private var isLoggedOut = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if isLoggedOut {
+            showLoginOrSignUpVC()
+        }
+        
     }
     
     @IBAction private func notificationButtonDidTapped(_ sender: Any) {
+        let notificationListVC = NotificationListViewController.instantiate()
+        self.navigationController?.pushViewController(notificationListVC, animated: true)
     }
     
     @IBAction private func allPostsButtonDidTapped(_ sender: Any) {
@@ -28,4 +36,12 @@ final class HomeViewController: UIViewController {
     
     @IBAction private func followingButtonDidTapped(_ sender: Any) {
     }
+    
+    private func showLoginOrSignUpVC() {
+        let loginOrSignUpVC = LoginOrSignUpViewController.instantiate()
+        let nav = UINavigationController(rootViewController: loginOrSignUpVC)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true, completion: nil)
+    }
+    
 }

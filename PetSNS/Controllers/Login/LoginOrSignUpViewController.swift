@@ -14,13 +14,17 @@ final class LoginOrSignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
-
+    
     @IBAction private func loginButtonDidTapped(_ sender: Any) {
+        let loginVC = LoginViewController.instantiate()
+        self.navigationController?.pushViewController(loginVC, animated: true)
     }
 
     @IBAction private func signUpButtonDidTapped(_ sender: Any) {
+        let signUpVC = SignUpViewController.instantiate()
+        self.navigationController?.pushViewController(signUpVC, animated: true)
     }
 
 }
