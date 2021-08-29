@@ -33,8 +33,7 @@
 		AB86A81126D3DECF00EA990A /* EditingPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81026D3DECF00EA990A /* EditingPost.storyboard */; };
 		AB86A81326D3DED800EA990A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81226D3DED800EA990A /* Profile.storyboard */; };
 		AB86A81526D3DEDF00EA990A /* FollowOrFollowerList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81426D3DEDF00EA990A /* FollowOrFollowerList.storyboard */; };
-		AB86A81726D3DEE900EA990A /* AdditionalPet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81626D3DEE900EA990A /* AdditionalPet.storyboard */; };
-		AB86A81926D3DEF700EA990A /* EditPetProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81826D3DEF700EA990A /* EditPetProfile.storyboard */; };
+		AB86A81726D3DEE900EA990A /* AdditionalOrEditPetProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81626D3DEE900EA990A /* AdditionalOrEditPetProfile.storyboard */; };
 		AB86A81B26D3DEFF00EA990A /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81A26D3DEFF00EA990A /* Setting.storyboard */; };
 		AB86A81D26D3DF0A00EA990A /* ThemeColor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81C26D3DF0A00EA990A /* ThemeColor.storyboard */; };
 		AB86A81F26D3DF1900EA990A /* PrivacyAndSecurity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB86A81E26D3DF1900EA990A /* PrivacyAndSecurity.storyboard */; };
@@ -53,8 +52,7 @@
 		AB86A84326D3E35B00EA990A /* EditingPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84226D3E35B00EA990A /* EditingPostViewController.swift */; };
 		AB86A84526D3E36700EA990A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84426D3E36700EA990A /* ProfileViewController.swift */; };
 		AB86A84726D3E37100EA990A /* FollowOrFollowerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84626D3E37100EA990A /* FollowOrFollowerListViewController.swift */; };
-		AB86A84926D3E37B00EA990A /* AdditionalPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84826D3E37B00EA990A /* AdditionalPetViewController.swift */; };
-		AB86A84B26D3E38600EA990A /* EditPetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84A26D3E38600EA990A /* EditPetProfileViewController.swift */; };
+		AB86A84926D3E37B00EA990A /* AdditionalOrEditPetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84826D3E37B00EA990A /* AdditionalOrEditPetProfileViewController.swift */; };
 		AB86A84D26D3E39400EA990A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84C26D3E39400EA990A /* SettingViewController.swift */; };
 		AB86A84F26D3E39B00EA990A /* ThemeColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84E26D3E39B00EA990A /* ThemeColorViewController.swift */; };
 		AB86A85126D3E3A500EA990A /* PrivacyAndSecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A85026D3E3A500EA990A /* PrivacyAndSecurityViewController.swift */; };
@@ -89,8 +87,7 @@
 		AB86A81026D3DECF00EA990A /* EditingPost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditingPost.storyboard; sourceTree = "<group>"; };
 		AB86A81226D3DED800EA990A /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		AB86A81426D3DEDF00EA990A /* FollowOrFollowerList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FollowOrFollowerList.storyboard; sourceTree = "<group>"; };
-		AB86A81626D3DEE900EA990A /* AdditionalPet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdditionalPet.storyboard; sourceTree = "<group>"; };
-		AB86A81826D3DEF700EA990A /* EditPetProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditPetProfile.storyboard; sourceTree = "<group>"; };
+		AB86A81626D3DEE900EA990A /* AdditionalOrEditPetProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdditionalOrEditPetProfile.storyboard; sourceTree = "<group>"; };
 		AB86A81A26D3DEFF00EA990A /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		AB86A81C26D3DF0A00EA990A /* ThemeColor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThemeColor.storyboard; sourceTree = "<group>"; };
 		AB86A81E26D3DF1900EA990A /* PrivacyAndSecurity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrivacyAndSecurity.storyboard; sourceTree = "<group>"; };
@@ -109,8 +106,7 @@
 		AB86A84226D3E35B00EA990A /* EditingPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingPostViewController.swift; sourceTree = "<group>"; };
 		AB86A84426D3E36700EA990A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AB86A84626D3E37100EA990A /* FollowOrFollowerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowOrFollowerListViewController.swift; sourceTree = "<group>"; };
-		AB86A84826D3E37B00EA990A /* AdditionalPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalPetViewController.swift; sourceTree = "<group>"; };
-		AB86A84A26D3E38600EA990A /* EditPetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetProfileViewController.swift; sourceTree = "<group>"; };
+		AB86A84826D3E37B00EA990A /* AdditionalOrEditPetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalOrEditPetProfileViewController.swift; sourceTree = "<group>"; };
 		AB86A84C26D3E39400EA990A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		AB86A84E26D3E39B00EA990A /* ThemeColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorViewController.swift; sourceTree = "<group>"; };
 		AB86A85026D3E3A500EA990A /* PrivacyAndSecurityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyAndSecurityViewController.swift; sourceTree = "<group>"; };
@@ -275,8 +271,7 @@
 			children = (
 				AB86A81226D3DED800EA990A /* Profile.storyboard */,
 				AB86A81426D3DEDF00EA990A /* FollowOrFollowerList.storyboard */,
-				AB86A81626D3DEE900EA990A /* AdditionalPet.storyboard */,
-				AB86A81826D3DEF700EA990A /* EditPetProfile.storyboard */,
+				AB86A81626D3DEE900EA990A /* AdditionalOrEditPetProfile.storyboard */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -306,8 +301,7 @@
 			children = (
 				AB86A84426D3E36700EA990A /* ProfileViewController.swift */,
 				AB86A84626D3E37100EA990A /* FollowOrFollowerListViewController.swift */,
-				AB86A84826D3E37B00EA990A /* AdditionalPetViewController.swift */,
-				AB86A84A26D3E38600EA990A /* EditPetProfileViewController.swift */,
+				AB86A84826D3E37B00EA990A /* AdditionalOrEditPetProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -406,14 +400,13 @@
 				4EA5C3C626D99E1100626ADE /* HomePostTableViewCell.xib in Resources */,
 				AB86A81D26D3DF0A00EA990A /* ThemeColor.storyboard in Resources */,
 				AB86A81B26D3DEFF00EA990A /* Setting.storyboard in Resources */,
-				AB86A81926D3DEF700EA990A /* EditPetProfile.storyboard in Resources */,
 				AB86A80126D3DE6A00EA990A /* Login.storyboard in Resources */,
 				AB86A80326D3DE8100EA990A /* PasswordForgot.storyboard in Resources */,
 				AB86A81526D3DEDF00EA990A /* FollowOrFollowerList.storyboard in Resources */,
 				AB86A80B26D3DEB100EA990A /* AllNotificationList.storyboard in Resources */,
 				AB09946E26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib in Resources */,
 				AB86A80526D3DE9000EA990A /* SignUp.storyboard in Resources */,
-				AB86A81726D3DEE900EA990A /* AdditionalPet.storyboard in Resources */,
+				AB86A81726D3DEE900EA990A /* AdditionalOrEditPetProfile.storyboard in Resources */,
 				AB86A80726D3DE9900EA990A /* PostDetail.storyboard in Resources */,
 				AB86A81326D3DED800EA990A /* Profile.storyboard in Resources */,
 				AB86A82326D3DF7600EA990A /* Home.storyboard in Resources */,
@@ -440,7 +433,6 @@
 			files = (
 				AB86A83926D3E29700EA990A /* NotificationListViewController.swift in Sources */,
 				AB86A83326D3E16B00EA990A /* SignUpViewController.swift in Sources */,
-				AB86A84B26D3E38600EA990A /* EditPetProfileViewController.swift in Sources */,
 				AB86A83726D3E28600EA990A /* PostDetailViewController.swift in Sources */,
 				AB86A82F26D3E14A00EA990A /* LoginViewController.swift in Sources */,
 				AB86A82826D3E0E700EA990A /* LoginOrSignUpViewController.swift in Sources */,
@@ -463,7 +455,7 @@
 				AB86A7E926D3D76800EA990A /* SceneDelegate.swift in Sources */,
 				AB86A84D26D3E39400EA990A /* SettingViewController.swift in Sources */,
 				AB86A84126D3E35100EA990A /* LibraryViewController.swift in Sources */,
-				AB86A84926D3E37B00EA990A /* AdditionalPetViewController.swift in Sources */,
+				AB86A84926D3E37B00EA990A /* AdditionalOrEditPetProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
