@@ -9,7 +9,6 @@ import UIKit
 
 final class AdditionalOrEditPetProfileViewController: UIViewController {
 
-    @IBOutlet private weak var modalNameNavigationItem: UINavigationItem!
     @IBOutlet private weak var profilePhotoImageView: UIImageView!
     @IBOutlet private weak var changeProfilePhotoButton: UIButton!
     @IBOutlet private weak var otherPetCollectionView: UICollectionView!
