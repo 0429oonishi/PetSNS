@@ -7,23 +7,34 @@
 
 import UIKit
 
-class TopTabBarController: UITabBarController {
-
+final class TopTabBarController: UITabBarController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setObserver()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setObserver() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showHomeVC),
+                                               name: .showHomeVC,
+                                               object: nil)
     }
-    */
-
+    
+    @objc
+    private func showHomeVC() {
+        if let tabBarController = UIApplication.shared.windows.first(
+            where: { $0.isKeyWindow }
+        )?.rootViewController as? UITabBarController {
+            DispatchQueue.main.async {
+                tabBarController.selectedIndex = 0
+            }
+        }
+    }
+    
 }
+
+
+

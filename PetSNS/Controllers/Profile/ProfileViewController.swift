@@ -17,25 +17,33 @@ final class ProfileViewController: UIViewController {
     @IBOutlet private weak var introductionTextView: UITextView!
     @IBOutlet private weak var postedImageCollectionView: UICollectionView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
     @IBAction private func followButtonDidTapped(_ sender: Any) {
-        
+        let followOrFollowerListVC = FollowOrFollowerListViewController.instantiate()
+        self.navigationController?.pushViewController(followOrFollowerListVC, animated: true)
     }
     
     @IBAction private func followerButtonDidTapped(_ sender: Any) {
-        
+        let followOrFollowerListVC = FollowOrFollowerListViewController.instantiate()
+        self.navigationController?.pushViewController(followOrFollowerListVC, animated: true)
     }
     
     @IBAction private func editButtonDidTapped(_ sender: Any) {
-        
+        let additionalOrEditPetProfileVC = AdditionalOrEditPetProfileViewController.instantiate()
+        let nav = UINavigationController(rootViewController: additionalOrEditPetProfileVC)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true, completion: nil)
     }
     
     @IBAction private func settingButtonDidTapped(_ sender: Any) {
+        let settingVC = SettingViewController.instantiate()
+        let nav = UINavigationController(rootViewController: settingVC)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true, completion: nil)
     }
     
 }
