@@ -17,6 +17,10 @@
 		755E9B2326DB527C00A17709 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 755E9B2126DB527C00A17709 /* ItemTableViewCell.xib */; };
 		AB09946D26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB09946B26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift */; };
 		AB09946E26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB09946C26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib */; };
+		AB14B47226DBAD2B007A5F16 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14B47126DBAD2B007A5F16 /* UIViewController+Extension.swift */; };
+		AB14B47526DBB4E5007A5F16 /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB14B47426DBB4E5007A5F16 /* Top.storyboard */; };
+		AB14B47726DBC08A007A5F16 /* TopTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14B47626DBC08A007A5F16 /* TopTabBarController.swift */; };
+		AB14B47926DBC59D007A5F16 /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14B47826DBC59D007A5F16 /* NotificationName+Extension.swift */; };
 		AB86A7E726D3D76800EA990A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A7E626D3D76800EA990A /* AppDelegate.swift */; };
 		AB86A7E926D3D76800EA990A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A7E826D3D76800EA990A /* SceneDelegate.swift */; };
 		AB86A7F026D3D76900EA990A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB86A7EF26D3D76900EA990A /* Assets.xcassets */; };
@@ -69,6 +73,10 @@
 		755E9B2126DB527C00A17709 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		AB09946B26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetConfigurationTableViewCell.swift; sourceTree = "<group>"; };
 		AB09946C26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetConfigurationTableViewCell.xib; sourceTree = "<group>"; };
+		AB14B47126DBAD2B007A5F16 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		AB14B47426DBB4E5007A5F16 /* Top.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Top.storyboard; sourceTree = "<group>"; };
+		AB14B47626DBC08A007A5F16 /* TopTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarController.swift; sourceTree = "<group>"; };
+		AB14B47826DBC59D007A5F16 /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		AB86A7E326D3D76800EA990A /* PetSNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetSNS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB86A7E626D3D76800EA990A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB86A7E826D3D76800EA990A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +170,15 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		AB14B47326DBAD35007A5F16 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AB14B47126DBAD2B007A5F16 /* UIViewController+Extension.swift */,
+				AB14B47826DBC59D007A5F16 /* NotificationName+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		AB86A7DA26D3D76800EA990A = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +201,7 @@
 				AB86A7FC26D3DDF000EA990A /* Models */,
 				AB86A7FB26D3DDED00EA990A /* Views */,
 				AB86A7FA26D3DDE200EA990A /* Controllers */,
+				AB14B47326DBAD35007A5F16 /* Extensions */,
 				AB86A7E626D3D76800EA990A /* AppDelegate.swift */,
 				AB86A7E826D3D76800EA990A /* SceneDelegate.swift */,
 				AB86A7EF26D3D76900EA990A /* Assets.xcassets */,
@@ -195,6 +213,7 @@
 		AB86A7FA26D3DDE200EA990A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AB14B47626DBC08A007A5F16 /* TopTabBarController.swift */,
 				AB86A82D26D3E12100EA990A /* Login */,
 				AB86A82C26D3E11700EA990A /* Home */,
 				AB86A82B26D3E10F00EA990A /* Camera */,
@@ -224,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				AB86A7F126D3D76900EA990A /* LaunchScreen.storyboard */,
+				AB14B47426DBB4E5007A5F16 /* Top.storyboard */,
 				AB86A82026D3DF3C00EA990A /* Login */,
 				AB86A82126D3DF5100EA990A /* Home */,
 				AB86A82426D3DF8100EA990A /* Camera */,
@@ -309,8 +329,8 @@
 		AB86A82B26D3E10F00EA990A /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				AB86A83C26D3E33800EA990A /* ChoosableCameraOrLibraryViewController.swift */,
 				AB86A83E26D3E34A00EA990A /* CameraViewController.swift */,
+				AB86A83C26D3E33800EA990A /* ChoosableCameraOrLibraryViewController.swift */,
 				AB86A84026D3E35100EA990A /* LibraryViewController.swift */,
 				AB86A84226D3E35B00EA990A /* EditingPostViewController.swift */,
 			);
@@ -406,6 +426,7 @@
 				AB86A80B26D3DEB100EA990A /* AllNotificationList.storyboard in Resources */,
 				AB09946E26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib in Resources */,
 				AB86A80526D3DE9000EA990A /* SignUp.storyboard in Resources */,
+				AB14B47526DBB4E5007A5F16 /* Top.storyboard in Resources */,
 				AB86A81726D3DEE900EA990A /* AdditionalOrEditPetProfile.storyboard in Resources */,
 				AB86A80726D3DE9900EA990A /* PostDetail.storyboard in Resources */,
 				AB86A81326D3DED800EA990A /* Profile.storyboard in Resources */,
@@ -445,6 +466,7 @@
 				AB86A85126D3E3A500EA990A /* PrivacyAndSecurityViewController.swift in Sources */,
 				AB86A84F26D3E39B00EA990A /* ThemeColorViewController.swift in Sources */,
 				AB09946D26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift in Sources */,
+				AB14B47226DBAD2B007A5F16 /* UIViewController+Extension.swift in Sources */,
 				755E9B1E26DB4F9F00A17709 /* SwitchingTableViewCell.swift in Sources */,
 				AB86A84326D3E35B00EA990A /* EditingPostViewController.swift in Sources */,
 				AB86A83526D3E19300EA990A /* HomeViewController.swift in Sources */,
@@ -452,7 +474,9 @@
 				AB86A84726D3E37100EA990A /* FollowOrFollowerListViewController.swift in Sources */,
 				4EA5C3C526D99E1100626ADE /* HomePostTableViewCell.swift in Sources */,
 				AB86A84526D3E36700EA990A /* ProfileViewController.swift in Sources */,
+				AB14B47926DBC59D007A5F16 /* NotificationName+Extension.swift in Sources */,
 				AB86A7E926D3D76800EA990A /* SceneDelegate.swift in Sources */,
+				AB14B47726DBC08A007A5F16 /* TopTabBarController.swift in Sources */,
 				AB86A84D26D3E39400EA990A /* SettingViewController.swift in Sources */,
 				AB86A84126D3E35100EA990A /* LibraryViewController.swift in Sources */,
 				AB86A84926D3E37B00EA990A /* AdditionalOrEditPetProfileViewController.swift in Sources */,

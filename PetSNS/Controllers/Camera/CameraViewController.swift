@@ -18,9 +18,12 @@ final class CameraViewController: UIViewController {
     }
     
     @IBAction private func closeButtonDidTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction private func shutterButtonDidTapped(_ sender: Any) {
+        let editingPostVC = EditingPostViewController.instantiate()
+        self.navigationController?.pushViewController(editingPostVC, animated: true)
     }
 
     @IBAction private func stillImageShootingButtonDidTapped(_ sender: Any) {

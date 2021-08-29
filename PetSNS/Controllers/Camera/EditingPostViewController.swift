@@ -21,9 +21,14 @@ final class EditingPostViewController: UIViewController {
     }
     
     @IBAction private func postButtonDidTapped(_ sender: Any) {
+        NotificationCenter.default.post(name: .showHomeVC, object: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            self.dismiss(animated: true)
+        }
     }
     
     @IBAction private func cancelButtonDidTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
