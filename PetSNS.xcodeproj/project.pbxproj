@@ -13,6 +13,8 @@
 		755E9AC826D7933C00A17709 /* HomeContainerPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */; };
 		755E9B1E26DB4F9F00A17709 /* SwitchingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E9B1C26DB4F9F00A17709 /* SwitchingTableViewCell.swift */; };
 		755E9B1F26DB4F9F00A17709 /* SwitchingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 755E9B1D26DB4F9F00A17709 /* SwitchingTableViewCell.xib */; };
+		755E9B2226DB527C00A17709 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E9B2026DB527C00A17709 /* ItemTableViewCell.swift */; };
+		755E9B2326DB527C00A17709 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 755E9B2126DB527C00A17709 /* ItemTableViewCell.xib */; };
 		AB09946D26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB09946B26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift */; };
 		AB09946E26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB09946C26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib */; };
 		AB86A7E726D3D76800EA990A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A7E626D3D76800EA990A /* AppDelegate.swift */; };
@@ -65,6 +67,8 @@
 		755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerPostsViewController.swift; sourceTree = "<group>"; };
 		755E9B1C26DB4F9F00A17709 /* SwitchingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchingTableViewCell.swift; sourceTree = "<group>"; };
 		755E9B1D26DB4F9F00A17709 /* SwitchingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchingTableViewCell.xib; sourceTree = "<group>"; };
+		755E9B2026DB527C00A17709 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		755E9B2126DB527C00A17709 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		AB09946B26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetConfigurationTableViewCell.swift; sourceTree = "<group>"; };
 		AB09946C26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetConfigurationTableViewCell.xib; sourceTree = "<group>"; };
 		AB86A7E326D3D76800EA990A /* PetSNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetSNS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +151,8 @@
 			children = (
 				755E9B1C26DB4F9F00A17709 /* SwitchingTableViewCell.swift */,
 				755E9B1D26DB4F9F00A17709 /* SwitchingTableViewCell.xib */,
+				755E9B2026DB527C00A17709 /* ItemTableViewCell.swift */,
+				755E9B2126DB527C00A17709 /* ItemTableViewCell.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -420,6 +426,7 @@
 				AB86A80F26D3DEC600EA990A /* Camera.storyboard in Resources */,
 				AB86A7F026D3D76900EA990A /* Assets.xcassets in Resources */,
 				755E9B1F26DB4F9F00A17709 /* SwitchingTableViewCell.xib in Resources */,
+				755E9B2326DB527C00A17709 /* ItemTableViewCell.xib in Resources */,
 				AB86A7FE26D3DE3000EA990A /* LoginOrSignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +444,7 @@
 				AB86A83726D3E28600EA990A /* PostDetailViewController.swift in Sources */,
 				AB86A82F26D3E14A00EA990A /* LoginViewController.swift in Sources */,
 				AB86A82826D3E0E700EA990A /* LoginOrSignUpViewController.swift in Sources */,
+				755E9B2226DB527C00A17709 /* ItemTableViewCell.swift in Sources */,
 				AB86A83F26D3E34A00EA990A /* CameraViewController.swift in Sources */,
 				755E9AC826D7933C00A17709 /* HomeContainerPostsViewController.swift in Sources */,
 				AB86A83126D3E15F00EA990A /* PasswordForgotViewController.swift in Sources */,
