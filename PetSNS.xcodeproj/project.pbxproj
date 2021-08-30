@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E374B416C7B528D6B675A82 /* Pods_PetSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 063129E915306F0E6F58E61F /* Pods_PetSNS.framework */; };
 		4EA5C3C526D99E1100626ADE /* HomePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3C326D99E1100626ADE /* HomePostTableViewCell.swift */; };
 		4EA5C3C626D99E1100626ADE /* HomePostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA5C3C426D99E1100626ADE /* HomePostTableViewCell.xib */; };
+		4EA5C3CE26DCB88F00626ADE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EA5C3CD26DCB88E00626ADE /* GoogleService-Info.plist */; };
 		755E9AC626D7931C00A17709 /* HomeContainerPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 755E9AC526D7931C00A17709 /* HomeContainerPosts.storyboard */; };
 		755E9AC826D7933C00A17709 /* HomeContainerPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */; };
 		755E9B1E26DB4F9F00A17709 /* SwitchingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E9B1C26DB4F9F00A17709 /* SwitchingTableViewCell.swift */; };
@@ -64,14 +66,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		063129E915306F0E6F58E61F /* Pods_PetSNS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetSNS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		420D1DBBC8661E429D27A5EC /* Pods-PetSNS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSNS.release.xcconfig"; path = "Target Support Files/Pods-PetSNS/Pods-PetSNS.release.xcconfig"; sourceTree = "<group>"; };
 		4EA5C3C326D99E1100626ADE /* HomePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostTableViewCell.swift; sourceTree = "<group>"; };
 		4EA5C3C426D99E1100626ADE /* HomePostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePostTableViewCell.xib; sourceTree = "<group>"; };
+		4EA5C3CD26DCB88E00626ADE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		755E9AC526D7931C00A17709 /* HomeContainerPosts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeContainerPosts.storyboard; sourceTree = "<group>"; };
 		755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerPostsViewController.swift; sourceTree = "<group>"; };
 		755E9B1C26DB4F9F00A17709 /* SwitchingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchingTableViewCell.swift; sourceTree = "<group>"; };
 		755E9B1D26DB4F9F00A17709 /* SwitchingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchingTableViewCell.xib; sourceTree = "<group>"; };
 		755E9B2026DB527C00A17709 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		755E9B2126DB527C00A17709 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
+		8927CD67E2869A725EB5F18E /* Pods-PetSNS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSNS.debug.xcconfig"; path = "Target Support Files/Pods-PetSNS/Pods-PetSNS.debug.xcconfig"; sourceTree = "<group>"; };
 		AB09946B26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetConfigurationTableViewCell.swift; sourceTree = "<group>"; };
 		AB09946C26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetConfigurationTableViewCell.xib; sourceTree = "<group>"; };
 		AB14B47126DBAD2B007A5F16 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -127,12 +133,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E374B416C7B528D6B675A82 /* Pods_PetSNS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		374D8824DCF0F26162A8AF75 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8927CD67E2869A725EB5F18E /* Pods-PetSNS.debug.xcconfig */,
+				420D1DBBC8661E429D27A5EC /* Pods-PetSNS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4EA5C3C726D9F85300626ADE /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +202,8 @@
 			children = (
 				AB86A7E526D3D76800EA990A /* PetSNS */,
 				AB86A7E426D3D76800EA990A /* Products */,
+				374D8824DCF0F26162A8AF75 /* Pods */,
+				F232A8EBAC50A1FC74B1DAA2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,6 +226,7 @@
 				AB86A7E826D3D76800EA990A /* SceneDelegate.swift */,
 				AB86A7EF26D3D76900EA990A /* Assets.xcassets */,
 				AB86A7F426D3D76900EA990A /* Info.plist */,
+				4EA5C3CD26DCB88E00626ADE /* GoogleService-Info.plist */,
 			);
 			path = PetSNS;
 			sourceTree = "<group>";
@@ -363,6 +382,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		F232A8EBAC50A1FC74B1DAA2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				063129E915306F0E6F58E61F /* Pods_PetSNS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -370,9 +397,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB86A7F726D3D76900EA990A /* Build configuration list for PBXNativeTarget "PetSNS" */;
 			buildPhases = (
+				39CF82B59EE07BB10D559458 /* [CP] Check Pods Manifest.lock */,
 				AB86A7DF26D3D76800EA990A /* Sources */,
 				AB86A7E026D3D76800EA990A /* Frameworks */,
 				AB86A7E126D3D76800EA990A /* Resources */,
+				2F9F0595622B1F884289AC37 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -427,6 +456,7 @@
 				AB86A80326D3DE8100EA990A /* PasswordForgot.storyboard in Resources */,
 				AB86A81526D3DEDF00EA990A /* FollowOrFollowerList.storyboard in Resources */,
 				AB86A80B26D3DEB100EA990A /* AllNotificationList.storyboard in Resources */,
+				4EA5C3CE26DCB88F00626ADE /* GoogleService-Info.plist in Resources */,
 				AB09946E26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib in Resources */,
 				AB86A80526D3DE9000EA990A /* SignUp.storyboard in Resources */,
 				AB14B47526DBB4E5007A5F16 /* Top.storyboard in Resources */,
@@ -449,6 +479,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F9F0595622B1F884289AC37 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PetSNS/Pods-PetSNS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PetSNS/Pods-PetSNS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PetSNS/Pods-PetSNS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39CF82B59EE07BB10D559458 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PetSNS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB86A7DF26D3D76800EA990A /* Sources */ = {
@@ -619,6 +691,7 @@
 		};
 		AB86A7F826D3D76900EA990A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8927CD67E2869A725EB5F18E /* Pods-PetSNS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -639,6 +712,7 @@
 		};
 		AB86A7F926D3D76900EA990A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 420D1DBBC8661E429D27A5EC /* Pods-PetSNS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
