@@ -24,6 +24,8 @@
 		AB14B47726DBC08A007A5F16 /* TopTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14B47626DBC08A007A5F16 /* TopTabBarController.swift */; };
 		AB14B47926DBC59D007A5F16 /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14B47826DBC59D007A5F16 /* NotificationName+Extension.swift */; };
 		AB14B47B26DBDAEB007A5F16 /* UserUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14B47A26DBDAEB007A5F16 /* UserUtil.swift */; };
+		AB4397F726DDEA56008C8CA8 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4397F626DDEA56008C8CA8 /* Indicator.swift */; };
+		AB4397F926DDF46B008C8CA8 /* HUDIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4397F826DDF46B008C8CA8 /* HUDIndicator.swift */; };
 		AB86A7E726D3D76800EA990A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A7E626D3D76800EA990A /* AppDelegate.swift */; };
 		AB86A7E926D3D76800EA990A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A7E826D3D76800EA990A /* SceneDelegate.swift */; };
 		AB86A7F026D3D76900EA990A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB86A7EF26D3D76900EA990A /* Assets.xcassets */; };
@@ -85,6 +87,8 @@
 		AB14B47626DBC08A007A5F16 /* TopTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarController.swift; sourceTree = "<group>"; };
 		AB14B47826DBC59D007A5F16 /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		AB14B47A26DBDAEB007A5F16 /* UserUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUtil.swift; sourceTree = "<group>"; };
+		AB4397F626DDEA56008C8CA8 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
+		AB4397F826DDF46B008C8CA8 /* HUDIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDIndicator.swift; sourceTree = "<group>"; };
 		AB86A7E326D3D76800EA990A /* PetSNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetSNS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB86A7E626D3D76800EA990A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB86A7E826D3D76800EA990A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -257,6 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				AB14B47A26DBDAEB007A5F16 /* UserUtil.swift */,
+				AB4397F626DDEA56008C8CA8 /* Indicator.swift */,
+				AB4397F826DDF46B008C8CA8 /* HUDIndicator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -537,9 +543,11 @@
 				755E9AC826D7933C00A17709 /* HomeContainerPostsViewController.swift in Sources */,
 				AB86A83126D3E15F00EA990A /* PasswordForgotViewController.swift in Sources */,
 				AB86A7E726D3D76800EA990A /* AppDelegate.swift in Sources */,
+				AB4397F926DDF46B008C8CA8 /* HUDIndicator.swift in Sources */,
 				AB86A83B26D3E32100EA990A /* AllNotificationListViewController.swift in Sources */,
 				AB86A85126D3E3A500EA990A /* PrivacyAndSecurityViewController.swift in Sources */,
 				AB86A84F26D3E39B00EA990A /* ThemeColorViewController.swift in Sources */,
+				AB4397F726DDEA56008C8CA8 /* Indicator.swift in Sources */,
 				AB09946D26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift in Sources */,
 				AB14B47226DBAD2B007A5F16 /* UIViewController+Extension.swift in Sources */,
 				755E9B1E26DB4F9F00A17709 /* SwitchingTableViewCell.swift in Sources */,
