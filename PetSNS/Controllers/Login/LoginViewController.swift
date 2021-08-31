@@ -8,86 +8,102 @@
 import UIKit
 
 final class LoginViewController: UIViewController {
-
+    
     @IBOutlet private weak var mailAddressTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var passwordForgotButton: UIButton!
-
+    
+    private let secureButton = UIButton()
+    private var isAllTextFieldInputted: Bool {
+        guard let mailText = mailAddressTextField.text,
+              let passwordText = passwordTextField.text else { return false }
+        return !mailText.isEmpty && !passwordText.isEmpty
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLoginButton()
-        setupTextField()
+        setupMailAddressTextField()
+        setupPasswordTextFiled()
+        setupSecureButton()
         
     }
     
-    private func setupLoginButton() {
-        loginButton.alpha = 0.5
-        loginButton.isEnabled = false
+    private func changeLoginButtonEnabled(_ isEnabled: Bool) {
+        loginButton.isEnabled = isEnabled
+        loginButton.alpha = isEnabled ? 1 : 0.5
     }
     
-    private func setupTextField() {
-        mailAddressTextField.delegate = self
-        passwordTextField.delegate = self
-
-        let eyeButton = UIButton()
-        eyeButton.setBackgroundImage(UIImage(systemName: "eye.fill"), for: .normal)
-        passwordTextField.rightView = eyeButton
-        passwordTextField.rightViewMode = .always
-        
-        eyeButton.addTarget(self,
-                            action: #selector(eyeButtonDidTouchUpInside),
-                            for: .touchUpInside)
-        eyeButton.addTarget(self,
-                            action: #selector(eyeButtonDidTouchDown),
-                            for: .touchDown)
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
-    @objc private func eyeButtonDidTouchDown() {
-        passwordTextField.isSecureTextEntry = false
-    }
+}
+
+private extension LoginViewController {
     
-    @objc private func eyeButtonDidTouchUpInside() {
-        passwordTextField.isSecureTextEntry = true
-    }
-
-
-    @IBAction private func loginButtonDidTapped(_ sender: Any) {
+    @IBAction func loginButtonDidTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
-    @IBAction private func passwordForgotButtonDidTapped(_ sender: Any) {
+    
+    @IBAction func passwordForgotButtonDidTapped(_ sender: Any) {
         let passwordForgotVC = PasswordForgotViewController.instantiate()
         self.navigationController?.pushViewController(passwordForgotVC, animated: true)
     }
-
 }
+
+
 
 extension LoginViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        
-        let isInput = validate(mail: mailAddressTextField.text,
-                                          pass: passwordTextField.text)
-        if isInput {
-            loginButton.alpha = 1
-            loginButton.isEnabled = true
+        if isAllTextFieldInputted {
+            changeLoginButtonEnabled(true)
+        } else {
+            changeLoginButtonEnabled(false)
         }
-        else {
-            loginButton.alpha = 0.5
-            loginButton.isEnabled = false
-        }
-        
     }
     
-    private func validate(mail: String?, pass: String?) -> Bool {
-        guard mail != nil,
-              mail?.isEmpty == false,
-              pass != nil,
-              pass?.isEmpty == false else { return false }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
     }
-
+    
 }
+
+private extension LoginViewController {
+    
+    func setupLoginButton() {
+        changeLoginButtonEnabled(false)
+    }
+    
+    func setupMailAddressTextField() {
+        mailAddressTextField.delegate = self
+    }
+    
+    func setupPasswordTextFiled() {
+        passwordTextField.delegate = self
+        passwordTextField.rightView = secureButton
+        passwordTextField.rightViewMode = .always
+    }
+    
+    func setupSecureButton() {
+        secureButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        secureButton.addTarget(self,
+                               action: #selector(secureButtonDidTapped),
+                               for: .touchUpInside)
+    }
+    
+    @objc
+    func secureButtonDidTapped() {
+        if passwordTextField.isSecureTextEntry {
+            secureButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+        } else {
+            secureButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        }
+        passwordTextField.isSecureTextEntry.toggle()
+    }
+}
+
