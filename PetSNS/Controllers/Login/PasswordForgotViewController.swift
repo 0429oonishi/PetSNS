@@ -19,6 +19,9 @@ final class PasswordForgotViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        changeSendButtonEnabled(false)
+        setupMailAddressTextField()
+        
     }
     
     @IBAction private func sendButtonDidTapped(_ sender: Any) {
@@ -39,10 +42,41 @@ final class PasswordForgotViewController: UIViewController {
         }
     }
     
+    private func setupMailAddressTextField() {
+        mailAddressTextField.delegate = self
+    }
+    
+    private func changeSendButtonEnabled(_ isEnabled: Bool) {
+        sendButton.isEnabled = isEnabled
+        sendButton.alpha = isEnabled ? 1 : 0.5
+    }
+    
     private func showErrorAlert(title: String, message: String? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+}
+
+extension PasswordForgotViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let emailText = mailAddressTextField.text else { return }
+        if emailText.isEmpty {
+            changeSendButtonEnabled(false)
+        } else {
+            changeSendButtonEnabled(true)
+        }
     }
     
 }
