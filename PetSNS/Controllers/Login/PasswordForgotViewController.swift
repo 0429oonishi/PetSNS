@@ -14,6 +14,8 @@ final class PasswordForgotViewController: UIViewController {
     @IBOutlet private weak var mailAddressTextField: UITextField!
     @IBOutlet private weak var sendButton: UIButton!
     
+    private let indicator = Indicator(kinds: PKHUDIndicator())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,15 +23,16 @@ final class PasswordForgotViewController: UIViewController {
     
     @IBAction private func sendButtonDidTapped(_ sender: Any) {
         guard let email = mailAddressTextField.text else { return }
-        Indicator().show(.progress)
-        UserUtil().sendPasswordResetMail(email: email) { result in
+        indicator.show(.progress)
+        UserUtil().sendPasswordResetMail(email: email) { [weak self] result in
+            guard let self = self else { return }
             switch result {
                 case .failure(let title):
-                    Indicator().flash(.error) {
+                    self.indicator.flash(.error) {
                         self.showErrorAlert(title: title)
                     }
                 case .success:
-                    Indicator().flash(.success) {
+                    self.indicator.flash(.success) {
                         self.dismiss(animated: true, completion: nil)
                     }
             }
