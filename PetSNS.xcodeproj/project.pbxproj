@@ -16,7 +16,6 @@
 		755E9B1F26DB4F9F00A17709 /* SwitchingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 755E9B1D26DB4F9F00A17709 /* SwitchingTableViewCell.xib */; };
 		755E9B2226DB527C00A17709 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E9B2026DB527C00A17709 /* ItemTableViewCell.swift */; };
 		755E9B2326DB527C00A17709 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 755E9B2126DB527C00A17709 /* ItemTableViewCell.xib */; };
-		75A5D78526DF923700FCBEF2 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A5D78426DF923700FCBEF2 /* UIAlertController+Extension.swift */; };
 		AB09946D26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB09946B26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift */; };
 		AB09946E26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB09946C26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib */; };
 		AB14B47226DBAD2B007A5F16 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14B47126DBAD2B007A5F16 /* UIViewController+Extension.swift */; };
@@ -79,7 +78,6 @@
 		755E9B1D26DB4F9F00A17709 /* SwitchingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchingTableViewCell.xib; sourceTree = "<group>"; };
 		755E9B2026DB527C00A17709 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		755E9B2126DB527C00A17709 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
-		75A5D78426DF923700FCBEF2 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		8462CE25D20020CDE15C0FC5 /* Pods-PetSNS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSNS.release.xcconfig"; path = "Target Support Files/Pods-PetSNS/Pods-PetSNS.release.xcconfig"; sourceTree = "<group>"; };
 		AB09946B26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetConfigurationTableViewCell.swift; sourceTree = "<group>"; };
 		AB09946C26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetConfigurationTableViewCell.xib; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 			children = (
 				AB14B47126DBAD2B007A5F16 /* UIViewController+Extension.swift */,
 				AB14B47826DBC59D007A5F16 /* NotificationName+Extension.swift */,
-				75A5D78426DF923700FCBEF2 /* UIAlertController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -562,7 +559,6 @@
 				AB86A84526D3E36700EA990A /* ProfileViewController.swift in Sources */,
 				AB14B47926DBC59D007A5F16 /* NotificationName+Extension.swift in Sources */,
 				AB86A7E926D3D76800EA990A /* SceneDelegate.swift in Sources */,
-				75A5D78526DF923700FCBEF2 /* UIAlertController+Extension.swift in Sources */,
 				AB14B47B26DBDAEB007A5F16 /* UserUtil.swift in Sources */,
 				AB14B47726DBC08A007A5F16 /* TopTabBarController.swift in Sources */,
 				AB86A84D26D3E39400EA990A /* SettingViewController.swift in Sources */,
