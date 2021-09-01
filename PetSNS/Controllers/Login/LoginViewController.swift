@@ -14,6 +14,8 @@ final class LoginViewController: UIViewController {
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var passwordForgotButton: UIButton!
     
+    private let indicator = Indicator(kinds: PKHUDIndicator())
+    
     private let secureButton = UIButton()
     private var isAllTextFieldInputted: Bool {
         guard let mailText = mailAddressTextField.text,
@@ -45,7 +47,28 @@ final class LoginViewController: UIViewController {
 private extension LoginViewController {
     
     @IBAction func loginButtonDidTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        guard let email = mailAddressTextField.text,
+              let password = passwordTextField.text else { return }
+        indicator.show(.progress)
+        UserUtil().login(email: email,
+                         password: password) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .failure(let title):
+                self.indicator.flash(.error) {
+                    self.showErrorAlert(title: title)
+                }
+            case .success:
+                self.indicator.flash(.success) {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    private func showErrorAlert(title: String, message: String? = nil) {
+        let alert = UIAlertController.makeAuthAlert(title: title)
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func passwordForgotButtonDidTapped(_ sender: Any) {
