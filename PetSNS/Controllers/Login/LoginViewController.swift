@@ -66,11 +66,6 @@ private extension LoginViewController {
         }
     }
     
-    private func showErrorAlert(title: String, message: String? = nil) {
-        let alert = UIAlertController.makeAuthAlert(title: title)
-        present(alert, animated: true, completion: nil)
-    }
-    
     @IBAction func passwordForgotButtonDidTapped(_ sender: Any) {
         let passwordForgotVC = PasswordForgotViewController.instantiate()
         self.navigationController?.pushViewController(passwordForgotVC, animated: true)

@@ -51,11 +51,6 @@ final class PasswordForgotViewController: UIViewController {
         sendButton.alpha = isEnabled ? 1 : 0.5
     }
     
-    private func showErrorAlert(title: String, message: String? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

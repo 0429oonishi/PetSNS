@@ -24,3 +24,13 @@ extension UIViewController {
     }
     
 }
+
+extension UIViewController {
+    
+    func showErrorAlert(title: String, message: String? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "閉じる", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+}
