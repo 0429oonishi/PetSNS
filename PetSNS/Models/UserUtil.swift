@@ -31,6 +31,21 @@ final class UserUtil {
         }
     }
     
+    func login(email: String,
+               password: String,
+               completion: @escaping ResultHandler<Any?>) {
+        Auth.auth().signIn(withEmail: email,
+                           password: password) { authResult, error in
+            if let error = error {
+                let message = self.authErrorMessage(error)
+                completion(.failure(message))
+                return
+            }
+            completion(.success(nil))
+        }
+        
+    }
+    
     private func authErrorMessage(_ error: Error) -> String {
         if let errorCode = AuthErrorCode(rawValue: error._code) {
             switch errorCode {
