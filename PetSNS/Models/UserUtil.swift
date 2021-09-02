@@ -43,7 +43,16 @@ final class UserUtil {
             }
             completion(.success(nil))
         }
-        
+    }
+    
+    func logout(completion: @escaping ResultHandler<Any?>) {
+        do {
+            try Auth.auth().signOut()
+            completion(.success(nil))
+        } catch {
+            let message = authErrorMessage(error)
+            completion(.failure(message))
+        }
     }
     
     private func authErrorMessage(_ error: Error) -> String {
