@@ -15,7 +15,7 @@ final class SignUpViewController: UIViewController {
     @IBOutlet private weak var confirmationPasswordTextField: UITextField!
     @IBOutlet private weak var registerButton: UIButton!
     
-    private let signUpValidation = SignUpValidation()
+    private let signUpValidation = LocalValidationCheckers()
     private let secureButton = UIButton()
     private let confirmationSecureButton = UIButton()
     private var isAllTextFieldInputted: Bool {
@@ -54,7 +54,7 @@ final class SignUpViewController: UIViewController {
                                            confirmationMail: confirmationMail, 
                                            password: password, 
                                            confirmationPassword: confirmationPassword) {
-            self.showErrorAlert(title: "確認", message: "\(alertMessage)")
+            self.showErrorAlert(title: "確認", message: alertMessage)
         } else {
             self.dismiss(animated: true, completion: nil)
         }
@@ -83,7 +83,7 @@ final class SignUpViewController: UIViewController {
         if checkers.filter({ $0 != .succucess }).isEmpty {
             return nil
         } else {
-            let message = checkers.filter({ $0 != .succucess }).map { $0.message }.joined(separator: "\n")
+            let message = checkers.filter({ $0 != .succucess }).map { $0.ErrorMessage }.joined(separator: "\n")
             return message
         }
     }

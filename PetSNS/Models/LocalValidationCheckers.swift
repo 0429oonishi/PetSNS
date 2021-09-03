@@ -15,7 +15,7 @@ enum LocalValidation {
          notMatchConfirmationMail, 
          notMatchConfirmationPassword
     
-    var message: String {
+    var ErrorMessage: String {
         switch self {
         case .succucess: return "成功"
         case .mailAddressFormatError: return "メールアドレスの形式が正しくありません"
@@ -27,18 +27,15 @@ enum LocalValidation {
     }
 }
 
-class SignUpValidation {
+final class LocalValidationCheckers {
     func textIsEmptyChecker(target: [String]) -> Bool {
         return target.allSatisfy{ !$0.isEmpty }
     }
     
     func mailAddressFormatChecker(mail: String) -> LocalValidation {
         let mailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-        if NSPredicate(format: "SELF MATCHES %@", mailRegex).evaluate(with: mail) {
-            return .succucess
-        } else {
-            return .mailAddressFormatError
-        }
+        let checkMailFormat = NSPredicate(format: "SELF MATCHES %@", mailRegex).evaluate(with: mail)
+        return checkMailFormat ? .succucess : .mailAddressFormatError
     }
     
     func numberOfPasswordCharactersChecker(password: String) -> LocalValidation {
@@ -50,11 +47,8 @@ class SignUpValidation {
     }
     
     func passwordCharacterFormatChecker(password: String) -> LocalValidation {
-        if NSPredicate(format: "SELF MATCHES %@", "[a-zA-Z0-9]+").evaluate(with: password) {
-            return .succucess
-        } else {
-            return .passwordCharacterFormatError
-        }
+        let checkPasswordFormat = NSPredicate(format: "SELF MATCHES %@", "[a-zA-Z0-9]+").evaluate(with: password)
+        return checkPasswordFormat ? .succucess : .passwordCharacterFormatError
     }
     
     func matchConfirmationChecker(target: String, confirmation: String) -> LocalValidation {
