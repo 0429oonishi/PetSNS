@@ -15,7 +15,7 @@ final class SignUpViewController: UIViewController {
     @IBOutlet private weak var confirmationPasswordTextField: UITextField!
     @IBOutlet private weak var registerButton: UIButton!
     
-    private let signUpValidation = LocalValidationCheckers()
+    private let signUpValidation = LocalValidationChecker()
     private let secureButton = UIButton()
     private let confirmationSecureButton = UIButton()
     private var isAllTextFieldInputted: Bool {

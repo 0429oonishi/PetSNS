@@ -27,7 +27,7 @@ enum LocalValidation {
     }
 }
 
-final class LocalValidationCheckers {
+final class LocalValidationChecker {
     func textIsEmptyChecker(target: [String]) -> Bool {
         return target.allSatisfy{ !$0.isEmpty }
     }
