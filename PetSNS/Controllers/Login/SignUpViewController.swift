@@ -15,6 +15,7 @@ final class SignUpViewController: UIViewController {
     @IBOutlet private weak var confirmationPasswordTextField: UITextField!
     @IBOutlet private weak var registerButton: UIButton!
     
+    private let signUpValidation = SignUpValidation()
     private let secureButton = UIButton()
     private let confirmationSecureButton = UIButton()
     private var isAllTextFieldInputted: Bool {
@@ -24,72 +25,72 @@ final class SignUpViewController: UIViewController {
               let confirmationPasswordText = confirmationPasswordTextField.text 
         else { return false }
         
-        return !mailText.isEmpty 
-            && !confirmationMailText.isEmpty 
-            && !passwordText.isEmpty 
-            && !confirmationPasswordText.isEmpty
+        return signUpValidation.textIsEmptyChecker(target: [mailText, 
+                                                            confirmationMailText, 
+                                                            passwordText, 
+                                                            confirmationPasswordText])
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupRegisterButton()
-        setupMailAddressTextField()
-        setupConfirmationMailAddressTextField()
-        setupPasswordTextField()
-        setupConfirmationPasswordTextField()
-        SetupSecureButton()
+        setUpRegisterButton()
+        setUpMailAddressTextField()
+        setUpConfirmationMailAddressTextField()
+        setUpPasswordTextField()
+        setUpConfirmationPasswordTextField()
+        setUpSecureButton()
         
     }
     
-    //登録ボタンをタップした時の処理
     @IBAction private func registerButtonDidTapped(_ sender: Any) {
-        if confirmInput(mail: mailAddressTextField.text!, 
-                        confirmationMail: confirmationMailAddressTextField.text!, 
-                        password: passwordTextField.text!, 
-                        confirmationPassword: confirmationPasswordTextField.text!) {
-            self.dismiss(animated: true, completion: nil)
+        guard let mail = mailAddressTextField.text, 
+              let confirmationMail = confirmationMailAddressTextField.text, 
+              let password = passwordTextField.text, 
+              let confirmationPassword = confirmationPasswordTextField.text 
+        else { return }
+        
+        if let alertMessage = confirmInput(mail: mail, 
+                                           confirmationMail: confirmationMail, 
+                                           password: password, 
+                                           confirmationPassword: confirmationPassword) {
+            self.showErrorAlert(title: "確認", message: "\(alertMessage)")
         } else {
-            return
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
-    //登録ボタンの色と有効処理
     private func changeRegisterButton(_ isEnabled: Bool) {
         registerButton.isEnabled = isEnabled
         registerButton.alpha = isEnabled ? 1 : 0.5
     }
     
-    //viewをタップした際キーボードを閉じる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    //チェック作業
     func confirmInput(mail: String, 
                       confirmationMail: String, 
                       password: String, 
-                      confirmationPassword: String) -> Bool {
+                      confirmationPassword: String) -> String? {
         
-        var checkers = [localValidation]()
-        checkers.append(contentsOf: [mailAddressFormatChecker(mail: mail), 
-                                     numberOfPasswordCharactersChecker(password: password), 
-                                     passwordCharacterFormatChecker(password: password), 
-                                     matchConfirmationMailChecker(mail: mail, confirmationMail: confirmationMail), 
-                                     matchConfirmationPasswordChecker(password: password, confirmationPassword: confirmationPassword)])
+        let checkers = [signUpValidation.mailAddressFormatChecker(mail: mail),
+                        signUpValidation.numberOfPasswordCharactersChecker(password: password),
+                        signUpValidation.passwordCharacterFormatChecker(password: password),
+                        signUpValidation.matchConfirmationChecker(target: mail, confirmation: confirmationMail),
+                        signUpValidation.matchConfirmationChecker(target: password, confirmation: confirmationPassword)]
+        
         if checkers.filter({ $0 != .succucess }).isEmpty {
-            return true
+            return nil
         } else {
-            let message = checkers.filter({ $0 != .succucess }).map { $0.warningMessage() }.joined(separator: "\n")
-            self.showErrorAlert(title: "確認", message: "\(message)")
-            return false
+            let message = checkers.filter({ $0 != .succucess }).map { $0.message }.joined(separator: "\n")
+            return message
         }
     }
 }
 
 extension SignUpViewController: UITextFieldDelegate {
     
-    //全てのtextfieldが入力された場合登録ボタンを押せるようにする
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if isAllTextFieldInputted {
             changeRegisterButton(true)
@@ -98,47 +99,39 @@ extension SignUpViewController: UITextFieldDelegate {
         }
     }
     
-    //returnを押した時キーボードを閉じている
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
 }
 
-// MARK: - 各種セットアップ
 private extension SignUpViewController {
     
-    //登録ボタンのセットアップ
-    func setupRegisterButton() {
+    func setUpRegisterButton() {
         changeRegisterButton(false)
     }
     
-    //メール入力欄のセットアップ
-    func setupMailAddressTextField() {
+    func setUpMailAddressTextField() {
         mailAddressTextField.delegate = self
     }
     
-    //メール確認欄のセットアップ
-    func setupConfirmationMailAddressTextField() {
+    func setUpConfirmationMailAddressTextField() {
         confirmationMailAddressTextField.delegate = self
     }
     
-    //パスワード入力欄のセットアップ
-    func setupPasswordTextField() {
+    func setUpPasswordTextField() {
         passwordTextField.delegate = self
         passwordTextField.rightView = secureButton
         passwordTextField.rightViewMode = .always
     }
     
-    //パスワード確認欄のセットアップ
-    func setupConfirmationPasswordTextField() {
+    func setUpConfirmationPasswordTextField() {
         confirmationPasswordTextField.delegate = self
         confirmationPasswordTextField.rightView = confirmationSecureButton
         confirmationPasswordTextField.rightViewMode = .always
     }
     
-    //目隠しボタンのセットアップ
-    func SetupSecureButton() {
+    func setUpSecureButton() {
         secureButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
         secureButton.addTarget(self, 
                                action: #selector(secureButtonDidTapped), 
@@ -149,7 +142,6 @@ private extension SignUpViewController {
                                            for: .touchUpInside)
     }
     
-    //目隠しボタンタップ時の処理
     @objc
     func secureButtonDidTapped() {
         if passwordTextField.isSecureTextEntry {
@@ -160,7 +152,6 @@ private extension SignUpViewController {
         passwordTextField.isSecureTextEntry.toggle()
     }
     
-    //確認用の目隠しボタンタップ時の処理
     @objc
     func cunfirmationSecureButtonDidTapped() {
         if confirmationPasswordTextField.isSecureTextEntry {
@@ -169,81 +160,5 @@ private extension SignUpViewController {
             confirmationSecureButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
         }
         confirmationPasswordTextField.isSecureTextEntry.toggle()
-    }
-}
-
-// MARK: - バリデーション
-private extension SignUpViewController {
-    
-    //メールアドレスの形式チェック
-    func mailAddressFormatChecker(mail: String) -> localValidation {
-        let mailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-        if NSPredicate(format: "SELF MATCHES %@", mailRegex).evaluate(with: mail) {
-            return .succucess
-        } else {
-            return .mailAddressFormatError
-        }
-    }
-    
-    //パスワードの文字数チェック
-    func numberOfPasswordCharactersChecker(password: String) -> localValidation {
-        if 6 <= password.count && password.count <= 12 {
-            return .succucess
-        } else {
-            return .numberOfPasswordCharactersError
-        }
-    }
-    
-    //パスワードの形式チェック
-    func passwordCharacterFormatChecker(password: String) -> localValidation {
-        if NSPredicate(format: "SELF MATCHES %@", "[a-zA-Z0-9]+").evaluate(with: password) {
-            return .succucess
-        } else {
-            return .passwordCharacterFormatError
-        }
-    }
-    
-    //確認用メールアドレスと一致してるか
-    func matchConfirmationMailChecker(mail: String, confirmationMail: String) -> localValidation {
-        if mail == confirmationMail {
-            return .succucess
-        } else {
-            return .notMatchConfirmationMail
-        }
-    }
-    
-    //確認用パスワードと一致してるか
-    func matchConfirmationPasswordChecker(password: String, confirmationPassword: String) -> localValidation {
-        if password == confirmationPassword {
-            return .succucess
-        } else {
-            return .notMatchConfirmationPassword
-        }
-    }
-}
-
-private enum localValidation {
-    case succucess
-    case mailAddressFormatError
-    case numberOfPasswordCharactersError
-    case passwordCharacterFormatError
-    case notMatchConfirmationMail
-    case notMatchConfirmationPassword
-    
-    func warningMessage() -> String {
-        switch self {
-        case .succucess:
-            return "成功"
-        case .mailAddressFormatError:
-            return "メールアドレスの形式が正しくありません"
-        case .numberOfPasswordCharactersError:
-            return "パスワードは6文字以上12文字未満で入力してください"
-        case .passwordCharacterFormatError:
-            return "パスワードは半角英数字のみ使えます"
-        case .notMatchConfirmationMail:
-            return "確認用メールアドレスと一致しません"
-        case .notMatchConfirmationPassword:
-            return "確認用パスワードと一致しません"
-        }
     }
 }
