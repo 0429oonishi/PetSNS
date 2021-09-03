@@ -10,7 +10,7 @@
 		4EA5C3C526D99E1100626ADE /* HomePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3C326D99E1100626ADE /* HomePostTableViewCell.swift */; };
 		4EA5C3C626D99E1100626ADE /* HomePostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA5C3C426D99E1100626ADE /* HomePostTableViewCell.xib */; };
 		4EA5C3CE26DCB88F00626ADE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EA5C3CD26DCB88E00626ADE /* GoogleService-Info.plist */; };
-		4EA5C3D026E20C6800626ADE /* LocalValidationCheckers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3CF26E20C6800626ADE /* LocalValidationCheckers.swift */; };
+		4EA5C3D026E20C6800626ADE /* LocalValidationChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3CF26E20C6800626ADE /* LocalValidationChecker.swift */; };
 		755E9AC626D7931C00A17709 /* HomeContainerPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 755E9AC526D7931C00A17709 /* HomeContainerPosts.storyboard */; };
 		755E9AC826D7933C00A17709 /* HomeContainerPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */; };
 		755E9B1E26DB4F9F00A17709 /* SwitchingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E9B1C26DB4F9F00A17709 /* SwitchingTableViewCell.swift */; };
@@ -73,7 +73,7 @@
 		4EA5C3C326D99E1100626ADE /* HomePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostTableViewCell.swift; sourceTree = "<group>"; };
 		4EA5C3C426D99E1100626ADE /* HomePostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePostTableViewCell.xib; sourceTree = "<group>"; };
 		4EA5C3CD26DCB88E00626ADE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4EA5C3CF26E20C6800626ADE /* LocalValidationCheckers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalValidationCheckers.swift; sourceTree = "<group>"; };
+		4EA5C3CF26E20C6800626ADE /* LocalValidationChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalValidationChecker.swift; sourceTree = "<group>"; };
 		755E9AC526D7931C00A17709 /* HomeContainerPosts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeContainerPosts.storyboard; sourceTree = "<group>"; };
 		755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerPostsViewController.swift; sourceTree = "<group>"; };
 		755E9B1C26DB4F9F00A17709 /* SwitchingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchingTableViewCell.swift; sourceTree = "<group>"; };
@@ -265,7 +265,7 @@
 				AB14B47A26DBDAEB007A5F16 /* UserUtil.swift */,
 				AB4397F626DDEA56008C8CA8 /* Indicator.swift */,
 				AB4397F826DDF46B008C8CA8 /* HUDIndicator.swift */,
-				4EA5C3CF26E20C6800626ADE /* LocalValidationCheckers.swift */,
+				4EA5C3CF26E20C6800626ADE /* LocalValidationChecker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -554,7 +554,7 @@
 				AB09946D26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift in Sources */,
 				AB14B47226DBAD2B007A5F16 /* UIViewController+Extension.swift in Sources */,
 				755E9B1E26DB4F9F00A17709 /* SwitchingTableViewCell.swift in Sources */,
-				4EA5C3D026E20C6800626ADE /* LocalValidationCheckers.swift in Sources */,
+				4EA5C3D026E20C6800626ADE /* LocalValidationChecker.swift in Sources */,
 				AB86A84326D3E35B00EA990A /* EditingPostViewController.swift in Sources */,
 				AB86A83526D3E19300EA990A /* HomeViewController.swift in Sources */,
 				AB86A83D26D3E33800EA990A /* ChoosableCameraOrLibraryViewController.swift in Sources */,
