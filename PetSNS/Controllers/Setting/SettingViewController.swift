@@ -37,12 +37,40 @@ final class SettingViewController: UIViewController {
     private func isSwitchingCell(indexPath: IndexPath) -> Bool {
         return indexPath.row == 1 && indexPath.section == 0
     }
+    private let indicator = Indicator(kinds: PKHUDIndicator())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
         
+    }
+    
+    @IBAction private func closeButtonDidTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction private func logoutButtonDidTapped(_ sender: Any) {
+        indicator.show(.progress)
+        UserUtil().logout { result in
+            switch result {
+                case .failure(let title):
+                    self.indicator.flash(.error) {
+                        self.showErrorAlert(title: title)
+                    }
+                case .success:
+                    self.indicator.flash(.success) {
+                        self.presentLoginOrSignUpViewController()
+                    }
+            }
+        }
+    }
+    
+    private func presentLoginOrSignUpViewController() {
+        let loginOrSignUpVC = LoginOrSignUpViewController.instantiate()
+        let nav = UINavigationController(rootViewController: loginOrSignUpVC)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true, completion: nil)
     }
     
     private func setupTableView() {
@@ -54,17 +82,6 @@ final class SettingViewController: UIViewController {
                            forCellReuseIdentifier: ItemTableViewCell.identifier)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView()
-    }
-    
-    @IBAction private func closeButtonDidTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction private func logoutButtonDidTapped(_ sender: Any) {
-        let loginOrSignUpVC = LoginOrSignUpViewController.instantiate()
-        let nav = UINavigationController(rootViewController: loginOrSignUpVC)
-        nav.modalPresentationStyle = .fullScreen
-        self.present(nav, animated: true, completion: nil)
     }
     
 }
