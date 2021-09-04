@@ -35,6 +35,14 @@ final class HomeContainerPostsViewController: UIViewController {
         horizontalScrollView.delegate = self
     }
     
+    func scrollToPage(page: Int, animated: Bool) {
+            var frame: CGRect = horizontalScrollView.bounds
+            frame.origin.x = frame.size.width * CGFloat(page)
+            frame.origin.y = 0;
+        horizontalScrollView.scrollRectToVisible(frame,
+                                                 animated: animated)
+        }
+    
 }
 
 extension HomeContainerPostsViewController: UITableViewDelegate {
