@@ -14,6 +14,7 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var followingButton: UIButton!
     @IBOutlet private weak var selectedMarkView: UIView!
     @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var selectedMarkViewLeftConstraint: NSLayoutConstraint!
     
     private var isLoggedOut = false
     
@@ -42,6 +43,10 @@ final class HomeViewController: UIViewController {
         let nav = UINavigationController(rootViewController: loginOrSignUpVC)
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true, completion: nil)
+    }
+    
+    func moveSelectedMarkView(contentOffset: CGFloat) {
+        selectedMarkViewLeftConstraint.constant = contentOffset
     }
     
 }
