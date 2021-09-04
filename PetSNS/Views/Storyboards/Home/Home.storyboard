@@ -62,7 +62,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IKf-65-YOp">
                                 <rect key="frame" x="0.0" y="128" width="414" height="685"/>
                                 <connections>
-                                    <segue destination="BF7-Xg-06l" kind="embed" id="Ugw-VU-8t4"/>
+                                    <segue destination="Wjl-Qa-HjK" kind="embed" id="ZiE-DL-Eg8"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -97,19 +97,20 @@
                         <outlet property="followingButton" destination="ycm-da-VfS" id="Djp-6n-6Js"/>
                         <outlet property="notificationButton" destination="vvD-2b-t59" id="fsa-c5-07C"/>
                         <outlet property="selectedMarkView" destination="4NK-2b-2Vc" id="qGG-8V-gH6"/>
+                        <outlet property="selectedMarkViewLeftConstraint" destination="cOA-tT-Ohh" id="IUn-SZ-Jg1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3488" y="123"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="0W2-AH-Z90">
+        <!--HomeContainerPosts-->
+        <scene sceneID="WRa-85-cz9">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="BF7-Xg-06l" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UVL-ue-j37" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="HomeContainerPosts" id="Wjl-Qa-HjK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iU3-HK-5Jt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4193" y="123"/>
+            <point key="canvasLocation" x="4186" y="123"/>
         </scene>
     </scenes>
     <resources>
