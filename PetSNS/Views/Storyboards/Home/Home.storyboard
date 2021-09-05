@@ -62,7 +62,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IKf-65-YOp">
                                 <rect key="frame" x="0.0" y="128" width="414" height="685"/>
                                 <connections>
-                                    <segue destination="Wjl-Qa-HjK" kind="embed" id="ZiE-DL-Eg8"/>
+                                    <segue destination="Wjl-Qa-HjK" kind="embed" identifier="HomeContainerPostsIdentifier" id="ZiE-DL-Eg8"/>
                                 </connections>
                             </containerView>
                         </subviews>

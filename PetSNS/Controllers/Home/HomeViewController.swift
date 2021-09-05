@@ -17,6 +17,27 @@ enum PostsPageState: CaseIterable {
         case .following: return 1
         }
     }
+    mutating func checkNowPage(widthPerPage: CGFloat,
+                               selectedConstraint: CGFloat) {
+        let page = Int(selectedConstraint / widthPerPage)
+        for postsPage in PostsPageState.allCases
+        where postsPage.page == page {
+            self = postsPage
+        }
+        self = .all
+    }
+    mutating func changeState() {
+        switch self {
+        case .all: self = .following
+        case .following: self = .all
+        }
+    }
+    func isState(_ state: PostsPageState) -> Bool {
+        switch state {
+        case .all: return self == .following
+        case .following: return self == .all
+        }
+    }
 }
 
 final class HomeViewController: UIViewController {
@@ -29,7 +50,8 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var selectedMarkViewLeftConstraint: NSLayoutConstraint!
     
     private var isLoggedOut = false
-    private var nowPostsPage = PostsPageState.all
+    private var nowPostsPage: PostsPageState = .all
+    private let homeContainerPostsIdentifier = "HomeContainerPostsIdentifier"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,19 +69,17 @@ final class HomeViewController: UIViewController {
     
     @IBAction private func allPostsButtonDidTapped(_ sender: Any) {
         guard let homeContainerPostsVC = children.first as? HomeContainerPostsViewController else { return }
-        if !(nowPostsPage == .all) {
-            homeContainerPostsVC.scrollToPage(page: PostsPageState.all.page,
-                                              animated: true)
-            nowPostsPage = .all
+        if nowPostsPage.isState(.all) {
+            homeContainerPostsVC.scrollToPage(state: .all, animated: true)
+            nowPostsPage.changeState()
         }
     }
     
     @IBAction private func followingButtonDidTapped(_ sender: Any) {
         guard let homeContainerPostsVC = children.first as? HomeContainerPostsViewController else { return }
-        if !(nowPostsPage == .following) {
-            homeContainerPostsVC.scrollToPage(page: PostsPageState.following.page,
-                                              animated: true)
-            nowPostsPage = .following
+        if nowPostsPage.isState(.following) {
+            homeContainerPostsVC.scrollToPage(state: .following, animated: true)
+            nowPostsPage.changeState()
         }
     }
     
@@ -70,18 +90,24 @@ final class HomeViewController: UIViewController {
         self.present(nav, animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == homeContainerPostsIdentifier {
+            let homeContainerPostsVC = segue.destination as? HomeContainerPostsViewController
+            homeContainerPostsVC?.delegate = self
+        }
+    }
+    
+}
+
+extension HomeViewController: HomeContainerPostsVCDelegate {
+    
     func moveSelectedMarkView(contentOffset: CGFloat) {
         selectedMarkViewLeftConstraint.constant = contentOffset
     }
     
     func checkNowPage(widthPerPage: CGFloat) {
-        let page = Int(selectedMarkViewLeftConstraint.constant / widthPerPage)
-        for postsPage in PostsPageState.allCases {
-            if postsPage.page == page {
-                nowPostsPage = postsPage
-                return
-            }
-        }
+        nowPostsPage.checkNowPage(widthPerPage: widthPerPage,
+                                  selectedConstraint: selectedMarkViewLeftConstraint.constant)
     }
     
 }

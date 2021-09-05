@@ -7,11 +7,18 @@
 
 import UIKit
 
+protocol HomeContainerPostsVCDelegate: AnyObject {
+    func checkNowPage(widthPerPage: CGFloat)
+    func moveSelectedMarkView(contentOffset: CGFloat)
+}
+
 final class HomeContainerPostsViewController: UIViewController {
     
     @IBOutlet private weak var allTableView: UITableView!
     @IBOutlet private weak var followingTableView: UITableView!
     @IBOutlet private weak var horizontalScrollView: UIScrollView!
+    
+    weak var delegate: HomeContainerPostsVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +49,13 @@ final class HomeContainerPostsViewController: UIViewController {
         horizontalScrollView.delegate = self
     }
     
-    func scrollToPage(page: Int, animated: Bool) {
-        var frame: CGRect = horizontalScrollView.bounds
-        frame.origin.x = frame.size.width * CGFloat(page)
-        frame.origin.y = 0
+    func scrollToPage(state: PostsPageState, animated: Bool) {
+        let horizontalScrollViewWidth = horizontalScrollView.frame.width
+        let horizontalScrollViewHeight = horizontalScrollView.frame.height
+        let frame = CGRect(x: horizontalScrollViewWidth * CGFloat(state.page),
+                           y: 0,
+                           width: horizontalScrollViewWidth,
+                           height: horizontalScrollViewHeight)
         horizontalScrollView.scrollRectToVisible(frame,
                                                  animated: animated)
     }
@@ -60,22 +70,18 @@ extension HomeContainerPostsViewController: UITableViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let homeVC = parent as? HomeViewController else { return }
-        if (scrollView == self.horizontalScrollView) {
+        if scrollView == horizontalScrollView {
             let pageCounts = PostsPageState.allCases.count
             let scrollOffset = scrollView.contentOffset.x / CGFloat(pageCounts)
-            homeVC.moveSelectedMarkView(contentOffset: scrollOffset)
-            print(scrollOffset)
+            delegate?.moveSelectedMarkView(contentOffset: scrollOffset)
         }
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        guard let homeVC = parent as? HomeViewController else { return }
-        if (scrollView == self.horizontalScrollView) {
-            print(scrollView.bounds.width)
+        if scrollView == horizontalScrollView {
             let pageCounts = PostsPageState.allCases.count
             let widthPerPage = scrollView.bounds.width / CGFloat(pageCounts)
-            homeVC.checkNowPage(widthPerPage: widthPerPage)
+            delegate?.checkNowPage(widthPerPage: widthPerPage)
         }
     }
 }
