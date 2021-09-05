@@ -7,6 +7,18 @@
 
 import UIKit
 
+enum PostsPageState: CaseIterable {
+    case all
+    case following
+    
+    var page: Int {
+        switch self {
+        case .all: return 0
+        case .following: return 1
+        }
+    }
+}
+
 final class HomeViewController: UIViewController {
     
     @IBOutlet private weak var notificationButton: UIBarButtonItem!
@@ -17,9 +29,7 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var selectedMarkViewLeftConstraint: NSLayoutConstraint!
     
     private var isLoggedOut = false
-    private var isAllPosts: Bool {
-        return selectedMarkViewLeftConstraint.constant == 0
-    }
+    private var nowPostsPage = PostsPageState.all
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +47,19 @@ final class HomeViewController: UIViewController {
     
     @IBAction private func allPostsButtonDidTapped(_ sender: Any) {
         guard let homeContainerPostsVC = children.first as? HomeContainerPostsViewController else { return }
-        if isAllPosts == false {
-            homeContainerPostsVC.scrollToPage(page: 0, animated: true)
+        if !(nowPostsPage == .all) {
+            homeContainerPostsVC.scrollToPage(page: PostsPageState.all.page,
+                                              animated: true)
+            nowPostsPage = .all
         }
     }
     
     @IBAction private func followingButtonDidTapped(_ sender: Any) {
         guard let homeContainerPostsVC = children.first as? HomeContainerPostsViewController else { return }
-        if isAllPosts {
-            homeContainerPostsVC.scrollToPage(page: 1, animated: true)
+        if !(nowPostsPage == .following) {
+            homeContainerPostsVC.scrollToPage(page: PostsPageState.following.page,
+                                              animated: true)
+            nowPostsPage = .following
         }
     }
     
@@ -58,6 +72,16 @@ final class HomeViewController: UIViewController {
     
     func moveSelectedMarkView(contentOffset: CGFloat) {
         selectedMarkViewLeftConstraint.constant = contentOffset
+    }
+    
+    func checkNowPage(widthPerPage: CGFloat) {
+        let page = Int(selectedMarkViewLeftConstraint.constant / widthPerPage)
+        for postsPage in PostsPageState.allCases {
+            if postsPage.page == page {
+                nowPostsPage = postsPage
+                return
+            }
+        }
     }
     
 }
