@@ -16,19 +16,26 @@ final class HomeContainerPostsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupTableView()
+        setupAllTableView()
+        setupFollowingTableView()
         setupScrollView()
         
     }
     
-    private func setupTableView() {
-        [allTableView, followingTableView]
-            .forEach {
-                $0?.delegate = self
-                $0?.dataSource = self
-                $0?.rowHeight = UITableView.automaticDimension
-                $0?.register(HomePostTableViewCell.nib,
-                             forCellReuseIdentifier: HomePostTableViewCell.identifier) }
+    private func setupAllTableView() {
+        allTableView.delegate = self
+        allTableView.dataSource = self
+        allTableView.rowHeight = UITableView.automaticDimension
+        allTableView.register(HomePostTableViewCell.nib,
+                              forCellReuseIdentifier: HomePostTableViewCell.identifier)
+    }
+    
+    private func setupFollowingTableView() {
+        followingTableView.delegate = self
+        followingTableView.dataSource = self
+        followingTableView.rowHeight = UITableView.automaticDimension
+        followingTableView.register(HomePostTableViewCell.nib,
+                                    forCellReuseIdentifier: HomePostTableViewCell.identifier)
     }
     
     private func setupScrollView() {
@@ -36,12 +43,12 @@ final class HomeContainerPostsViewController: UIViewController {
     }
     
     func scrollToPage(page: Int, animated: Bool) {
-            var frame: CGRect = horizontalScrollView.bounds
-            frame.origin.x = frame.size.width * CGFloat(page)
-            frame.origin.y = 0;
+        var frame: CGRect = horizontalScrollView.bounds
+        frame.origin.x = frame.size.width * CGFloat(page)
+        frame.origin.y = 0
         horizontalScrollView.scrollRectToVisible(frame,
                                                  animated: animated)
-        }
+    }
     
 }
 
@@ -55,9 +62,20 @@ extension HomeContainerPostsViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let homeVC = parent as? HomeViewController else { return }
         if (scrollView == self.horizontalScrollView) {
-            let scrollOffset = scrollView.contentOffset.x / 2
+            let pageCounts = PostsPageState.allCases.count
+            let scrollOffset = scrollView.contentOffset.x / CGFloat(pageCounts)
             homeVC.moveSelectedMarkView(contentOffset: scrollOffset)
             print(scrollOffset)
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        guard let homeVC = parent as? HomeViewController else { return }
+        if (scrollView == self.horizontalScrollView) {
+            print(scrollView.bounds.width)
+            let pageCounts = PostsPageState.allCases.count
+            let widthPerPage = scrollView.bounds.width / CGFloat(pageCounts)
+            homeVC.checkNowPage(widthPerPage: widthPerPage)
         }
     }
 }
