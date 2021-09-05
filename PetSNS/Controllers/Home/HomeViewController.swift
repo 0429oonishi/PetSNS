@@ -23,6 +23,7 @@ enum PostsPageState: CaseIterable {
         for postsPage in PostsPageState.allCases
         where postsPage.page == page {
             self = postsPage
+            return
         }
         self = .all
     }
