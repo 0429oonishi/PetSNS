@@ -15,6 +15,7 @@ final class SignUpViewController: UIViewController {
     @IBOutlet private weak var confirmationPasswordTextField: UITextField!
     @IBOutlet private weak var registerButton: UIButton!
     
+    private let indicator = Indicator(kinds: PKHUDIndicator())
     private let signUpValidation = LocalValidationChecker()
     private let secureButton = UIButton()
     private let confirmationSecureButton = UIButton()
@@ -49,14 +50,27 @@ final class SignUpViewController: UIViewController {
               let password = passwordTextField.text, 
               let confirmationPassword = confirmationPasswordTextField.text 
         else { return }
-        
         if let alertMessage = confirmInput(mail: mail, 
                                            confirmationMail: confirmationMail, 
                                            password: password, 
                                            confirmationPassword: confirmationPassword) {
             self.showErrorAlert(title: "確認", message: alertMessage)
         } else {
-            self.dismiss(animated: true, completion: nil)
+            indicator.show(.progress)
+            UserUtil().signUp(email: mail, 
+                              password: password) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .failure(let title):
+                    self.indicator.flash(.error) {
+                        self.showErrorAlert(title: title)
+                    }
+                case .success:
+                    self.indicator.flash(.success) {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
         }
     }
     
