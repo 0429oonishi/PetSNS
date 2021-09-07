@@ -38,6 +38,14 @@ final class LocalValidationChecker {
         return checkMailFormat ? .succucess : .mailAddressFormatError
     }
     
+    func matchConfirmationMailChecker(target: String, confirmation: String) -> LocalValidation {
+        if target == confirmation {
+            return .succucess
+        } else {
+            return .notMatchConfirmationMail
+        }
+    }
+    
     func numberOfPasswordCharactersChecker(password: String) -> LocalValidation {
         if 6 <= password.count && password.count <= 12 {
             return .succucess
@@ -51,11 +59,11 @@ final class LocalValidationChecker {
         return checkPasswordFormat ? .succucess : .passwordCharacterFormatError
     }
     
-    func matchConfirmationChecker(target: String, confirmation: String) -> LocalValidation {
+    func matchConfirmationPasswordChecker(target: String, confirmation: String) -> LocalValidation {
         if target == confirmation {
             return .succucess
         } else {
-            return .notMatchConfirmationMail
+            return .notMatchConfirmationPassword
         }
     }
 }
