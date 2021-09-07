@@ -91,8 +91,8 @@ final class SignUpViewController: UIViewController {
         let checkers = [signUpValidation.mailAddressFormatChecker(mail: mail),
                         signUpValidation.numberOfPasswordCharactersChecker(password: password),
                         signUpValidation.passwordCharacterFormatChecker(password: password),
-                        signUpValidation.matchConfirmationChecker(target: mail, confirmation: confirmationMail),
-                        signUpValidation.matchConfirmationChecker(target: password, confirmation: confirmationPassword)]
+                        signUpValidation.matchConfirmationMailChecker(target: mail, confirmation: confirmationMail),
+                        signUpValidation.matchConfirmationPasswordChecker(target: password, confirmation: confirmationPassword)]
         
         if checkers.filter({ $0 != .succucess }).isEmpty {
             return nil
