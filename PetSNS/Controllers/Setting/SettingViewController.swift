@@ -84,6 +84,13 @@ final class SettingViewController: UIViewController {
         tableView.tableFooterView = UIView()
     }
     
+    private func showActivityVC() {
+        guard let shareUrl = URL(string: "https://apps.apple.com/jp/app/movie-reviews-%E6%98%A0%E7%94%BB%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E7%AE%A1%E7%90%86/id1578614989") else { return }
+        let activityVC = UIActivityViewController(activityItems: [shareUrl],
+                                                  applicationActivities: nil)
+        present(activityVC, animated: true, completion: nil)
+    }
+    
 }
 
 extension SettingViewController: UITableViewDelegate {
@@ -105,14 +112,6 @@ extension SettingViewController: UITableViewDelegate {
                 let privacyAndSecurityVC = PrivacyAndSecurityViewController.instantiate()
                 self.navigationController?.pushViewController(privacyAndSecurityVC, animated: true)
         }
-        
-        func showActivityVC() {
-            guard let shareUrl = URL(string: "https://apps.apple.com/jp/app/movie-reviews-%E6%98%A0%E7%94%BB%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E7%AE%A1%E7%90%86/id1578614989") else { return }
-            let activityVC = UIActivityViewController(activityItems: [shareUrl],
-                                                      applicationActivities: nil)
-            present(activityVC, animated: true, completion: nil)
-        }
-        
     }
     
     func tableView(_ tableView: UITableView,
