@@ -26,5 +26,9 @@ final class OtherPetsCollectionViewCell: UICollectionViewCell {
     func configureAdditionalButton() {
         otherPetsImageView.image = UIImage(systemName: "plus.circle")
     }
+    
+    func changeHighlight() {
+        alpha = isHighlighted ? 0.5 : 1.0
+    }
 
 }
