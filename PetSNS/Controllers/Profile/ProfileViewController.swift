@@ -65,6 +65,10 @@ final class ProfileViewController: UIViewController {
         self.present(nav, animated: true, completion: nil)
     }
     
+    private func changeCellHighlight(_ cell: UICollectionViewCell) {
+        cell.alpha = cell.isHighlighted ? 0.5 : 1.0
+    }
+    
 }
 
 extension ProfileViewController: UICollectionViewDelegate {
@@ -77,6 +81,17 @@ extension ProfileViewController: UICollectionViewDelegate {
             present(navigationVC, animated: true, completion: nil)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+        changeCellHighlight(cell)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+        changeCellHighlight(cell)
+    }
+
 }
 
 extension ProfileViewController: UICollectionViewDataSource {
