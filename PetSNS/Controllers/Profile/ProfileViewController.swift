@@ -89,6 +89,7 @@ final class ProfileViewController: UIViewController {
         accompanimentCollectionView.dataSource = self
         accompanimentCollectionView.register(OtherPetsCollectionViewCell.nib,
                                              forCellWithReuseIdentifier: OtherPetsCollectionViewCell.identifier)
+        accompanimentCollectionView.isScrollEnabled = false
     }
     
     private func presentAdditionalOrEditPetProfileVC() {
