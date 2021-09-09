@@ -65,6 +65,15 @@ final class ProfileViewController: UIViewController {
         self.present(nav, animated: true, completion: nil)
     }
     
+    private func setupCollectionView() {
+        accompanimentCollectionView.collectionViewLayout = createLayout()
+        accompanimentCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        accompanimentCollectionView.delegate = self
+        accompanimentCollectionView.dataSource = self
+        accompanimentCollectionView.register(OtherPetsCollectionViewCell.nib,
+                                             forCellWithReuseIdentifier: OtherPetsCollectionViewCell.identifier)
+    }
+
 }
 
 extension ProfileViewController: UICollectionViewDelegate {
@@ -101,11 +110,7 @@ extension ProfileViewController: UICollectionViewDataSource {
             withReuseIdentifier: OtherPetsCollectionViewCell.identifier, for: indexPath
         ) as! OtherPetsCollectionViewCell
         let isAdditionalButton = (indexPath.row == myPets.count)
-        if isAdditionalButton {
-            cell.configureAdditionalButton()
-        } else {
-            cell.configurePet()
-        }
+        cell.configure(isAdditionalButton)
         cell.layer.cornerRadius = cell.bounds.height / 2
         return cell
     }
@@ -132,15 +137,6 @@ extension ProfileViewController {
         let layout = UICollectionViewCompositionalLayout(section: section)
         
         return layout
-    }
-    
-    private func setupCollectionView() {
-        accompanimentCollectionView.collectionViewLayout = createLayout()
-        accompanimentCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        accompanimentCollectionView.delegate = self
-        accompanimentCollectionView.dataSource = self
-        accompanimentCollectionView.register(OtherPetsCollectionViewCell.nib,
-                                             forCellWithReuseIdentifier: OtherPetsCollectionViewCell.identifier)
     }
 
 }

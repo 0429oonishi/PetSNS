@@ -19,12 +19,10 @@ final class OtherPetsCollectionViewCell: UICollectionViewCell {
 
     }
     
-    func configurePet() {
-        otherPetsImageView.image = UIImage(named: "pet.noimage.icon")
-    }
-    
-    func configureAdditionalButton() {
-        otherPetsImageView.image = UIImage(systemName: "plus.circle")
+    func configure(_ isAdditionalButton: Bool) {
+        otherPetsImageView.image = isAdditionalButton
+            ? UIImage(systemName: "plus.circle")
+            : UIImage(named: "pet.noimage.icon")
     }
     
     func changeHighlight() {
