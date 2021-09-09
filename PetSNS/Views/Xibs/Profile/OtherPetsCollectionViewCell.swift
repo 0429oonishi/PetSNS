@@ -23,7 +23,7 @@ final class OtherPetsCollectionViewCell: UICollectionViewCell {
         otherPetsImageView.image = UIImage(named: "pet.noimage.icon")
     }
     
-    func configurePlusButton() {
+    func configureAdditionalButton() {
         otherPetsImageView.image = UIImage(systemName: "plus.circle")
     }
 
