@@ -18,5 +18,13 @@ final class OtherPetsCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
 
     }
+    
+    func configurePet() {
+        otherPetsImageView.image = UIImage(named: "pet.noimage.icon")
+    }
+    
+    func configurePlusButton() {
+        otherPetsImageView.image = UIImage(systemName: "plus.circle")
+    }
 
 }
