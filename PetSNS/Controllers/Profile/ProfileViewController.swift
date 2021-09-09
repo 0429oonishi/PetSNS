@@ -7,9 +7,25 @@
 
 import UIKit
 
-struct PetInfomation: Hashable {
+struct PetInfomation {
     var name: String
     var imageData: Data?
+}
+
+extension PetInfomation {
+    
+    static let myPets: [PetInfomation] = [PetInfomation(name: "アッシュ", imageData: nil),
+                                          PetInfomation(name: "アッシュ", imageData: nil),
+                                          PetInfomation(name: "アッシュ", imageData: nil),
+                                          PetInfomation(name: "アッシュ", imageData: nil),
+                                          PetInfomation(name: "アッシュ", imageData: nil),
+                                          PetInfomation(name: "アッシュ", imageData: nil),
+                                          PetInfomation(name: "アッシュ", imageData: nil),
+                                          PetInfomation(name: "アッシュ", imageData: nil),
+                                          PetInfomation(name: "アッシュ", imageData: nil),
+                                          PetInfomation(name: "アッシュ", imageData: nil)
+    ]
+    
 }
 
 final class ProfileViewController: UIViewController {
@@ -22,17 +38,21 @@ final class ProfileViewController: UIViewController {
     @IBOutlet private weak var introductionTextView: UITextView!
     @IBOutlet private weak var postedImageCollectionView: UICollectionView!
     
-    private var myPets: [PetInfomation] =
-        [PetInfomation(name: "アッシュ", imageData: nil),
-         PetInfomation(name: "アッシュ", imageData: nil),
-         PetInfomation(name: "アッシュ", imageData: nil),
-         PetInfomation(name: "アッシュ", imageData: nil),
-         PetInfomation(name: "アッシュ", imageData: nil),
-         PetInfomation(name: "アッシュ", imageData: nil),
-         PetInfomation(name: "アッシュ", imageData: nil),
-         PetInfomation(name: "アッシュ", imageData: nil),
-         PetInfomation(name: "アッシュ", imageData: nil),
-         PetInfomation(name: "アッシュ", imageData: nil)]
+    private var testData = PetInfomation.myPets
+    private enum CellType: CaseIterable {
+        case pet
+        case additional
+    }
+    private func isAdditional(row: Int) -> Bool {
+        return testData.count == row
+    }
+    private func getCellType(row: Int) -> CellType {
+        if isAdditional(row: row) {
+            return .additional
+        } else {
+            return .pet
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,10 +72,7 @@ final class ProfileViewController: UIViewController {
     }
     
     @IBAction private func editButtonDidTapped(_ sender: Any) {
-        let additionalOrEditPetProfileVC = AdditionalOrEditPetProfileViewController.instantiate()
-        let nav = UINavigationController(rootViewController: additionalOrEditPetProfileVC)
-        nav.modalPresentationStyle = .fullScreen
-        self.present(nav, animated: true, completion: nil)
+        presentAdditionalOrEditPetProfileVC()
     }
     
     @IBAction private func settingButtonDidTapped(_ sender: Any) {
@@ -73,45 +90,68 @@ final class ProfileViewController: UIViewController {
         accompanimentCollectionView.register(OtherPetsCollectionViewCell.nib,
                                              forCellWithReuseIdentifier: OtherPetsCollectionViewCell.identifier)
     }
-
+    
+    private func presentAdditionalOrEditPetProfileVC() {
+        let additionalOrEditPetProfileVC = AdditionalOrEditPetProfileViewController.instantiate()
+        let navigationVC = UINavigationController(rootViewController: additionalOrEditPetProfileVC)
+        navigationVC.modalPresentationStyle = .fullScreen
+        present(navigationVC, animated: true, completion: nil)
+    }
+    
 }
 
 extension ProfileViewController: UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let isAdditionalButtonDidTapped = (indexPath.row == myPets.count)
-        if isAdditionalButtonDidTapped {
-            let additionalOrEditPetProfileVC = AdditionalOrEditPetProfileViewController.instantiate()
-            let navigationVC = UINavigationController(rootViewController: additionalOrEditPetProfileVC)
-            present(navigationVC, animated: true, completion: nil)
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        let cellType = getCellType(row: indexPath.row)
+        switch cellType {
+        case .additional:
+            presentAdditionalOrEditPetProfileVC()
+        case .pet:
+            // ペットの編集に移動させる
+            break
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        didHighlightItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? OtherPetsCollectionViewCell else { return }
         cell.changeHighlight()
     }
     
-    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        didUnhighlightItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? OtherPetsCollectionViewCell else { return }
         cell.changeHighlight()
     }
-
+    
 }
 
 extension ProfileViewController: UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return myPets.count + 1
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        // 追加ボタン用に+1する
+        return testData.count + 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: OtherPetsCollectionViewCell.identifier, for: indexPath
+            withReuseIdentifier: OtherPetsCollectionViewCell.identifier,
+            for: indexPath
         ) as! OtherPetsCollectionViewCell
-        let isAdditionalButton = (indexPath.row == myPets.count)
-        cell.configure(isAdditionalButton)
-        cell.layer.cornerRadius = cell.bounds.height / 2
+        let image: UIImage = {
+            let isAdditionalButton = (indexPath.row == testData.count)
+            if isAdditionalButton {
+                return UIImage(systemName: "plus.circle")!
+            } else {
+                return UIImage(named: "pet.noimage.icon")!
+            }
+        }()
+        cell.configure(image: image)
+        cell.setCircleImage(height: cell.frame.height)
         return cell
     }
     
@@ -129,14 +169,15 @@ extension ProfileViewController {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                        subitem: item,
                                                        count: 1)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-
+        group.contentInsets = NSDirectionalEdgeInsets(top: 5,
+                                                      leading: 5,
+                                                      bottom: 5,
+                                                      trailing: 5)
+        
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        
+        let layout = UICollectionViewCompositionalLayout(section: section)        
         return layout
     }
-
+    
 }
