@@ -152,7 +152,6 @@ extension ProfileViewController: UICollectionViewDataSource {
             }
         }()
         cell.configure(image: image)
-        cell.setCircleImage(height: cell.frame.height)
         return cell
     }
     

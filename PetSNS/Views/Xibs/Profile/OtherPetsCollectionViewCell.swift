@@ -19,12 +19,13 @@ final class OtherPetsCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func configure(image: UIImage) {
-        otherPetsImageView.image = image
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        otherPetsImageView.layer.cornerRadius = layer.frame.width / 2
     }
     
-    func setCircleImage(height: CGFloat) {
-        otherPetsImageView.layer.cornerRadius = height / 2
+    func configure(image: UIImage) {
+        otherPetsImageView.image = image
     }
     
     func changeHighlight() {
