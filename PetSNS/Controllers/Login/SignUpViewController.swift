@@ -41,6 +41,7 @@ final class SignUpViewController: UIViewController {
         setUpPasswordTextField()
         setUpConfirmationPasswordTextField()
         setUpSecureButton()
+        setupNotification()
         
     }
     
@@ -154,6 +155,28 @@ private extension SignUpViewController {
         confirmationSecureButton.addTarget(self, 
                                            action: #selector(cunfirmationSecureButtonDidTapped), 
                                            for: .touchUpInside)
+    }
+    
+    private func setupNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+
+    }
+
+    @objc
+    private func keyboardWillShow(notification: Notification) {
+        
+    }
+    
+    @objc
+    private func keyboardWillHide(notification: Notification) {
+        
     }
     
     @objc
