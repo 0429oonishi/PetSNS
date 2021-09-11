@@ -9,35 +9,24 @@ import UIKit
 
 final class ThemeColorCollectionViewCell: UICollectionViewCell {
     
-    var sellectedColor: ThemeColor = .defaultColor {
-        didSet {
-            
-        }
-    }
+    @IBOutlet private weak var checkmarkImageView: UIImageView!
     static var identifier: String { String(describing: self) }
     static var nib: UINib { UINib(nibName: String(describing: self), bundle: nil) }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    func configure(color: UIColor,
+                   isHidden: Bool,
+                   imageColor: UIColor) {
+        self.backgroundColor = color
+        checkmarkImageView.isHidden = isHidden
+        let image = checkmarkImageView.image?.withTintColor(imageColor)
+        checkmarkImageView.image = image
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        self.deSellectedColor()
-    }
-    
-    func configure(themeColor: ThemeColor, cornerRadius: CGFloat) {
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
-        self.backgroundColor = themeColor.color
-        self.layer.cornerRadius = cornerRadius
+        self.layer.cornerRadius = self.frame.height / 2
+        
     }
     
-    func setupSellectedColor() {
-        self.layer.borderWidth = 5
-        self.layer.borderColor = UIColor.yellow.cgColor
-    }
-    
-    func deSellectedColor() {
-        self.layer.borderWidth = 0
-    }
 }
