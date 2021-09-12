@@ -38,6 +38,7 @@ final class SignUpViewController: UIViewController {
                                                             passwordText, 
                                                             confirmationPasswordText])
     }
+    private var deviceType: DeviceType = .large
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,7 @@ final class SignUpViewController: UIViewController {
         setUpConfirmationPasswordTextField()
         setUpSecureButton()
         setupNotification()
+        setupDeviceType()
         
     }
     
@@ -164,55 +166,6 @@ private extension SignUpViewController {
                                            for: .touchUpInside)
     }
     
-    private func setupNotification() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShow),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
-        
-    }
-    
-    @objc
-    private func keyboardWillShow(notification: Notification) {
-        changeLayout(verticalSpace: 5, withDuration: 1.0)
-        changeStackViewSpacing(spacing: 5, withDuration: 1.0)
-    }
-    
-    @objc
-    private func keyboardWillHide(notification: Notification) {
-        changeLayout(verticalSpace: 50, withDuration: 1.0)
-        changeStackViewSpacing(spacing: 20, withDuration: 1.0)
-    }
-    
-    private func changeLayout(verticalSpace: CGFloat, withDuration: TimeInterval) {
-        [signUpLabelTopConstraint,
-         mailAddressTopConstraint,
-         passwordTopConstraint,
-         registerButtonTopConstraint].forEach { $0?.constant = verticalSpace }
-        
-        UIView.animate(withDuration: withDuration,
-                       animations: { [weak self] in
-                        guard let self = self else { return }
-                        self.view.layoutIfNeeded()
-                       }, completion: nil)
-
-    }
-    
-    private func changeStackViewSpacing(spacing: CGFloat, withDuration: TimeInterval) {
-        [mailStackView,
-         passwordStackView].forEach { $0?.spacing = spacing }
-        
-        UIView.animate(withDuration: withDuration,
-                       animations: { [weak self] in
-                        guard let self = self else { return }
-                        self.view.layoutIfNeeded()
-                       }, completion: nil)
-    }
-    
     @objc
     func secureButtonDidTapped() {
         if passwordTextField.isSecureTextEntry {
@@ -232,4 +185,61 @@ private extension SignUpViewController {
         }
         confirmationPasswordTextField.isSecureTextEntry.toggle()
     }
+    
+    func setupNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
+    func setupDeviceType() {
+        deviceType.getDeviceType()
+    }
+    
+    @objc
+    private func keyboardWillShow(notification: Notification) {
+        changeLayout(verticalSpace: deviceType.verticalLayoutSpace,
+                     withDuration: 1.0)
+        changeStackViewSpacing(spacing: deviceType.verticalStackViewSpace,
+                               withDuration: 1.0)
+    }
+    
+    @objc
+    func keyboardWillHide(notification: Notification) {
+        changeLayout(verticalSpace: deviceType.defaultVerticalLayoutSpace,
+                     withDuration: 1.0)
+        changeStackViewSpacing(spacing: deviceType.defaultVerticalStackViewSpace,
+                               withDuration: 1.0)
+    }
+    
+    func changeLayout(verticalSpace: CGFloat, withDuration: TimeInterval) {
+        [signUpLabelTopConstraint,
+         mailAddressTopConstraint,
+         passwordTopConstraint,
+         registerButtonTopConstraint].forEach { $0?.constant = verticalSpace }
+        
+        UIView.animate(withDuration: withDuration,
+                       animations: { [weak self] in
+                        guard let self = self else { return }
+                        self.view.layoutIfNeeded()
+                       }, completion: nil)
+        
+    }
+    
+    func changeStackViewSpacing(spacing: CGFloat, withDuration: TimeInterval) {
+        [mailStackView,
+         passwordStackView].forEach { $0?.spacing = spacing }
+        
+        UIView.animate(withDuration: withDuration,
+                       animations: { [weak self] in
+                        guard let self = self else { return }
+                        self.view.layoutIfNeeded()
+                       }, completion: nil)
+    }
+    
 }
