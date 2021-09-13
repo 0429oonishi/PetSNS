@@ -108,11 +108,8 @@
                         <outlet property="confirmationMailAddressTextField" destination="WdM-tE-5El" id="3Ez-iJ-iyM"/>
                         <outlet property="confirmationPasswordTextField" destination="Enl-Zs-Wji" id="Ux1-3M-vJM"/>
                         <outlet property="mailAddressTextField" destination="f9o-uD-V8O" id="IEw-Ou-dbv"/>
-                        <outlet property="mailStackView" destination="T6d-iW-RSu" id="Ngk-sa-asU"/>
-                        <outlet property="passwordStackView" destination="im1-QB-Dtt" id="5xu-F7-nB8"/>
                         <outlet property="passwordTextField" destination="8Tk-Qe-Xqs" id="LoN-9g-Fo5"/>
                         <outlet property="registerButton" destination="CSp-oz-B6Y" id="GYV-Ml-Sfu"/>
-                        <outlet property="registerButtonTopConstraint" destination="i6H-HJ-OQn" id="Ans-0v-HK5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
