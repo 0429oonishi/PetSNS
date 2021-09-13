@@ -8,36 +8,36 @@
 import UIKit
 
 protocol ChangeLayoutProtocol: AnyObject {
-    func changeLayout(constraints: [NSLayoutConstraint?],
-                      verticalSpace: CGFloat,
-                      withDuration: TimeInterval)
-    func changeStackViewSpacing(stackViews: [UIStackView?],
-                                spacing: CGFloat,
-                                withDuration: TimeInterval)
+    func changeViewFrame(keyboardPositionY: CGFloat,
+                   hidingPositionY: CGFloat,
+                   withDuration: TimeInterval)
+    func returnOriginalViewFrame()
 }
 
 extension ChangeLayoutProtocol where Self: UIViewController {
     
-    func changeLayout(constraints: [NSLayoutConstraint?],
-                      verticalSpace: CGFloat,
-                      withDuration: TimeInterval = 1.0) {
-        constraints
-            .compactMap { $0 }
-            .forEach { $0.constant = verticalSpace }
-        UIView.animate(withDuration: withDuration) {
-            self.view.layoutIfNeeded()
+    func changeViewFrame(keyboardPositionY: CGFloat,
+                   hidingPositionY: CGFloat,
+                   withDuration: TimeInterval = 0.25) {
+        let transformY = keyboardPositionY - hidingPositionY
+        if keyboardPositionY < hidingPositionY {
+            UIView.animate(withDuration: withDuration) {
+                self.view.frame = CGRect(x: 0,
+                                         y: self.view.frame.origin.y + transformY,
+                                         width: self.view.bounds.width,
+                                         height: self.view.bounds.height)
+            }
+        } else {
+            self.returnOriginalViewFrame()
         }
     }
-    
-    func changeStackViewSpacing(stackViews: [UIStackView?],
-                                spacing: CGFloat,
-                                withDuration: TimeInterval = 1.0) {
-        stackViews
-            .compactMap { $0 }
-            .forEach { $0.spacing = spacing }
-        UIView.animate(withDuration: withDuration) {
-            self.view.layoutIfNeeded()
-        }
+
+    func returnOriginalViewFrame() {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.view.frame = CGRect(x: 0,
+                                     y: 0,
+                                     width: self.view.bounds.width,
+                                     height: self.view.bounds.height)
+        }, completion: nil)
     }
-    
 }

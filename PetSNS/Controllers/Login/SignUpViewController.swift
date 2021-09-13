@@ -17,14 +17,7 @@ final class SignUpViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var confirmationPasswordTextField: UITextField!
     @IBOutlet private weak var registerButton: UIButton!
-    
-    @IBOutlet private weak var signUpLabelTopConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var mailAddressTopConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var passwordTopConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var registerButtonTopConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var mailStackView: UIStackView!
-    @IBOutlet private weak var passwordStackView: UIStackView!
-    
+        
     private let indicator = Indicator(kinds: PKHUDIndicator())
     private let signUpValidation = LocalValidationChecker()
     private let secureButton = UIButton()
@@ -199,32 +192,19 @@ private extension SignUpViewController {
     }
     
     @objc
-    func keyboardWillShow() {
-        let deviceType = getDeviceType()
-        changeLayout(constraints: [signUpLabelTopConstraint,
-                                   mailAddressTopConstraint,
-                                   passwordTopConstraint,
-                                   registerButtonTopConstraint],
-                     verticalSpace: deviceType.verticalLayoutSpace)
-        
-        changeStackViewSpacing(stackViews: [mailStackView,
-                                            passwordStackView],
-                               spacing: deviceType.verticalStackViewSpace)
+    func keyboardWillShow(notification: Notification) {
+        guard let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
+                                        as? NSValue)?.cgRectValue.size.height
+        else { return }
+        let keyboardPositionY = view.frame.size.height - keyboardHeight
+        let registerButtonY = registerButton.frame.origin.y + registerButton.frame.height
+        changeViewFrame(keyboardPositionY: keyboardPositionY,
+                  hidingPositionY: registerButtonY)
     }
     
     @objc
     func keyboardWillHide(notification: Notification) {
-        let deviceType = getDeviceType()
-        changeLayout(constraints: [signUpLabelTopConstraint,
-                                   mailAddressTopConstraint,
-                                   passwordTopConstraint,
-                                   registerButtonTopConstraint],
-                     verticalSpace: deviceType.defaultVerticalLayoutSpace)
-        
-        changeStackViewSpacing(stackViews: [mailStackView,
-                                            passwordStackView],
-                               spacing: deviceType.defaultVerticalStackViewSpace)
+        returnOriginalViewFrame()
     }
-    
 }
 
