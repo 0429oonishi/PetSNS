@@ -8,7 +8,6 @@
 import UIKit
 
 extension SignUpViewController: ChangeLayoutProtocol { }
-extension SignUpViewController: DeviceTypeProtocol { }
 
 final class SignUpViewController: UIViewController {
     
@@ -17,7 +16,7 @@ final class SignUpViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var confirmationPasswordTextField: UITextField!
     @IBOutlet private weak var registerButton: UIButton!
-        
+    
     private let indicator = Indicator(kinds: PKHUDIndicator())
     private let signUpValidation = LocalValidationChecker()
     private let secureButton = UIButton()
@@ -190,7 +189,7 @@ private extension SignUpViewController {
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
     }
-    
+
     @objc
     func keyboardWillShow(notification: Notification) {
         guard let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
@@ -199,12 +198,13 @@ private extension SignUpViewController {
         let keyboardPositionY = view.frame.size.height - keyboardHeight
         let registerButtonY = registerButton.frame.origin.y + registerButton.frame.height
         changeViewFrame(keyboardPositionY: keyboardPositionY,
-                  hidingPositionY: registerButtonY)
+                        hidingPositionY: registerButtonY)
     }
     
     @objc
     func keyboardWillHide(notification: Notification) {
         returnOriginalViewFrame()
     }
+    
 }
 

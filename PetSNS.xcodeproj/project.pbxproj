@@ -25,7 +25,6 @@
 		AB09946D26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB09946B26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift */; };
 		AB09946E26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB09946C26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib */; };
 		AB0C76B726EE102500BF5B64 /* ChangeLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0C76B626EE102500BF5B64 /* ChangeLayoutProtocol.swift */; };
-		AB0C76BB26EE114400BF5B64 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0C76BA26EE114400BF5B64 /* DeviceType.swift */; };
 		AB14B47226DBAD2B007A5F16 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14B47126DBAD2B007A5F16 /* UIViewController+Extension.swift */; };
 		AB14B47526DBB4E5007A5F16 /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB14B47426DBB4E5007A5F16 /* Top.storyboard */; };
 		AB14B47726DBC08A007A5F16 /* TopTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14B47626DBC08A007A5F16 /* TopTabBarController.swift */; };
@@ -96,7 +95,6 @@
 		AB09946B26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetConfigurationTableViewCell.swift; sourceTree = "<group>"; };
 		AB09946C26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetConfigurationTableViewCell.xib; sourceTree = "<group>"; };
 		AB0C76B626EE102500BF5B64 /* ChangeLayoutProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLayoutProtocol.swift; sourceTree = "<group>"; };
-		AB0C76BA26EE114400BF5B64 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		AB14B47126DBAD2B007A5F16 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		AB14B47426DBB4E5007A5F16 /* Top.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Top.storyboard; sourceTree = "<group>"; };
 		AB14B47626DBC08A007A5F16 /* TopTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarController.swift; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				AB0C76B626EE102500BF5B64 /* ChangeLayoutProtocol.swift */,
-				AB0C76BA26EE114400BF5B64 /* DeviceType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -595,7 +592,6 @@
 				AB86A84726D3E37100EA990A /* FollowOrFollowerListViewController.swift in Sources */,
 				4EA5C3C526D99E1100626ADE /* HomePostTableViewCell.swift in Sources */,
 				AB86A84526D3E36700EA990A /* ProfileViewController.swift in Sources */,
-				AB0C76BB26EE114400BF5B64 /* DeviceType.swift in Sources */,
 				AB14B47926DBC59D007A5F16 /* NotificationName+Extension.swift in Sources */,
 				AB86A7E926D3D76800EA990A /* SceneDelegate.swift in Sources */,
 				AB14B47B26DBDAEB007A5F16 /* UserUtil.swift in Sources */,
