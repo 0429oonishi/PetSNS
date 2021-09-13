@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension SignUpViewController: ChangeLayoutProtocol { }
+extension SignUpViewController: ChangeFrameProtocol { }
 
 final class SignUpViewController: UIViewController {
     
@@ -192,17 +192,13 @@ private extension SignUpViewController {
     
     @objc
     func keyboardWillShow(notification: Notification) {
-        guard let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
-                                        as? NSValue)?.cgRectValue.size.height
-        else { return }
-        let keyboardPositionY = view.frame.size.height - keyboardHeight
-        let registerButtonY = registerButton.frame.origin.y + registerButton.frame.height
-        changeViewFrame(keyboardPositionY: keyboardPositionY,
-                        hidingPositionY: registerButtonY)
+        let registerButtonBottomY = registerButton.frame.origin.y + registerButton.frame.height
+        changeViewFrame(notification: notification,
+                        verificationPositionY: registerButtonBottomY)
     }
     
     @objc
-    func keyboardWillHide(notification: Notification) {
+    func keyboardWillHide() {
         returnOriginalViewFrame()
     }
     

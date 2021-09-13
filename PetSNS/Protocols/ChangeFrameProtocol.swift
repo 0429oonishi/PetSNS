@@ -7,20 +7,23 @@
 
 import UIKit
 
-protocol ChangeLayoutProtocol: AnyObject {
-    func changeViewFrame(keyboardPositionY: CGFloat,
-                         hidingPositionY: CGFloat,
+protocol ChangeFrameProtocol: AnyObject {
+    func changeViewFrame(notification: Notification,
+                         verificationPositionY: CGFloat,
                          withDuration: TimeInterval)
     func returnOriginalViewFrame()
 }
 
-extension ChangeLayoutProtocol where Self: UIViewController {
+extension ChangeFrameProtocol where Self: UIViewController {
     
-    func changeViewFrame(keyboardPositionY: CGFloat,
-                         hidingPositionY: CGFloat,
+    func changeViewFrame(notification: Notification,
+                         verificationPositionY: CGFloat,
                          withDuration: TimeInterval = 0.25) {
-        let transformY = keyboardPositionY - hidingPositionY
-        if keyboardPositionY < hidingPositionY {
+        guard let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
+                                        as? NSValue)?.cgRectValue.size.height else { return }
+        let keyboardPositionY = view.frame.size.height - keyboardHeight
+        let transformY = keyboardPositionY - verificationPositionY
+        if keyboardPositionY < verificationPositionY {
             UIView.animate(withDuration: withDuration) {
                 self.view.frame = CGRect(x: 0,
                                          y: self.view.frame.origin.y + transformY,
