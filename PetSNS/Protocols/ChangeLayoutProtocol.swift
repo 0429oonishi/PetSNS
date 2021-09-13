@@ -9,16 +9,16 @@ import UIKit
 
 protocol ChangeLayoutProtocol: AnyObject {
     func changeViewFrame(keyboardPositionY: CGFloat,
-                   hidingPositionY: CGFloat,
-                   withDuration: TimeInterval)
+                         hidingPositionY: CGFloat,
+                         withDuration: TimeInterval)
     func returnOriginalViewFrame()
 }
 
 extension ChangeLayoutProtocol where Self: UIViewController {
     
     func changeViewFrame(keyboardPositionY: CGFloat,
-                   hidingPositionY: CGFloat,
-                   withDuration: TimeInterval = 0.25) {
+                         hidingPositionY: CGFloat,
+                         withDuration: TimeInterval = 0.25) {
         let transformY = keyboardPositionY - hidingPositionY
         if keyboardPositionY < hidingPositionY {
             UIView.animate(withDuration: withDuration) {
@@ -31,7 +31,7 @@ extension ChangeLayoutProtocol where Self: UIViewController {
             self.returnOriginalViewFrame()
         }
     }
-
+    
     func returnOriginalViewFrame() {
         UIView.animate(withDuration: 0.25, animations: {
             self.view.frame = CGRect(x: 0,
