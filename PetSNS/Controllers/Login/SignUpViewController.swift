@@ -192,7 +192,7 @@ private extension SignUpViewController {
     
     @objc
     func keyboardWillShow(notification: Notification) {
-        let registerButtonBottomY = registerButton.frame.origin.y + registerButton.frame.height
+        let registerButtonBottomY = registerButton.frame.maxY
         changeViewFrame(notification: notification,
                         verificationPositionY: registerButtonBottomY)
     }

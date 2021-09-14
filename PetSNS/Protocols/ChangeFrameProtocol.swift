@@ -19,9 +19,8 @@ extension ChangeFrameProtocol where Self: UIViewController {
     func changeViewFrame(notification: Notification,
                          verificationPositionY: CGFloat,
                          withDuration: TimeInterval = 0.25) {
-        guard let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
-                                        as? NSValue)?.cgRectValue.size.height else { return }
-        let keyboardPositionY = view.frame.size.height - keyboardHeight
+        guard let keyboardPositionY = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
+                                        as? NSValue)?.cgRectValue.minY else { return }
         let transformY = keyboardPositionY - verificationPositionY
         if keyboardPositionY < verificationPositionY {
             UIView.animate(withDuration: withDuration) {
