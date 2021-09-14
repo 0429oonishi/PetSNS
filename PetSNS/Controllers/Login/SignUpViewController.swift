@@ -7,6 +7,8 @@
 
 import UIKit
 
+extension SignUpViewController: ChangeFrameProtocol { }
+
 final class SignUpViewController: UIViewController {
     
     @IBOutlet private weak var mailAddressTextField: UITextField!
@@ -41,6 +43,7 @@ final class SignUpViewController: UIViewController {
         setUpPasswordTextField()
         setUpConfirmationPasswordTextField()
         setUpSecureButton()
+        setupNotification()
         
     }
     
@@ -175,4 +178,29 @@ private extension SignUpViewController {
         }
         confirmationPasswordTextField.isSecureTextEntry.toggle()
     }
+    
+    func setupNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
+    @objc
+    func keyboardWillShow(notification: Notification) {
+        let registerButtonBottomY = registerButton.frame.maxY
+        changeViewFrame(notification: notification,
+                        verificationPositionY: registerButtonBottomY)
+    }
+    
+    @objc
+    func keyboardWillHide() {
+        returnOriginalViewFrame()
+    }
+    
 }
+
