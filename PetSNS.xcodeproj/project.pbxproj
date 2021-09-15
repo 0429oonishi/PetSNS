@@ -14,6 +14,10 @@
 		4EA5C3D226EB124000626ADE /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3D126EB124000626ADE /* ThemeColor.swift */; };
 		4EA5C3D526EB263300626ADE /* ThemeColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3D326EB263300626ADE /* ThemeColorCollectionViewCell.swift */; };
 		4EA5C3D626EB263300626ADE /* ThemeColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA5C3D426EB263300626ADE /* ThemeColorCollectionViewCell.xib */; };
+		4EA5C3D826F242D600626ADE /* OwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3D726F242D600626ADE /* OwnerModel.swift */; };
+		4EA5C3DA26F2438800626ADE /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3D926F2438800626ADE /* PetModel.swift */; };
+		4EA5C3DD26F243C000626ADE /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3DC26F243C000626ADE /* PostModel.swift */; };
+		4EA5C3DF26F24CCC00626ADE /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3DE26F24CCC00626ADE /* CommentModel.swift */; };
 		755E9AC626D7931C00A17709 /* HomeContainerPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 755E9AC526D7931C00A17709 /* HomeContainerPosts.storyboard */; };
 		755E9AC826D7933C00A17709 /* HomeContainerPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */; };
 		755E9B1E26DB4F9F00A17709 /* SwitchingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E9B1C26DB4F9F00A17709 /* SwitchingTableViewCell.swift */; };
@@ -83,6 +87,10 @@
 		4EA5C3D126EB124000626ADE /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
 		4EA5C3D326EB263300626ADE /* ThemeColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		4EA5C3D426EB263300626ADE /* ThemeColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeColorCollectionViewCell.xib; sourceTree = "<group>"; };
+		4EA5C3D726F242D600626ADE /* OwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerModel.swift; sourceTree = "<group>"; };
+		4EA5C3D926F2438800626ADE /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
+		4EA5C3DC26F243C000626ADE /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		4EA5C3DE26F24CCC00626ADE /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		755E9AC526D7931C00A17709 /* HomeContainerPosts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeContainerPosts.storyboard; sourceTree = "<group>"; };
 		755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerPostsViewController.swift; sourceTree = "<group>"; };
 		755E9B1C26DB4F9F00A17709 /* SwitchingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchingTableViewCell.swift; sourceTree = "<group>"; };
@@ -186,6 +194,17 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		4EA5C3DB26F2439B00626ADE /* User */ = {
+			isa = PBXGroup;
+			children = (
+				4EA5C3D726F242D600626ADE /* OwnerModel.swift */,
+				4EA5C3D926F2438800626ADE /* PetModel.swift */,
+				4EA5C3DC26F243C000626ADE /* PostModel.swift */,
+				4EA5C3DE26F24CCC00626ADE /* CommentModel.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		755E9B1B26DB4F9F00A17709 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +306,7 @@
 		AB86A7FC26D3DDF000EA990A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4EA5C3DB26F2439B00626ADE /* User */,
 				AB14B47A26DBDAEB007A5F16 /* UserUtil.swift */,
 				AB4397F626DDEA56008C8CA8 /* Indicator.swift */,
 				AB4397F826DDF46B008C8CA8 /* HUDIndicator.swift */,
@@ -581,6 +601,7 @@
 				AB86A85126D3E3A500EA990A /* PrivacyAndSecurityViewController.swift in Sources */,
 				AB86A84F26D3E39B00EA990A /* ThemeColorViewController.swift in Sources */,
 				AB4397F726DDEA56008C8CA8 /* Indicator.swift in Sources */,
+				4EA5C3DF26F24CCC00626ADE /* CommentModel.swift in Sources */,
 				AB09946D26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift in Sources */,
 				AB14B47226DBAD2B007A5F16 /* UIViewController+Extension.swift in Sources */,
 				4EA5C3D226EB124000626ADE /* ThemeColor.swift in Sources */,
@@ -595,11 +616,14 @@
 				AB14B47926DBC59D007A5F16 /* NotificationName+Extension.swift in Sources */,
 				AB86A7E926D3D76800EA990A /* SceneDelegate.swift in Sources */,
 				AB14B47B26DBDAEB007A5F16 /* UserUtil.swift in Sources */,
+				4EA5C3DD26F243C000626ADE /* PostModel.swift in Sources */,
+				4EA5C3D826F242D600626ADE /* OwnerModel.swift in Sources */,
 				AB14B47726DBC08A007A5F16 /* TopTabBarController.swift in Sources */,
 				AB86A84D26D3E39400EA990A /* SettingViewController.swift in Sources */,
 				AB86A84126D3E35100EA990A /* LibraryViewController.swift in Sources */,
 				AB86A84926D3E37B00EA990A /* AdditionalOrEditPetProfileViewController.swift in Sources */,
 				AB0C76B726EE102500BF5B64 /* ChangeFrameProtocol.swift in Sources */,
+				4EA5C3DA26F2438800626ADE /* PetModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
