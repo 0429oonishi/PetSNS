@@ -7,12 +7,12 @@
 
 import UIKit
 
-struct PostModel {
+struct Post {
     
     var id: String
     var image: UIImage
     var text: String = ""
     var likedUsers: [String] = []
-    var comments: [CommentModel] = []
+    var comments: [Comment] = []
     
 }

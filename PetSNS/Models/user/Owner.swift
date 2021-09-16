@@ -5,13 +5,13 @@
 //  Created by 相良 詠斗 on 2021/09/16.
 //
 
-import UIKit
+import Foundation
 
-struct OwnerModel {
+struct Owner {
     
-    var pets: [PetModel] = []
+    var pets: [Pet] = []
     var favoritePosts: [String] = []
     var commentPosts: [String] = []
-    
+    var followsAndFollowers: [FollowsAndFollowers]
 }
 
