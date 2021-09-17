@@ -45,7 +45,7 @@ final class CameraViewController: UIViewController {
 }
 
 // MARK: - setup
-extension CameraViewController {
+private extension CameraViewController {
     
     func setupCaptureSession() {
         captureSession.sessionPreset = .photo
