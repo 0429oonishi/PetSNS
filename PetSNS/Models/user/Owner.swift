@@ -1,5 +1,5 @@
 //
-//  PetModel.swift
+//  Owner.swift
 //  PetSNS
 //
 //  Created by 相良 詠斗 on 2021/09/16.
@@ -12,6 +12,6 @@ struct Owner {
     var pets: [Pet] = []
     var favoritePosts: [String] = []
     var commentPosts: [String] = []
-    var followsAndFollowers: [FollowsAndFollowers]
+    var allFollow: [Follow]
+    var allFollower: [Follower]
 }
-

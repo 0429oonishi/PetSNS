@@ -17,8 +17,6 @@
 		4EA5C3D826F242D600626ADE /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3D726F242D600626ADE /* Owner.swift */; };
 		4EA5C3DA26F2438800626ADE /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3D926F2438800626ADE /* Pet.swift */; };
 		4EA5C3DD26F243C000626ADE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3DC26F243C000626ADE /* Post.swift */; };
-		4EA5C3E126F36CB700626ADE /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3E026F36CB700626ADE /* Comment.swift */; };
-		4EA5C3E326F373A400626ADE /* FollowsAndFollowers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3E226F373A400626ADE /* FollowsAndFollowers.swift */; };
 		755E9AC626D7931C00A17709 /* HomeContainerPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 755E9AC526D7931C00A17709 /* HomeContainerPosts.storyboard */; };
 		755E9AC826D7933C00A17709 /* HomeContainerPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */; };
 		755E9B1E26DB4F9F00A17709 /* SwitchingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E9B1C26DB4F9F00A17709 /* SwitchingTableViewCell.swift */; };
@@ -91,8 +89,6 @@
 		4EA5C3D726F242D600626ADE /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		4EA5C3D926F2438800626ADE /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		4EA5C3DC26F243C000626ADE /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		4EA5C3E026F36CB700626ADE /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		4EA5C3E226F373A400626ADE /* FollowsAndFollowers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowsAndFollowers.swift; sourceTree = "<group>"; };
 		755E9AC526D7931C00A17709 /* HomeContainerPosts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeContainerPosts.storyboard; sourceTree = "<group>"; };
 		755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerPostsViewController.swift; sourceTree = "<group>"; };
 		755E9B1C26DB4F9F00A17709 /* SwitchingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchingTableViewCell.swift; sourceTree = "<group>"; };
@@ -202,8 +198,6 @@
 				4EA5C3D726F242D600626ADE /* Owner.swift */,
 				4EA5C3D926F2438800626ADE /* Pet.swift */,
 				4EA5C3DC26F243C000626ADE /* Post.swift */,
-				4EA5C3E026F36CB700626ADE /* Comment.swift */,
-				4EA5C3E226F373A400626ADE /* FollowsAndFollowers.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -606,7 +600,6 @@
 				AB4397F726DDEA56008C8CA8 /* Indicator.swift in Sources */,
 				AB09946D26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift in Sources */,
 				AB14B47226DBAD2B007A5F16 /* UIViewController+Extension.swift in Sources */,
-				4EA5C3E326F373A400626ADE /* FollowsAndFollowers.swift in Sources */,
 				4EA5C3D226EB124000626ADE /* ThemeColor.swift in Sources */,
 				755E9B1E26DB4F9F00A17709 /* SwitchingTableViewCell.swift in Sources */,
 				4EA5C3D026E20C6800626ADE /* LocalValidationChecker.swift in Sources */,
@@ -623,7 +616,6 @@
 				4EA5C3D826F242D600626ADE /* Owner.swift in Sources */,
 				AB14B47726DBC08A007A5F16 /* TopTabBarController.swift in Sources */,
 				AB86A84D26D3E39400EA990A /* SettingViewController.swift in Sources */,
-				4EA5C3E126F36CB700626ADE /* Comment.swift in Sources */,
 				AB86A84126D3E35100EA990A /* LibraryViewController.swift in Sources */,
 				AB86A84926D3E37B00EA990A /* AdditionalOrEditPetProfileViewController.swift in Sources */,
 				AB0C76B726EE102500BF5B64 /* ChangeFrameProtocol.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  PostModel.swift
+//  Post.swift
 //  PetSNS
 //
 //  Created by 相良 詠斗 on 2021/09/16.
@@ -14,5 +14,12 @@ struct Post {
     var text: String = ""
     var likedUsers: [String] = []
     var comments: [Comment] = []
+    
+}
+
+struct Comment {
+    
+    let user: String
+    let comment: String
     
 }

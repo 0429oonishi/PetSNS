@@ -1,5 +1,5 @@
 //
-//  PetModel.swift
+//  Pet.swift
 //  PetSNS
 //
 //  Created by 相良 詠斗 on 2021/09/16.
@@ -14,6 +14,20 @@ struct Pet {
     var name: String
     var introduction: String = ""
     var posts: [Post] = []
-    var followsAndFollowersId: String
+    var followId: String
+    
+    
+}
+
+struct Follow {
+    
+    var id: String
+    var follow: [String] = []
+}
+
+struct Follower {
+    
+    var id: String
+    var follower: [String] = []
     
 }
