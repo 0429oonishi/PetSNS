@@ -15,8 +15,6 @@
 		4EA5C3D526EB263300626ADE /* ThemeColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3D326EB263300626ADE /* ThemeColorCollectionViewCell.swift */; };
 		4EA5C3D626EB263300626ADE /* ThemeColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA5C3D426EB263300626ADE /* ThemeColorCollectionViewCell.xib */; };
 		4EA5C3D826F242D600626ADE /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3D726F242D600626ADE /* Owner.swift */; };
-		4EA5C3DA26F2438800626ADE /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3D926F2438800626ADE /* Pet.swift */; };
-		4EA5C3DD26F243C000626ADE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5C3DC26F243C000626ADE /* Post.swift */; };
 		755E9AC626D7931C00A17709 /* HomeContainerPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 755E9AC526D7931C00A17709 /* HomeContainerPosts.storyboard */; };
 		755E9AC826D7933C00A17709 /* HomeContainerPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */; };
 		755E9B1E26DB4F9F00A17709 /* SwitchingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755E9B1C26DB4F9F00A17709 /* SwitchingTableViewCell.swift */; };
@@ -87,8 +85,6 @@
 		4EA5C3D326EB263300626ADE /* ThemeColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		4EA5C3D426EB263300626ADE /* ThemeColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeColorCollectionViewCell.xib; sourceTree = "<group>"; };
 		4EA5C3D726F242D600626ADE /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
-		4EA5C3D926F2438800626ADE /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
-		4EA5C3DC26F243C000626ADE /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		755E9AC526D7931C00A17709 /* HomeContainerPosts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeContainerPosts.storyboard; sourceTree = "<group>"; };
 		755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerPostsViewController.swift; sourceTree = "<group>"; };
 		755E9B1C26DB4F9F00A17709 /* SwitchingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchingTableViewCell.swift; sourceTree = "<group>"; };
@@ -196,8 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				4EA5C3D726F242D600626ADE /* Owner.swift */,
-				4EA5C3D926F2438800626ADE /* Pet.swift */,
-				4EA5C3DC26F243C000626ADE /* Post.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -612,14 +606,12 @@
 				AB14B47926DBC59D007A5F16 /* NotificationName+Extension.swift in Sources */,
 				AB86A7E926D3D76800EA990A /* SceneDelegate.swift in Sources */,
 				AB14B47B26DBDAEB007A5F16 /* UserUtil.swift in Sources */,
-				4EA5C3DD26F243C000626ADE /* Post.swift in Sources */,
 				4EA5C3D826F242D600626ADE /* Owner.swift in Sources */,
 				AB14B47726DBC08A007A5F16 /* TopTabBarController.swift in Sources */,
 				AB86A84D26D3E39400EA990A /* SettingViewController.swift in Sources */,
 				AB86A84126D3E35100EA990A /* LibraryViewController.swift in Sources */,
 				AB86A84926D3E37B00EA990A /* AdditionalOrEditPetProfileViewController.swift in Sources */,
 				AB0C76B726EE102500BF5B64 /* ChangeFrameProtocol.swift in Sources */,
-				4EA5C3DA26F2438800626ADE /* Pet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
