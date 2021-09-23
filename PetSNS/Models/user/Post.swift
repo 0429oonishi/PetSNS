@@ -8,18 +8,14 @@
 import UIKit
 
 struct Post {
-    
     var id: String
     var image: UIImage
     var text: String = ""
     var likedUsers: [String] = []
     var comments: [Comment] = []
-    
 }
 
 struct Comment {
-    
     let user: String
     let comment: String
-    
 }

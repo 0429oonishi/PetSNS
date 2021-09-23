@@ -8,7 +8,6 @@
 import Foundation
 
 struct Owner {
-    
     var pets: [Pet] = []
     var favoritePosts: [String] = []
     var commentPosts: [String] = []
