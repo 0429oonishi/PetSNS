@@ -8,41 +8,38 @@
 import Foundation
 
 struct Owner {
-    var pets: [Pet] = []
-    var favoritePosts: [String] = []
-    var commentPosts: [String] = []
-    var follows: [Follow] = []
-    var followers: [Follower] = []
+    let pets: [Pet] = []
+    let favoritePosts: [String] = []
+    let commentPosts: [String] = []
+    let follows: [Follow] = []
+    let followers: [Follower] = []
 }
 
 struct Pet {
-    var id: String
-    var imageData: Data
-    var name: String
-    var introduction: String = ""
-    var posts: [Post] = []
-    var followId: String
+    let id: String
+    let followId: String
+    let imageData: Data
+    let name: String
+    let introduction: String = ""
+    let posts: [Post] = []
 }
 
 struct Follow {
-    var id: String
-    var follow: [String] = []
+    let id: String
 }
 
 struct Follower {
-    var id: String
-    var follower: [String] = []
+    let id: String
 }
 
 struct Post {
-    var id: String
-    var imageData: Data
-    var text: String = ""
-    var likedUsers: [String] = []
-    var comments: [Comment] = []
+    let id: String
+    let imageData: Data
+    let text: String = ""
+    let likedUsers: [String] = []
+    let comments: [Comment] = []
 }
 
 struct Comment {
     let user: String
-    let comment: String
 }
