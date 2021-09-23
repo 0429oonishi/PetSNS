@@ -11,13 +11,13 @@ struct Owner {
     var pets: [Pet] = []
     var favoritePosts: [String] = []
     var commentPosts: [String] = []
-    var allFollow: [Follow]
-    var allFollower: [Follower]
+    var follows: [Follow] = []
+    var followers: [Follower] = []
 }
 
 struct Pet {
     var id: String
-    var image: UIImage = #imageLiteral(resourceName: "スクリーンショット 2021-09-16 1.09.47.png")
+    var imageData: Data
     var name: String
     var introduction: String = ""
     var posts: [Post] = []
@@ -36,7 +36,7 @@ struct Follower {
 
 struct Post {
     var id: String
-    var image: UIImage
+    var imageData: Data
     var text: String = ""
     var likedUsers: [String] = []
     var comments: [Comment] = []
