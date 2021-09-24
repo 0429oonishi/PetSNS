@@ -15,15 +15,26 @@ final class CameraViewController: UIViewController {
     
     private var captureSession = AVCaptureSession()
     private var currentDevice: AVCaptureDevice?
+    private let sessionQueue = DispatchQueue(label: "session queue")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupCaptureSession()
-        setupDevice()
-        setupInputOutput()
-        setupPreviewLayer()
-        captureSession.startRunning()
+        sessionQueue.async {
+            self.setupCaptureSession()
+            self.setupDevice()
+            self.setupInputOutput()
+            self.setupPreviewLayer()
+        }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        sessionQueue.async {
+            self.captureSession.startRunning()
+        }
         
     }
     
@@ -59,10 +70,10 @@ private extension CameraViewController {
         )
         deviceDiscoverySession.devices.forEach { device in
             switch device.position {
-                case .back:
-                    currentDevice = device
-                default:
-                    break
+            case .back:
+                currentDevice = device
+            default:
+                break
             }
         }
     }
@@ -88,8 +99,10 @@ private extension CameraViewController {
         let cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         cameraPreviewLayer.videoGravity = .resizeAspectFill
         cameraPreviewLayer.connection?.videoOrientation = .portrait
-        cameraPreviewLayer.frame = view.frame
-        self.view.layer.insertSublayer(cameraPreviewLayer, at: 0)
+        DispatchQueue.main.async {
+            cameraPreviewLayer.frame = self.view.frame
+            self.view.layer.insertSublayer(cameraPreviewLayer, at: 0)
+        }
     }
     
 }
