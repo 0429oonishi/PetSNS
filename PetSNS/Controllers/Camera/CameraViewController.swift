@@ -15,6 +15,7 @@ final class CameraViewController: UIViewController {
     
     private var captureSession = AVCaptureSession()
     private var currentDevice: AVCaptureDevice?
+    private let photoOutput = AVCapturePhotoOutput()
     private let sessionQueue = DispatchQueue(label: "session queue")
     
     override func viewDidLoad() {
@@ -83,7 +84,6 @@ private extension CameraViewController {
             guard let currentDevice = currentDevice else { return }
             let captureDeviceInput = try AVCaptureDeviceInput(device: currentDevice)
             captureSession.addInput(captureDeviceInput)
-            let photoOutput = AVCapturePhotoOutput()
             photoOutput.setPreparedPhotoSettingsArray(
                 [AVCapturePhotoSettings(
                     format: [AVVideoCodecKey: AVVideoCodecType.jpeg]
