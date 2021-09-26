@@ -16,6 +16,7 @@ final class CameraViewController: UIViewController {
     private var captureSession = AVCaptureSession()
     private var currentDevice: AVCaptureDevice?
     private let photoOutput = AVCapturePhotoOutput()
+    private var captureDeviceInput: AVCaptureDeviceInput!
     private let sessionQueue = DispatchQueue(label: "session queue")
     
     override func viewDidLoad() {
@@ -44,6 +45,23 @@ final class CameraViewController: UIViewController {
     }
     
     @IBAction private func shutterButtonDidTapped(_ sender: Any) {
+        let videoPreviewLayerOrientation = cameraPreviewLayer.connection?.videoOrientation
+        
+        sessionQueue.async {
+            /// ① ビデオプレビューレイヤーのビデオ方向に合わせる
+            if let photoOutputConnection = self.photoOutput.connection(with: .video),
+               let orientation = videoPreviewLayerOrientation {
+                photoOutputConnection.videoOrientation = orientation
+            }
+            /// ② 向きが揃ったら、設定開始
+            let photoSettings = AVCapturePhotoSettings()
+            if self.captureDeviceInput.device.isFlashAvailable {
+                photoSettings.flashMode = .auto
+            }
+            /// ③ 写真をキャプチャ
+            self.photoOutput.capturePhoto(with: photoSettings, delegate: self)
+        }
+        
         let editingPostVC = EditingPostViewController.instantiate()
         self.navigationController?.pushViewController(editingPostVC, animated: true)
     }
@@ -82,7 +100,7 @@ private extension CameraViewController {
     func setupInputOutput() {
         do {
             guard let currentDevice = currentDevice else { return }
-            let captureDeviceInput = try AVCaptureDeviceInput(device: currentDevice)
+            captureDeviceInput = try AVCaptureDeviceInput(device: currentDevice)
             captureSession.addInput(captureDeviceInput)
             photoOutput.setPreparedPhotoSettingsArray(
                 [AVCapturePhotoSettings(
