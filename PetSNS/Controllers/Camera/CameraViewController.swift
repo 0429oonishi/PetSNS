@@ -18,7 +18,7 @@ final class CameraViewController: UIViewController {
     private let photoOutput = AVCapturePhotoOutput()
     private var captureDeviceInput: AVCaptureDeviceInput!
     private let sessionQueue = DispatchQueue(label: "session queue")
-    
+    private var cameraPreviewLayer: AVCaptureVideoPreviewLayer!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -114,12 +114,12 @@ private extension CameraViewController {
     }
     
     func setupPreviewLayer() {
-        let cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         cameraPreviewLayer.videoGravity = .resizeAspectFill
         cameraPreviewLayer.connection?.videoOrientation = .portrait
         DispatchQueue.main.async {
-            cameraPreviewLayer.frame = self.view.frame
-            self.view.layer.insertSublayer(cameraPreviewLayer, at: 0)
+            self.cameraPreviewLayer.frame = self.view.frame
+            self.view.layer.insertSublayer(self.cameraPreviewLayer, at: 0)
         }
     }
     
