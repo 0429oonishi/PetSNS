@@ -19,6 +19,8 @@ final class CameraViewController: UIViewController {
     private var captureDeviceInput: AVCaptureDeviceInput!
     private let sessionQueue = DispatchQueue(label: "session queue")
     private var cameraPreviewLayer: AVCaptureVideoPreviewLayer!
+    private var photoData: Data?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,6 +72,51 @@ final class CameraViewController: UIViewController {
     }
     
     @IBAction private func movieShootingButtonDidTapped(_ sender: Any) {
+    }
+    
+}
+
+extension CameraViewController: AVCapturePhotoCaptureDelegate {
+    
+    func photoOutput(_ output: AVCapturePhotoOutput,
+                     willBeginCaptureFor resolvedSettings: AVCaptureResolvedPhotoSettings) {
+        /// capturePhoto(with: photoSettings, delegate: self)後、１番最初に呼ばれる
+        print(#function)
+    }
+    
+    func photoOutput(_ output: AVCapturePhotoOutput,
+                     willCapturePhotoFor resolvedSettings: AVCaptureResolvedPhotoSettings) {
+        /// シャッター音が鳴った直後
+        print(#function)
+        DispatchQueue.main.async {
+            self.cameraPreviewLayer.opacity = 0
+            UIView.animate(withDuration: 0.25) {
+                self.cameraPreviewLayer.opacity = 1
+            }
+        }
+        
+    }
+    
+    
+    func photoOutput(_ output: AVCapturePhotoOutput,
+                     didFinishProcessingPhoto photo: AVCapturePhoto,
+                     error: Error?) {
+        /// システムが深度データとポートレートエフェクトマットの処理を終えたときに届く
+        print(#function)
+        if let error = error {
+            print("Error capturing photo: \(error)")
+            return
+        } else {
+            photoData = photo.fileDataRepresentation()
+        }
+        
+    }
+    
+    func photoOutput(_ output: AVCapturePhotoOutput,
+                     didFinishCaptureFor resolvedSettings: AVCaptureResolvedPhotoSettings,
+                     error: Error?) {
+        /// 最終的なコールバックで、1枚の写真のキャプチャが終了したことを示す
+        print(#function)
     }
     
 }
