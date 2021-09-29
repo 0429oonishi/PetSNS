@@ -48,24 +48,25 @@ final class CameraViewController: UIViewController {
     
     @IBAction private func shutterButtonDidTapped(_ sender: Any) {
         let videoPreviewLayerOrientation = cameraPreviewLayer.connection?.videoOrientation
-        
         sessionQueue.async {
-            /// ① ビデオプレビューレイヤーのビデオ方向に合わせる
-            if let photoOutputConnection = self.photoOutput.connection(with: .video),
-               let orientation = videoPreviewLayerOrientation {
-                photoOutputConnection.videoOrientation = orientation
-            }
-            /// ② 向きが揃ったら、設定開始
+            self.alignDirection(orientation: videoPreviewLayerOrientation)
             let photoSettings = AVCapturePhotoSettings()
-            if self.captureDeviceInput.device.isFlashAvailable {
-                photoSettings.flashMode = .auto
-            }
-            /// ③ 写真をキャプチャ
+            self.configurePhotoSettings(photoSettings: photoSettings)
             self.photoOutput.capturePhoto(with: photoSettings, delegate: self)
         }
-        
-        let editingPostVC = EditingPostViewController.instantiate()
-        self.navigationController?.pushViewController(editingPostVC, animated: true)
+    }
+    
+    private func alignDirection(orientation: AVCaptureVideoOrientation?) {
+        if let photoOutputConnection = self.photoOutput.connection(with: .video),
+           let orientation = orientation {
+            photoOutputConnection.videoOrientation = orientation
+        }
+    }
+    
+    private func configurePhotoSettings(photoSettings: AVCapturePhotoSettings) {
+        if self.captureDeviceInput.device.isFlashAvailable {
+            photoSettings.flashMode = .auto
+        }
     }
     
     @IBAction private func stillImageShootingButtonDidTapped(_ sender: Any) {
@@ -79,15 +80,8 @@ final class CameraViewController: UIViewController {
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
     
     func photoOutput(_ output: AVCapturePhotoOutput,
-                     willBeginCaptureFor resolvedSettings: AVCaptureResolvedPhotoSettings) {
-        /// capturePhoto(with: photoSettings, delegate: self)後、１番最初に呼ばれる
-        print(#function)
-    }
-    
-    func photoOutput(_ output: AVCapturePhotoOutput,
                      willCapturePhotoFor resolvedSettings: AVCaptureResolvedPhotoSettings) {
-        /// シャッター音が鳴った直後
-        print(#function)
+        // 撮影時、PreviewLayerが点滅する処理を実装しようとしたが、点滅しなかった。ボタンとかは点滅できた。
         DispatchQueue.main.async {
             self.cameraPreviewLayer.opacity = 0
             UIView.animate(withDuration: 0.25) {
@@ -101,8 +95,6 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput,
                      didFinishProcessingPhoto photo: AVCapturePhoto,
                      error: Error?) {
-        /// システムが深度データとポートレートエフェクトマットの処理を終えたときに届く
-        print(#function)
         if let error = error {
             print("Error capturing photo: \(error)")
             return
@@ -115,8 +107,10 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput,
                      didFinishCaptureFor resolvedSettings: AVCaptureResolvedPhotoSettings,
                      error: Error?) {
-        /// 最終的なコールバックで、1枚の写真のキャプチャが終了したことを示す
-        print(#function)
+        guard let photoData = photoData else { return }
+        let editingPostVC = EditingPostViewController.instantiate()
+        editingPostVC.receivePhoto(photoData: photoData)
+        self.navigationController?.pushViewController(editingPostVC, animated: true)
     }
     
 }
