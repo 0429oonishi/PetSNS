@@ -24,22 +24,24 @@ final class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sessionQueue.async {
-            self.setupCaptureSession()
-            self.setupDevice()
-            self.setupInputOutput()
-            self.setupPreviewLayer()
-        }
+        setupCaptureSession()
+        setupDevice()
+        setupInputOutput()
+        setupPreviewLayer()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        startRunCaptureSession()
+        
+    }
+    
+    private func startRunCaptureSession() {
         sessionQueue.async {
             self.captureSession.startRunning()
         }
-        
     }
     
     @IBAction private func closeButtonDidTapped(_ sender: Any) {
@@ -98,10 +100,8 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         if let error = error {
             print("Error capturing photo: \(error)")
             return
-        } else {
-            photoData = photo.fileDataRepresentation()
         }
-        
+        photoData = photo.fileDataRepresentation()
     }
     
     func photoOutput(_ output: AVCapturePhotoOutput,
@@ -119,48 +119,56 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
 private extension CameraViewController {
     
     func setupCaptureSession() {
-        captureSession.sessionPreset = .photo
+        sessionQueue.async {
+            self.captureSession.sessionPreset = .photo
+        }
     }
     
     func setupDevice() {
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(
-            deviceTypes: [.builtInWideAngleCamera],
-            mediaType: .video,
-            position: .unspecified
-        )
-        deviceDiscoverySession.devices.forEach { device in
-            switch device.position {
-            case .back:
-                currentDevice = device
-            default:
-                break
+        sessionQueue.async {
+            let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(
+                deviceTypes: [.builtInWideAngleCamera],
+                mediaType: .video,
+                position: .unspecified
+            )
+            deviceDiscoverySession.devices.forEach { device in
+                switch device.position {
+                case .back:
+                    self.currentDevice = device
+                default:
+                    break
+                }
             }
         }
     }
     
     func setupInputOutput() {
-        do {
-            guard let currentDevice = currentDevice else { return }
-            captureDeviceInput = try AVCaptureDeviceInput(device: currentDevice)
-            captureSession.addInput(captureDeviceInput)
-            photoOutput.setPreparedPhotoSettingsArray(
-                [AVCapturePhotoSettings(
-                    format: [AVVideoCodecKey: AVVideoCodecType.jpeg]
-                )]
-            )
-            captureSession.addOutput(photoOutput)
-        } catch {
-            fatalError("\(error)")
+        sessionQueue.async {
+            do {
+                guard let currentDevice = self.currentDevice else { return }
+                self.captureDeviceInput = try AVCaptureDeviceInput(device: currentDevice)
+                self.captureSession.addInput(self.captureDeviceInput)
+                self.photoOutput.setPreparedPhotoSettingsArray(
+                    [AVCapturePhotoSettings(
+                        format: [AVVideoCodecKey: AVVideoCodecType.jpeg]
+                    )]
+                )
+                self.captureSession.addOutput(self.photoOutput)
+            } catch {
+                fatalError("\(error)")
+            }
         }
     }
     
     func setupPreviewLayer() {
-        cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        cameraPreviewLayer.videoGravity = .resizeAspectFill
-        cameraPreviewLayer.connection?.videoOrientation = .portrait
-        DispatchQueue.main.async {
-            self.cameraPreviewLayer.frame = self.view.frame
-            self.view.layer.insertSublayer(self.cameraPreviewLayer, at: 0)
+        sessionQueue.async {
+            self.cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
+            self.cameraPreviewLayer.videoGravity = .resizeAspectFill
+            self.cameraPreviewLayer.connection?.videoOrientation = .portrait
+            DispatchQueue.main.async {
+                self.cameraPreviewLayer.frame = self.view.frame
+                self.view.layer.insertSublayer(self.cameraPreviewLayer, at: 0)
+            }
         }
     }
     

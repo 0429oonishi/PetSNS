@@ -50,11 +50,11 @@ extension EditingPostViewController {
         postedPhotosView.addSubview(photoImageView)
         
         photoImageView.translatesAutoresizingMaskIntoConstraints = false
-        [photoImageView.topAnchor.constraint(equalTo: postedPhotosView.topAnchor),
-         photoImageView.bottomAnchor.constraint(equalTo: postedPhotosView.bottomAnchor),
-         photoImageView.leadingAnchor.constraint(equalTo: postedPhotosView.leadingAnchor),
-         photoImageView.trailingAnchor.constraint(equalTo: postedPhotosView.trailingAnchor)]
-            .forEach { $0.isActive = true }
+        let constraints = [photoImageView.topAnchor.constraint(equalTo: postedPhotosView.topAnchor),
+                           photoImageView.bottomAnchor.constraint(equalTo: postedPhotosView.bottomAnchor),
+                           photoImageView.leadingAnchor.constraint(equalTo: postedPhotosView.leadingAnchor),
+                           photoImageView.trailingAnchor.constraint(equalTo: postedPhotosView.trailingAnchor)]
+        NSLayoutConstraint.activate(constraints)
     }
     
 }
