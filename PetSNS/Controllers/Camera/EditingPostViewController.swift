@@ -14,10 +14,17 @@ final class EditingPostViewController: UIViewController {
     @IBOutlet private weak var postedPhotosView: UIView!
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var commentTextView: UITextView!
-
+    
+    private var photoData: Data!
+    func receivePhoto(photoData: Data) {
+        self.photoData = photoData
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupPostedPhotosView()
+        
     }
     
     @IBAction private func postButtonDidTapped(_ sender: Any) {
@@ -29,6 +36,25 @@ final class EditingPostViewController: UIViewController {
     
     @IBAction private func cancelButtonDidTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+}
+
+// MARK: - setup
+extension EditingPostViewController {
+    
+    private func setupPostedPhotosView() {
+        guard let photoImage = UIImage(data: photoData) else { return }
+        let photoImageView = UIImageView()
+        photoImageView.image = photoImage
+        postedPhotosView.addSubview(photoImageView)
+        
+        photoImageView.translatesAutoresizingMaskIntoConstraints = false
+        let constraints = [photoImageView.topAnchor.constraint(equalTo: postedPhotosView.topAnchor),
+                           photoImageView.bottomAnchor.constraint(equalTo: postedPhotosView.bottomAnchor),
+                           photoImageView.leadingAnchor.constraint(equalTo: postedPhotosView.leadingAnchor),
+                           photoImageView.trailingAnchor.constraint(equalTo: postedPhotosView.trailingAnchor)]
+        NSLayoutConstraint.activate(constraints)
     }
     
 }
