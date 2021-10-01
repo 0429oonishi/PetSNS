@@ -77,19 +77,23 @@ final class CameraViewController: UIViewController {
     @IBAction private func movieShootingButtonDidTapped(_ sender: Any) {
     }
     
+    private func blinkLayer() {
+        DispatchQueue.main.async {
+            self.cameraView.layer.opacity = 0
+            UIView.animate(withDuration: 0.25) {
+                self.cameraView.layer.opacity = 1
+            }
+        }
+    }
+    
 }
 
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
     
     func photoOutput(_ output: AVCapturePhotoOutput,
                      willCapturePhotoFor resolvedSettings: AVCaptureResolvedPhotoSettings) {
-        // 撮影時、PreviewLayerが点滅する処理を実装しようとしたが、点滅しなかった。ボタンとかは点滅できた。
-        DispatchQueue.main.async {
-            self.cameraPreviewLayer.opacity = 0
-            UIView.animate(withDuration: 0.25) {
-                self.cameraPreviewLayer.opacity = 1
-            }
-        }
+        
+        blinkLayer()
         
     }
     
