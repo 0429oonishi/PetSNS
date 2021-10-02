@@ -35,7 +35,9 @@ final class EditingPostViewController: UIViewController {
     }
     
     @IBAction private func cancelButtonDidTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        showPopViewControllerAlert(title: "この画面を閉じると編集中の投稿は保存されません。",
+                                   cancelTitle: "キャンセル",
+                                   destructiveTitle: "閉じる")
     }
     
 }
