@@ -129,7 +129,6 @@ private extension LoginViewController {
         passwordTextField.isSecureTextEntry.toggle()
     }
     
-    @objc
     func setupNotification() {
         NotificationCenter.default.addObserver(self, 
                                                selector: #selector(keyboardWillShow), 
