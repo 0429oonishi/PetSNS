@@ -32,7 +32,6 @@ final class LoginViewController: UIViewController {
         setupMailAddressTextField()
         setupPasswordTextFiled()
         setupSecureButton()
-        //
         setupNotification()
         
         
