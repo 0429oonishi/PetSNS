@@ -33,9 +33,10 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func showPopViewControllerAlert(title: String,
-                                    cancelTitle: String,
-                                    destructiveTitle: String) {
+    func showTwoChoicesAlert(title: String,
+                             cancelTitle: String,
+                             destructiveTitle: String,
+                             destructiveHandler: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(title: title,
                                       message: nil,
                                       preferredStyle: .alert)
@@ -43,9 +44,7 @@ extension UIViewController {
                                       style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: destructiveTitle,
                                       style: .destructive,
-                                      handler: { [weak self] _ in
-            self?.navigationController?.popViewController(animated: true)
-        }))
+                                      handler: destructiveHandler))
         present(alert, animated: true, completion: nil)
     }
     
