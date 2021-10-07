@@ -33,4 +33,19 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func showTwoChoicesAlert(title: String,
+                             cancelTitle: String,
+                             destructiveTitle: String,
+                             destructiveHandler: ((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(title: title,
+                                      message: nil,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: cancelTitle,
+                                      style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: destructiveTitle,
+                                      style: .destructive,
+                                      handler: destructiveHandler))
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
