@@ -35,7 +35,7 @@ struct Follower {
 struct Post {
     let id: String
     let imageData: Data
-    let text: String = ""
+    let text: String
     let likedUsers: [String] = []
     let comments: [Comment] = []
 }

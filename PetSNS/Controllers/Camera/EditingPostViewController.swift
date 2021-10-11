@@ -28,9 +28,21 @@ final class EditingPostViewController: UIViewController {
     }
     
     @IBAction private func postButtonDidTapped(_ sender: Any) {
-        NotificationCenter.default.post(name: .showHomeVC, object: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            self.dismiss(animated: true)
+        guard let text = commentTextView.text else { return }
+        let post = Post(id: UUID().uuidString,
+                        imageData: photoData,
+                        text: text)
+        PostUtil().save(post: post) { result in
+            switch result {
+            case .failure(let title):
+                self.showErrorAlert(title: title)
+            case .success:
+                NotificationCenter.default.post(name: .showHomeVC,
+                                                object: nil)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                    self.dismiss(animated: true)
+                }
+            }
         }
     }
     
