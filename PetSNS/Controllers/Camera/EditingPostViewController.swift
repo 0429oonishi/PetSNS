@@ -15,6 +15,7 @@ final class EditingPostViewController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var commentTextView: UITextView!
     
+    private let indicator = Indicator(kinds: PKHUDIndicator())
     private var photoData: Data!
     func receivePhoto(photoData: Data) {
         self.photoData = photoData
