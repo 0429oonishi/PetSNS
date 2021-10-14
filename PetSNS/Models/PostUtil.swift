@@ -30,6 +30,23 @@ final class PostUtil {
         }
     }
     
+    func saveData(postId: String,
+                  data: Data,
+                  completion: @escaping ResultHandler<Any?>) {
+        guard let user = user else { return }
+        let photosRef = Storage.storage().reference().child("users/\(user.uid)/posts/\(postId).jpg")
+        let uploadTask = photosRef.putData(data, metadata: nil) { metadata, error in
+            guard let metadata = metadata else {
+                let message = self.storageErrorMessage(error)
+                completion(.failure(message))
+                return
+            }
+            completion(.success(nil))
+            print(metadata)
+        }
+        uploadTask.resume()
+    }
+    
     private func firestoreErrorMessage(_ error: Error) -> String {
         if let errorCode = FirestoreErrorCode(rawValue: error._code) {
             switch errorCode {
@@ -50,8 +67,29 @@ final class PostUtil {
             case .unavailable: return "現在このサービスは利用できません。"
             case .dataLoss: return "回復不可能なデータ損失が発生しました。"
             case .unauthenticated: return "有効な認証がありません。"
-            @unknown default:
-                return "未知のエラーです\(error)"
+            default: return "未知のエラーです\(error)"
+            }
+        }
+        return "不明なエラーが発生しました。"
+    }
+    
+    private func storageErrorMessage(_ error: Error?) -> String {
+        guard let error = error else { return "エラーはありません" }
+        if let errorCode = StorageErrorCode(rawValue: error._code) {
+            switch errorCode {
+            case .unknown: return "不明なエラーが発生しました。"
+            case .objectNotFound: return "オブジェクトが存在しません。"
+            case .bucketNotFound: return "設定されているバケットはありません。"
+            case .projectNotFound: return "プロジェクトがありません。"
+            case .quotaExceeded: return "バケットのクオータが超過しました。"
+            case .unauthenticated: return "認証してからやり直して下さい。"
+            case .unauthorized: return "実行権限がありません。"
+            case .retryLimitExceeded: return "操作の最大制限時間を超えました。"
+            case .nonMatchingChecksum: return "チェックサムが一致しません。"
+            case .downloadSizeExceeded: return "ダウンロードファイルのサイズがメモリ容量を超えています。"
+            case .cancelled: return "キャンセルされました。"
+            case .invalidArgument: return "無効な引数が指定されました。"
+            default: return "不明なエラーが発生しました。"
             }
         }
         return "不明なエラーが発生しました。"
