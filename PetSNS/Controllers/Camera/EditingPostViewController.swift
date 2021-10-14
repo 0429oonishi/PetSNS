@@ -29,19 +29,51 @@ final class EditingPostViewController: UIViewController {
     }
     
     @IBAction private func postButtonDidTapped(_ sender: Any) {
-        guard let text = commentTextView.text else { return }
+        indicator.show(.progress)
+        var isSavedPost = false
+        var isSavedData = false
+        var errorMessage: String?
         let post = Post(id: UUID().uuidString,
                         imageData: photoData,
-                        text: text)
+                        text: commentTextView.text ?? "")
+        
+        let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
+        dispatchGroup.enter()
+        
         PostUtil().save(post: post) { result in
+            defer { dispatchGroup.leave() }
             switch result {
             case .failure(let title):
-                self.showErrorAlert(title: title)
+                errorMessage = title
             case .success:
-                NotificationCenter.default.post(name: .showHomeVC,
-                                                object: nil)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-                    self.dismiss(animated: true)
+                isSavedPost = true
+            }
+        }
+        
+        PostUtil().saveData(postId: post.id,
+                            data: photoData) { result in
+            defer { dispatchGroup.leave() }
+            switch result {
+            case .failure(let title):
+                errorMessage = title
+            case .success:
+                isSavedData = true
+            }
+        }
+        dispatchGroup.notify(queue: .main) {
+            switch (isSavedPost, isSavedData) {
+            case (true, true):
+                self.indicator.flash(.success) {
+                    NotificationCenter.default.post(name: .showHomeVC,
+                                                    object: nil)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                        self.dismiss(animated: true)
+                    }
+                }
+            default:
+                self.indicator.flash(.error) {
+                    self.showErrorAlert(title: errorMessage ?? "投稿できませんでした。")
                 }
             }
         }
