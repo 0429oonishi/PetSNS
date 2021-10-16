@@ -61,6 +61,7 @@ final class EditingPostViewController: UIViewController {
                 isSavedData = true
             }
         }
+        
         dispatchGroup.notify(queue: .main) {
             switch (isSavedPost, isSavedData) {
             case (true, true):
@@ -77,6 +78,7 @@ final class EditingPostViewController: UIViewController {
                 }
             }
         }
+        
     }
     
     @IBAction private func cancelButtonDidTapped(_ sender: Any) {
