@@ -32,16 +32,14 @@ final class UserUtil {
     }
     
     func signUp(email: String, 
-                password: String, 
-                completion: @escaping ResultHandler<Any?>) {
-        Auth.auth().createUser(withEmail: email, 
-                               password: password) { authResult, error in
-            if let error = error {
-                let message = self.authErrorMessage(error)
-                completion(.failure(message))
-                return
-            }
-            completion(.success(nil))
+                password: String) async -> Result<Any?, String> {
+        Auth.auth().languageCode = "ja_JP"
+        do {
+            try await Auth.auth().createUser(withEmail: email, password: password)
+            return .success(nil)
+        } catch {
+            let errorMessage = authErrorMessage(error)
+            return .failure(errorMessage)
         }
     }
     
