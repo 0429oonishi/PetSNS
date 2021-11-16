@@ -73,11 +73,11 @@
 		AB86A84D26D3E39400EA990A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84C26D3E39400EA990A /* SettingViewController.swift */; };
 		AB86A84F26D3E39B00EA990A /* ThemeColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A84E26D3E39B00EA990A /* ThemeColorViewController.swift */; };
 		AB86A85126D3E3A500EA990A /* PrivacyAndSecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86A85026D3E3A500EA990A /* PrivacyAndSecurityViewController.swift */; };
-		C7AA33C809174A7A649EAD2D /* Pods_PetSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CFC73EDFE618C15173E6D8 /* Pods_PetSNS.framework */; };
+		DFCDCCBBEB0E5AED656463ED /* Pods_PetSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C6FBCBD30AEEC489D28E4E /* Pods_PetSNS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4565DEEFE3CE56F67196FA0D /* Pods-PetSNS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSNS.debug.xcconfig"; path = "Target Support Files/Pods-PetSNS/Pods-PetSNS.debug.xcconfig"; sourceTree = "<group>"; };
+		47A42B9080FB01541F1F6877 /* Pods-PetSNS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSNS.release.xcconfig"; path = "Target Support Files/Pods-PetSNS/Pods-PetSNS.release.xcconfig"; sourceTree = "<group>"; };
 		4EA5C3C326D99E1100626ADE /* HomePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostTableViewCell.swift; sourceTree = "<group>"; };
 		4EA5C3C426D99E1100626ADE /* HomePostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePostTableViewCell.xib; sourceTree = "<group>"; };
 		4EA5C3CD26DCB88E00626ADE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -86,6 +86,7 @@
 		4EA5C3D326EB263300626ADE /* ThemeColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		4EA5C3D426EB263300626ADE /* ThemeColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeColorCollectionViewCell.xib; sourceTree = "<group>"; };
 		4EA5C3D726F242D600626ADE /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		66C6FBCBD30AEEC489D28E4E /* Pods_PetSNS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetSNS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75395AF627102D0E00492D69 /* PostUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUtil.swift; sourceTree = "<group>"; };
 		755E9AC526D7931C00A17709 /* HomeContainerPosts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeContainerPosts.storyboard; sourceTree = "<group>"; };
 		755E9AC726D7933C00A17709 /* HomeContainerPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerPostsViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 		755E9B2126DB527C00A17709 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		75888FB726E8AE9800F1A545 /* OtherPetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPetsCollectionViewCell.swift; sourceTree = "<group>"; };
 		75888FB826E8AE9800F1A545 /* OtherPetsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherPetsCollectionViewCell.xib; sourceTree = "<group>"; };
-		8462CE25D20020CDE15C0FC5 /* Pods-PetSNS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSNS.release.xcconfig"; path = "Target Support Files/Pods-PetSNS/Pods-PetSNS.release.xcconfig"; sourceTree = "<group>"; };
 		AB09946B26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetConfigurationTableViewCell.swift; sourceTree = "<group>"; };
 		AB09946C26DA1CD800DFA7D8 /* PetConfigurationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetConfigurationTableViewCell.xib; sourceTree = "<group>"; };
 		AB0C76B626EE102500BF5B64 /* ChangeFrameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFrameProtocol.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		AB86A84C26D3E39400EA990A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		AB86A84E26D3E39B00EA990A /* ThemeColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorViewController.swift; sourceTree = "<group>"; };
 		AB86A85026D3E3A500EA990A /* PrivacyAndSecurityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyAndSecurityViewController.swift; sourceTree = "<group>"; };
-		B9CFC73EDFE618C15173E6D8 /* Pods_PetSNS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetSNS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2B721BF2ABB848D40F950AD /* Pods-PetSNS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSNS.debug.xcconfig"; path = "Target Support Files/Pods-PetSNS/Pods-PetSNS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7AA33C809174A7A649EAD2D /* Pods_PetSNS.framework in Frameworks */,
+				DFCDCCBBEB0E5AED656463ED /* Pods_PetSNS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,8 +165,8 @@
 		374D8824DCF0F26162A8AF75 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4565DEEFE3CE56F67196FA0D /* Pods-PetSNS.debug.xcconfig */,
-				8462CE25D20020CDE15C0FC5 /* Pods-PetSNS.release.xcconfig */,
+				E2B721BF2ABB848D40F950AD /* Pods-PetSNS.debug.xcconfig */,
+				47A42B9080FB01541F1F6877 /* Pods-PetSNS.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -211,6 +211,14 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		A58D866DB03A6B689DA7B2A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66C6FBCBD30AEEC489D28E4E /* Pods_PetSNS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AB09946A26DA1CC900DFA7D8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,7 +253,7 @@
 				AB86A7E526D3D76800EA990A /* PetSNS */,
 				AB86A7E426D3D76800EA990A /* Products */,
 				374D8824DCF0F26162A8AF75 /* Pods */,
-				FAD472AEDEFF089FCEBABF54 /* Frameworks */,
+				A58D866DB03A6B689DA7B2A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -431,14 +439,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		FAD472AEDEFF089FCEBABF54 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B9CFC73EDFE618C15173E6D8 /* Pods_PetSNS.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -446,11 +446,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB86A7F726D3D76900EA990A /* Build configuration list for PBXNativeTarget "PetSNS" */;
 			buildPhases = (
-				8125672B18B5E5D92B000496 /* [CP] Check Pods Manifest.lock */,
+				4E46170E171E88DB42B1828B /* [CP] Check Pods Manifest.lock */,
 				AB86A7DF26D3D76800EA990A /* Sources */,
 				AB86A7E026D3D76800EA990A /* Frameworks */,
 				AB86A7E126D3D76800EA990A /* Resources */,
-				7D087BFB269D9C6AD7A7FCB4 /* [CP] Embed Pods Frameworks */,
+				44AFA6A61295EC8DEAFB7620 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -532,7 +532,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7D087BFB269D9C6AD7A7FCB4 /* [CP] Embed Pods Frameworks */ = {
+		44AFA6A61295EC8DEAFB7620 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -549,7 +549,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PetSNS/Pods-PetSNS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8125672B18B5E5D92B000496 /* [CP] Check Pods Manifest.lock */ = {
+		4E46170E171E88DB42B1828B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -684,7 +684,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -739,7 +739,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -751,14 +751,14 @@
 		};
 		AB86A7F826D3D76900EA990A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4565DEEFE3CE56F67196FA0D /* Pods-PetSNS.debug.xcconfig */;
+			baseConfigurationReference = E2B721BF2ABB848D40F950AD /* Pods-PetSNS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 242KS3V77L;
 				INFOPLIST_FILE = PetSNS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -772,14 +772,14 @@
 		};
 		AB86A7F926D3D76900EA990A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8462CE25D20020CDE15C0FC5 /* Pods-PetSNS.release.xcconfig */;
+			baseConfigurationReference = 47A42B9080FB01541F1F6877 /* Pods-PetSNS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 242KS3V77L;
 				INFOPLIST_FILE = PetSNS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

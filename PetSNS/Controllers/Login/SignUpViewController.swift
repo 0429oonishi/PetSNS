@@ -25,12 +25,12 @@ final class SignUpViewController: UIViewController {
         guard let mailText = mailAddressTextField.text,
               let confirmationMailText = confirmationMailAddressTextField.text,
               let passwordText = passwordTextField.text,
-              let confirmationPasswordText = confirmationPasswordTextField.text 
+              let confirmationPasswordText = confirmationPasswordTextField.text
         else { return false }
         
-        return signUpValidation.textIsEmptyChecker(target: [mailText, 
-                                                            confirmationMailText, 
-                                                            passwordText, 
+        return signUpValidation.textIsEmptyChecker(target: [mailText,
+                                                            confirmationMailText,
+                                                            passwordText,
                                                             confirmationPasswordText])
     }
     
@@ -48,21 +48,20 @@ final class SignUpViewController: UIViewController {
     }
     
     @IBAction private func registerButtonDidTapped(_ sender: Any) {
-        guard let mail = mailAddressTextField.text, 
-              let confirmationMail = confirmationMailAddressTextField.text, 
-              let password = passwordTextField.text, 
-              let confirmationPassword = confirmationPasswordTextField.text 
+        guard let mail = mailAddressTextField.text,
+              let confirmationMail = confirmationMailAddressTextField.text,
+              let password = passwordTextField.text,
+              let confirmationPassword = confirmationPasswordTextField.text
         else { return }
-        if let alertMessage = confirmInput(mail: mail, 
-                                           confirmationMail: confirmationMail, 
-                                           password: password, 
+        if let alertMessage = confirmInput(mail: mail,
+                                           confirmationMail: confirmationMail,
+                                           password: password,
                                            confirmationPassword: confirmationPassword) {
             self.showErrorAlert(title: "確認", message: alertMessage)
         } else {
             indicator.show(.progress)
-            UserUtil().signUp(email: mail, 
-                              password: password) { [weak self] result in
-                guard let self = self else { return }
+            Task {
+                let result = await UserUtil().signUp(email: mail, password: password)
                 switch result {
                 case .failure(let title):
                     self.indicator.flash(.error) {
@@ -86,9 +85,9 @@ final class SignUpViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    func confirmInput(mail: String, 
-                      confirmationMail: String, 
-                      password: String, 
+    func confirmInput(mail: String,
+                      confirmationMail: String,
+                      password: String,
                       confirmationPassword: String) -> String? {
         
         let checkers = [signUpValidation.mailAddressFormatChecker(mail: mail),
@@ -150,12 +149,12 @@ private extension SignUpViewController {
     
     func setUpSecureButton() {
         secureButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-        secureButton.addTarget(self, 
-                               action: #selector(secureButtonDidTapped), 
+        secureButton.addTarget(self,
+                               action: #selector(secureButtonDidTapped),
                                for: .touchUpInside)
         confirmationSecureButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-        confirmationSecureButton.addTarget(self, 
-                                           action: #selector(cunfirmationSecureButtonDidTapped), 
+        confirmationSecureButton.addTarget(self,
+                                           action: #selector(cunfirmationSecureButtonDidTapped),
                                            for: .touchUpInside)
     }
     
